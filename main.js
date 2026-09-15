@@ -12,9 +12,8 @@
     a.addEventListener('click', function () { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
   });
 
-  // Duplicate marquee track so it loops seamlessly
-  var track = document.getElementById('methodsTrack');
-  if (track) track.innerHTML += track.innerHTML;
+  // Payment methods marquee: both copies are already in the HTML (see index.html),
+  // so the CSS loop (translateX(-50%)) is seamless from first paint with no JS timing dependency.
 
   // Scroll reveal (IntersectionObserver, no scroll listeners)
   var reveals = document.querySelectorAll('.reveal');

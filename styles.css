@@ -162,6 +162,13 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero .lede { margin-bottom: 2rem; max-width: 46ch; }
 .hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+.hero-industries { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.75rem; }
+.hero-industries a {
+  font-family: var(--mono); font-size: .74rem; text-transform: uppercase; letter-spacing: .04em;
+  padding: .45rem .9rem; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--ink-2);
+  transition: border-color .2s, color .2s, background-color .2s;
+}
+.hero-industries a:hover { border-color: var(--accent); color: var(--ink); background: var(--accent-soft); }
 .hero-visual { position: relative; perspective: 1600px; }
 .frame {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-panel);

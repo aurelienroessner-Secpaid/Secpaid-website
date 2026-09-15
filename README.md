@@ -35,8 +35,8 @@ Then open http://localhost:8765.
   secpaid.com (including `/pharmaone-shops/` and the blog post) sets its canonical
   to the homepage, which tells Google to ignore the page. Every page also shares
   the homepage title and meta description. Nothing else ranks until this is fixed.
-- **301-redirect `/pharmaone-shops/` to `/online-pharmacy-merchant-account/.** 
-The new pharmacy page absorbs that content with a real, keyword-matched URL,
+- **301-redirect `/pharmaone-shops/` to `/online-pharmacy-merchant-account/`.**
+  The new pharmacy page absorbs that content with a real, keyword-matched URL,
   title, and meta. The PharmaOne ecosystem is still referenced on the page.
 - **Add `sitemap.xml` entries** for the four new URLs (see `sitemap.xml` here) and
   keep the existing legal, blog, and feature URLs from the live sitemap.
