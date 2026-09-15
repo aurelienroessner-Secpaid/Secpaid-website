@@ -4,13 +4,47 @@
   // Mobile nav
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('navToggle');
+  var navLinksEl = document.querySelector('.nav-links');
+  var navCtaEl = document.querySelector('.nav-cta');
+
+  // The mobile menu's Apply now / Sign in row sits right below the link list.
+  // The Industries dropdown can grow or shrink that list's height, so its
+  // position is calculated from the real rendered height instead of a fixed number.
+  function syncMobileCta() {
+    if (!navCtaEl) return;
+    if (!nav.classList.contains('open') || window.innerWidth > 960) { navCtaEl.style.top = ''; return; }
+    var navH = nav.getBoundingClientRect().height;
+    navCtaEl.style.top = (navH + (navLinksEl ? navLinksEl.offsetHeight : 0)) + 'px';
+  }
+
   toggle.addEventListener('click', function () {
     var open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
+    syncMobileCta();
   });
   nav.querySelectorAll('.nav-links a, .nav-cta a').forEach(function (a) {
     a.addEventListener('click', function () { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
   });
+
+  // Industries dropdown in the header: close others when one opens, sync the
+  // mobile CTA row, and close on outside click or Escape.
+  document.querySelectorAll('.nav-dropdown details').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) {
+        document.querySelectorAll('.nav-dropdown details').forEach(function (o) { if (o !== d) o.open = false; });
+      }
+      syncMobileCta();
+    });
+  });
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.nav-dropdown details[open]').forEach(function (d) {
+      if (!d.contains(e.target)) d.open = false;
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') document.querySelectorAll('.nav-dropdown details[open]').forEach(function (d) { d.open = false; });
+  });
+  window.addEventListener('resize', syncMobileCta);
 
   // Payment methods marquee: both copies are already in the HTML (see index.html),
   // so the CSS loop (translateX(-50%)) is seamless from first paint with no JS timing dependency.
