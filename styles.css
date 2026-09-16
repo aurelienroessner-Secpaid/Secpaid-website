@@ -450,6 +450,8 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 .cta .btn-ghost { border-color: color-mix(in srgb, var(--bg) 35%, transparent); color: var(--bg); }
 .cta .btn-ghost:hover { background: color-mix(in srgb, var(--bg) 10%, transparent); }
 @media (max-width: 960px) { .cta .box { grid-template-columns: minmax(0, 1fr); } .cta .actions { justify-content: flex-start; } }
+.cta-note { text-align: center; margin-top: 1.5rem; color: var(--muted); font-size: .92rem; }
+.cta-note a { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
 
 /* Footer */
 .footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; color: var(--muted); font-size: .9rem; }
@@ -488,10 +490,17 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 .field.invalid input { border-color: var(--danger); }
 .field.invalid .error { display: block; }
 .modal .btn { width: 100%; margin-top: .5rem; }
+.modal-divider { display: flex; align-items: center; gap: .75rem; margin: 1.1rem 0; color: var(--muted); font-size: .82rem; }
+.modal-divider::before, .modal-divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.btn-google { display: flex; align-items: center; justify-content: center; gap: .6rem; background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.btn-google:hover { background: var(--bg); }
 .done { text-align: center; padding: 1rem 0; }
 .done .mark { width: 56px; height: 56px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin: 0 auto 1rem; }
 .done .mark svg { width: 26px; height: 26px; }
 .done p { color: var(--muted); margin-top: .5rem; }
+.done-steps { text-align: left; display: grid; gap: .75rem; margin: 1.25rem 0; padding: 1rem 1.1rem; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-input); }
+.done-steps li { font-size: .88rem; color: var(--muted); }
+.done-steps li b { color: var(--ink); font-weight: 600; }
 
 /* Industries */
 .industry-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
