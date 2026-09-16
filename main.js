@@ -1,6 +1,50 @@
 (function () {
   'use strict';
 
+  // ---- Language toggle (EN/DE) ----
+  // Every translatable element carries data-de="<German HTML>". The first time a
+  // language switch touches an element we cache its current (English) markup so we
+  // can restore it later, instead of hardcoding the English copy twice in the file.
+  var LANG_KEY = 'secpaid-lang';
+  var i18nCache = new WeakMap();
+  var i18nNodes = document.querySelectorAll('[data-de]');
+  var titleEl = document.querySelector('title');
+  var descEl = document.querySelector('meta[name="description"]');
+
+  function applyLang(lang) {
+    i18nNodes.forEach(function (el) {
+      var isField = el.tagName === 'INPUT' || el.tagName === 'TEXTAREA';
+      var prop = isField ? 'placeholder' : 'innerHTML';
+      if (!i18nCache.has(el)) i18nCache.set(el, isField ? el.placeholder : el.innerHTML);
+      el[prop] = lang === 'de' ? el.getAttribute('data-de') : i18nCache.get(el);
+    });
+    if (titleEl && titleEl.hasAttribute('data-de')) {
+      if (!i18nCache.has(titleEl)) i18nCache.set(titleEl, titleEl.textContent);
+      titleEl.textContent = lang === 'de' ? titleEl.getAttribute('data-de') : i18nCache.get(titleEl);
+    }
+    if (descEl && descEl.hasAttribute('data-de')) {
+      if (!i18nCache.has(descEl)) i18nCache.set(descEl, descEl.getAttribute('content'));
+      descEl.setAttribute('content', lang === 'de' ? descEl.getAttribute('data-de') : i18nCache.get(descEl));
+    }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.textContent.trim().toUpperCase() === lang.toUpperCase()));
+    });
+    window.SECPAID_LANG = lang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(btn.textContent.trim().toLowerCase() === 'de' ? 'de' : 'en');
+    });
+  });
+
+  var savedLang = null;
+  try { savedLang = localStorage.getItem(LANG_KEY); } catch (e) {}
+  window.SECPAID_LANG = savedLang === 'de' ? 'de' : 'en';
+  if (savedLang === 'de') applyLang('de');
+
   // Mobile nav
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('navToggle');
@@ -143,19 +187,24 @@
   });
 
   // Simulated hand-off to a Signicat verification flow (demo only; no live API call).
+  var VERIFY_TEXT = {
+    en: { connecting: 'Connecting to Signicat — ', verifying: 'Verifying with Signicat…', done: 'Verified' },
+    de: { connecting: 'Verbindung zu Signicat wird hergestellt — ', verifying: 'Verifizierung mit Signicat läuft…', done: 'Verifiziert' }
+  };
   verifyOptions.querySelectorAll('.verify-option').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var method = btn.getAttribute('data-method');
+      var method = btn.getAttribute(window.SECPAID_LANG === 'de' ? 'data-method-de' : 'data-method') || btn.getAttribute('data-method');
+      var t = VERIFY_TEXT[window.SECPAID_LANG] || VERIFY_TEXT.en;
       verifyOptions.hidden = true;
       verifyStatus.hidden = false;
       verifyStatus.classList.remove('is-done');
-      verifyStatusText.textContent = 'Connecting to Signicat — ' + method + '…';
+      verifyStatusText.textContent = t.connecting + method + '…';
       setTimeout(function () {
-        verifyStatusText.textContent = 'Verifying with Signicat…';
+        verifyStatusText.textContent = t.verifying;
       }, 900);
       setTimeout(function () {
         verifyStatus.classList.add('is-done');
-        verifyStatusText.textContent = 'Verified';
+        verifyStatusText.textContent = t.done;
       }, 1900);
       setTimeout(function () {
         verify.hidden = true; done.hidden = false;
@@ -164,13 +213,6 @@
     });
   });
   }
-
-  // Language toggle (visual only; wire to your DE content)
-  document.querySelectorAll('.lang button').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
-    });
-  });
 
   // Live routing panel (hero visual — illustrative data, not a real feed)
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -191,8 +233,9 @@
       var tr = document.createElement('tr');
       if (isNew) tr.className = 'rp-new';
       var threeDS = Math.random() < 0.14;
+      var authLabel = window.SECPAID_LANG === 'de' ? 'AUTORISIERT' : 'AUTH';
       tr.innerHTML = '<td>' + euro() + '</td><td>' + pick(METHODS) + '</td><td>' + pick(ROUTES) +
-        '</td><td class="' + (threeDS ? '' : 'ok') + '">' + (threeDS ? '3-D SECURE' : 'AUTH') + '</td>';
+        '</td><td class="' + (threeDS ? '' : 'ok') + '">' + (threeDS ? '3-D SECURE' : authLabel) + '</td>';
       return tr;
     }
     for (var i = 0; i < 6; i++) rows.appendChild(mkRow(false));
