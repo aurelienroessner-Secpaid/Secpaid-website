@@ -34,7 +34,11 @@
           <ul>
             <li><a href="#orchestration">Orchestration</a></li>
             <li><a href="#product">Payment as a Service</a></li>
+            <li><a href="#payment-links">Payment links</a></li>
+            <li><a href="#qr-codes">QR codes</a></li>
+            <li><a href="#split-payments">Split payments</a></li>
             <li><a href="#subscriptions">Subscriptions</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
           </ul>
         </details>
       </li>
@@ -44,7 +48,7 @@
     </ul>
     <div class="nav-cta">
       <a class="btn btn-ghost btn-sm" href="https://app.secpaid.com" rel="noopener">Sign in</a>
-      <a class="btn btn-primary btn-sm" href="#pricing">Apply now</a>
+      <a class="btn btn-primary btn-sm" href="#pricing">Let's get started</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -62,7 +66,7 @@
         <h1>Flexible payments for the regulated <em>medical industry</em>.</h1>
         <p class="lede">Approved in 24 hours, routed across multiple providers, with an account manager on every chargeback.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#pricing">Apply now</a>
+          <a class="btn btn-primary btn-lg" href="#pricing">Let's get started</a>
           <a class="btn btn-ghost btn-lg" href="#contact">Talk to an account manager</a>
         </div>
       </div>
@@ -164,6 +168,38 @@
     </div>
   </section>
 
+  <!-- Account manager -->
+  <section class="am section" id="account-manager">
+    <div class="wrap">
+      <div class="frame reveal">
+        <div class="frame-bar"><span></span><span></span><span></span><em class="url">app.secpaid.com/disputes</em></div>
+        <img src="assets/screens/payments-disputes.png" alt="SecPaid disputes screen showing chargebacks under review and their status" width="1440" height="900" loading="lazy">
+      </div>
+      <div>
+        <h2 class="reveal">A dedicated Account Manager, not a ticket queue.</h2>
+        <p class="lede reveal">Your Account Manager acts as an extension of your own team, handling the everyday payment friction, disputes, fraud rules, and provider relationships, so you can stay focused on growing the business.</p>
+        <div class="am-list reveal">
+          <div class="am-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+            <div><b>Chargeback response</b><span>We compile evidence and file the representment, so a dispute does not automatically mean lost revenue.</span></div>
+          </div>
+          <div class="am-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+            <div><b>Ratio monitoring</b><span>We track your dispute ratio against card network thresholds and step in before it becomes a problem.</span></div>
+          </div>
+          <div class="am-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+            <div><b>Risk-aware routing that gets smarter</b><span>Every approval and every dispute retrains which provider handles which transaction next, so more payments clear and fewer disputes happen in the first place.</span></div>
+          </div>
+          <div class="am-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+            <div><b>A direct line</b><span>Reach your Account Manager by phone or email. No ticket number, no rotating support agents.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Onboarding -->
   <section class="onboard section" id="onboarding">
     <div class="wrap">
@@ -186,38 +222,6 @@
           <span class="idx">03</span>
           <h3>Start processing</h3>
           <p>Once approved, your account and API keys go live, usually within 24 hours.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Account manager -->
-  <section class="am section" id="account-manager">
-    <div class="wrap">
-      <div class="frame reveal">
-        <div class="frame-bar"><span></span><span></span><span></span><em class="url">app.secpaid.com/disputes</em></div>
-        <img src="assets/screens/payments-disputes.png" alt="SecPaid disputes screen showing chargebacks under review and their status" width="1440" height="900" loading="lazy">
-      </div>
-      <div>
-        <h2 class="reveal">A dedicated account manager, not a ticket queue.</h2>
-        <p class="lede reveal">Every merchant is assigned a named account manager who watches your dispute ratio, tunes fraud rules, and fights chargebacks on your behalf.</p>
-        <div class="am-list reveal">
-          <div class="am-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
-            <div><b>Chargeback response</b><span>We compile evidence and file the representment, so a dispute does not automatically mean lost revenue.</span></div>
-          </div>
-          <div class="am-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
-            <div><b>Ratio monitoring</b><span>We track your dispute ratio against card network thresholds and step in before it becomes a problem.</span></div>
-          </div>
-          <div class="am-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
-            <div><b>Routing tuned to your risk</b><span>We adjust which provider handles which transaction type as approval and dispute data comes in.</span></div>
-          </div>
-          <div class="am-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
-            <div><b>A direct line</b><span>Reach your account manager by phone or email. No ticket number, no rotating support agents.</span></div>
-          </div>
         </div>
       </div>
     </div>
@@ -273,7 +277,7 @@
         <div class="orch-list">
           <div class="reveal">
             <span class="num">Stay live</span>
-            <h3>Keep processing if a provider freezes your account</h3>
+            <h3>Multi-provider setup built for redundancy and business continuity</h3>
             <p>If an acquirer raises your reserve or shuts you down, traffic reroutes to another provider automatically. No code changes, no downtime.</p>
           </div>
           <div class="reveal">
@@ -291,34 +295,6 @@
     </div>
   </section>
 
-  <!-- Germany / EU sovereignty -->
-  <section class="sovereignty section" id="sovereignty">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Built in Germany, for merchants who answer to EU rules.</h2>
-        <p class="lede">Regulated merchants are held to GDPR, PSD2, and national health and pharmacy law. The orchestration layer underneath should start from those rules, not bolt them on later.</p>
-      </div>
-      <div class="trust-grid reveal">
-        <div>
-          <b>Developed in Germany</b>
-          <p>Designed and maintained by a German team, under German company law.</p>
-        </div>
-        <div>
-          <b>Hosted in Germany</b>
-          <p>Your data sits on certified German cloud infrastructure, processed under EU data protection law.</p>
-        </div>
-        <div>
-          <b>Built for regulated commerce</b>
-          <p>SEPA, iDEAL, and the local methods your customers reach for, plus the reconciliation your finance team expects.</p>
-        </div>
-        <div>
-          <b>Neutral by principle</b>
-          <p>Only you decide which providers and methods are active. No hidden margins, no steering agreements.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Product bento -->
   <section class="section" id="product">
     <div class="wrap">
@@ -329,29 +305,55 @@
       <div class="bento">
         <article class="cell cell-a reveal">
           <div class="cell-shot"><img src="assets/screens/payments.png" alt="SecPaid payments list with statuses, amounts, and payment methods" loading="lazy"></div>
-          <h3>Payments and orchestration</h3>
-          <p>Cards, wallets, and bank rails from every connected provider land in one payments view, with refunds, disputes, and reports built in.</p>
+          <h3>Payment as a Service</h3>
+          <p>Every card, wallet, and bank rail from your connected providers lands in one payments view.</p>
+          <ul class="cell-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Real-time authorisations, refunds, and disputes in a single feed</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Multi-provider routing built in, not bolted on</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reconciliation-ready reports, exportable on demand</li>
+          </ul>
         </article>
-        <article class="cell cell-b reveal">
-          <div class="cell-shot"><img src="assets/screens/linktopay.png" alt="SecPaid Link to Pay screen for creating shareable payment links" loading="lazy"></div>
-          <h3>Payment links and QR</h3>
-          <p>Create a shareable link or QR code in one call. No checkout build required.</p>
+        <article class="cell cell-b reveal" id="dashboard">
+          <div class="cell-shot"><img src="assets/screens/dashboard.png" alt="SecPaid dashboard overview with revenue, transactions, and payouts" loading="lazy"></div>
+          <h3>Dashboard</h3>
+          <p>One login for your whole payment stack, built for daily use, not just monthly reporting.</p>
+          <ul class="cell-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Live revenue, transaction, and payout totals at a glance</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Role-based access for finance and support teams</li>
+          </ul>
         </article>
-        <article class="cell cell-c cell-tint reveal">
+        <article class="cell cell-c cell-tint reveal" id="split-payments">
           <div class="split-viz" aria-hidden="true"><i></i><i></i><i></i></div>
           <h3>Split payments</h3>
           <p>Pay affiliates, fulfilment partners, and referral partners automatically on every order.</p>
+          <ul class="cell-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Percentage or fixed-amount splits, set per partner</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Payouts release automatically after settlement</li>
+          </ul>
         </article>
-        <article class="cell cell-d reveal">
+        <article class="cell cell-d reveal" id="payment-links">
           <div class="hook-log" aria-hidden="true">
-            payment.succeeded <span>200 OK</span><br>
-            payment.refunded <span>200 OK</span><br>
-            dispute.opened <span>retry 2, 200 OK</span>
+            link.created <span>200 OK</span><br>
+            link.paid <span>200 OK</span><br>
+            qr.scanned <span>200 OK</span>
           </div>
-          <h3>Webhooks and automation</h3>
-          <p>Every event posts to your endpoint with retries. Or skip code with Zapier and n8n.</p>
+          <h3>Payment links</h3>
+          <p>Create a shareable payment link in one API call. No checkout build required.</p>
+          <ul class="cell-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Send by email, SMS, or chat in seconds</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fixed or customer-entered amounts, with expiry controls</li>
+          </ul>
         </article>
-        <article class="cell cell-e cell-dark reveal">
+        <article class="cell cell-f reveal" id="qr-codes">
+          <div class="cell-shot cell-shot-qr"><img src="assets/screens/personal-qr.png" alt="SecPaid QR code for a payment link" loading="lazy"></div>
+          <h3>QR codes</h3>
+          <p>Every payment link doubles as a scannable QR code, generated automatically.</p>
+          <ul class="cell-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Print on invoices, packaging, or in-store signage</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Scans open straight to a secure, hosted checkout</li>
+          </ul>
+        </article>
+        <article class="cell cell-g cell-dark reveal">
           <h3>Subscriptions</h3>
           <p>Recurring billing with smart retries, proration, and a customer portal. Details below.</p>
           <a class="link" href="#subscriptions" style="color: var(--accent)">See subscription tools <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg></a>
@@ -451,12 +453,12 @@ console.log(data.pay_link);</pre>
     </div>
   </section>
 
-  <!-- Security -->
+  <!-- Security & sovereignty -->
   <section class="section" id="security">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Compliance is handled before your first transaction.</h2>
-        <p class="lede">SecPaid is a neutral orchestration layer built for regulated categories. Funds stay with your licensed providers, and your data stays in Germany.</p>
+        <h2>Security and compliance are the starting point, not an afterthought.</h2>
+        <p class="lede">SecPaid is a neutral orchestration layer engineered for regulated commerce, designed and hosted in Germany under EU data protection and payments law, so compliance is never bolted on later.</p>
       </div>
       <div class="sec-grid reveal">
         <div><b>PCI DSS Level 1</b><p>Card data is tokenised and never touches your servers, which keeps your own PCI scope minimal.</p></div>
@@ -465,6 +467,8 @@ console.log(data.pay_link);</pre>
         <div><b>End-to-end encryption</b><p>Encrypted in transit and at rest with tokenised storage of every sensitive field.</p></div>
         <div><b>Fraud detection</b><p>Machine-learning risk scoring tuned for regulated categories like pharma and cannabis, not generic e-commerce fraud patterns.</p></div>
         <div><b>Provider neutrality</b><p>SecPaid never steers routing for its own benefit. You decide which providers and methods are active.</p></div>
+        <div><b>Developed in Germany</b><p>Designed and maintained by a German team, under German company law.</p></div>
+        <div><b>Built for regulated commerce</b><p>SEPA, iDEAL, and the local methods your customers reach for, plus the reconciliation your finance team expects.</p></div>
       </div>
     </div>
   </section>
@@ -511,40 +515,58 @@ console.log(data.pay_link);</pre>
         <h2>Transparent, volume-based pricing.</h2>
         <p class="lede" style="margin-inline:auto">Your processing fee scales with your monthly volume. No flat monthly fee, no mark-up on processor fees.</p>
       </div>
-      <div class="fee-table-wrap reveal">
-        <table class="fee-table">
-          <thead>
-            <tr>
-              <th>Tier</th>
-              <th>Merchant monthly volume</th>
-              <th>Processing fee</th>
-              <th>Minimum per transaction</th>
-              <th class="fee-cta-col"><span class="sr-only">Action</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="fee-tier">Growth</td>
-              <td>€2M-€5M</td>
-              <td>0.95%</td>
-              <td>€0.06</td>
-              <td><button class="btn btn-ghost btn-sm choose" data-plan="Growth" data-fee="0.95% + €0.06 per transaction">Apply now</button></td>
-            </tr>
-            <tr>
-              <td class="fee-tier">Scale</td>
-              <td>€5M-€10M</td>
-              <td>0.75%</td>
-              <td>€0.05</td>
-              <td><button class="btn btn-primary btn-sm choose" data-plan="Scale" data-fee="0.75% + €0.05 per transaction">Apply now</button></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="plan-grid reveal">
+        <div class="plan">
+          <h3>Standard</h3>
+          <p class="muted">Up to €2M monthly volume</p>
+          <div class="price"><b>1.20%</b><span>+ €0.06 per transaction</span></div>
+          <ul class="plan-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Accept payments in 180+ countries</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Multi-provider routing with automatic failover</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Chargeback and dispute management</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>PCI DSS Level 1, hosted in Germany</li>
+          </ul>
+          <button class="btn btn-ghost choose" data-plan="Standard" data-fee="1.20% + €0.06 per transaction">Let's get started</button>
+        </div>
+        <div class="plan featured">
+          <span class="plan-tag">Most popular</span>
+          <h3>Growth</h3>
+          <p class="muted">€2M – €5M monthly volume</p>
+          <div class="price"><b>0.95%</b><span>+ €0.06 per transaction</span></div>
+          <ul class="plan-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Standard</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Dedicated account manager</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Express, priority support</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fraud detection tuned for regulated categories</li>
+          </ul>
+          <button class="btn btn-primary choose" data-plan="Growth" data-fee="0.95% + €0.06 per transaction">Let's get started</button>
+        </div>
+        <div class="plan">
+          <h3>Scale</h3>
+          <p class="muted">€5M – €10M monthly volume</p>
+          <div class="price"><b>0.75%</b><span>+ €0.05 per transaction</span></div>
+          <ul class="plan-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Growth</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Senior dedicated account manager</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Custom routing rules across providers</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Priority underwriting review</li>
+          </ul>
+          <button class="btn btn-ghost choose" data-plan="Scale" data-fee="0.75% + €0.05 per transaction">Let's get started</button>
+        </div>
+        <div class="plan">
+          <h3>Enterprise</h3>
+          <p class="muted">Over €10M monthly volume</p>
+          <div class="price"><b>0.60%</b><span>+ €0.04 per transaction</span></div>
+          <ul class="plan-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Everything in Scale</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Blended rate arranged individually</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Custom contract and SLA</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Direct line to your account manager</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Talk to an account manager</a>
+        </div>
       </div>
       <p class="sample">Rates shown are indicative. Your final fee is confirmed during underwriting and depends on category, ticket size, and provider mix.</p>
-      <div class="enterprise reveal">
-        <p><b>Enterprise</b>Above €10M in monthly volume, with a blended rate arranged individually, no mark-up on processor fees, and a senior dedicated account manager.</p>
-        <a class="btn btn-primary" href="#contact">Talk to an account manager</a>
-      </div>
     </div>
   </section>
 
@@ -592,7 +614,7 @@ console.log(data.pay_link);</pre>
           <p>Apply in minutes and get matched with underwriters who already know pharma, supplement, and cannabis regulation. Most merchants are live within 24 hours.</p>
         </div>
         <div class="actions">
-          <a class="btn btn-accent btn-lg" href="#pricing">Apply now</a>
+          <a class="btn btn-accent btn-lg" href="#pricing">Let's get started</a>
           <a class="btn btn-ghost btn-lg" href="mailto:sales@secpaid.com">Talk to an account manager</a>
         </div>
       </div>
@@ -622,9 +644,9 @@ console.log(data.pay_link);</pre>
         <h4>Product</h4>
         <ul>
           <li><a href="#orchestration">Orchestration</a></li>
-          <li><a href="#account-manager">Account manager</a></li>
+          <li><a href="#account-manager">Account Manager</a></li>
           <li><a href="#subscriptions">Subscriptions</a></li>
-          <li><a href="#sovereignty">Germany and EU</a></li>
+          <li><a href="#security">Germany and EU</a></li>
           <li><a href="#pricing">Pricing</a></li>
         </ul>
       </div>
@@ -699,11 +721,38 @@ console.log(data.pay_link);</pre>
         Sign up with Google
       </button>
     </div>
+    <div class="verify" id="checkoutVerify" hidden>
+      <div class="modal-head">
+        <div>
+          <h3>Verify your business</h3>
+          <p>Confirm who you are before your application goes to underwriting.</p>
+        </div>
+        <button class="icon-btn" id="closeVerify" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="verify-options" id="verifyOptions">
+        <button class="verify-option" type="button" data-method="Company data verification">
+          <span class="verify-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V7l6-4 6 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg></span>
+          <span class="verify-copy"><b>Verify company data</b><span>We look up your registration, VAT ID, and beneficial owners automatically.</span></span>
+          <span class="verify-time">~30 sec</span>
+        </button>
+        <button class="verify-option" type="button" data-method="ID document and biometric verification">
+          <span class="verify-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="9" cy="12" r="2.25"/><path d="M14 10.5h5M14 13.5h3.5"/></svg></span>
+          <span class="verify-copy"><b>Verify ID document</b><span>Scan a photo ID and take a quick selfie to confirm the applicant.</span></span>
+          <span class="verify-time">~1 min</span>
+        </button>
+      </div>
+      <div class="verify-status" id="verifyStatus" hidden>
+        <div class="spinner" id="verifySpinner" aria-hidden="true"></div>
+        <p id="verifyStatusText">Connecting to Signicat…</p>
+      </div>
+      <p class="verify-powered">Identity verification powered by <b>Signicat</b>, a certified Qualified Trust Service Provider.</p>
+    </div>
     <div class="done" id="checkoutDone" hidden>
       <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
       <h3>Almost there</h3>
-      <p>Your application has been received. Here's what happens next:</p>
+      <p>Your application and verification have been received. Here's what happens next:</p>
       <ol class="done-steps">
+        <li><b>Identity confirmed.</b> Your business was verified via Signicat and attached to your application.</li>
         <li><b>Underwriting review.</b> Our team checks your business against the providers active in your category.</li>
         <li><b>Account manager assigned.</b> You'll hear from a dedicated contact, not a support queue.</li>
         <li><b>Live in 24 hours.</b> Once approved, your API keys and dashboard access are ready to go.</li>

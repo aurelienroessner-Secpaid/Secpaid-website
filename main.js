@@ -93,6 +93,10 @@
   var dlg = document.getElementById('checkout');
   if (dlg) {
   var formWrap = document.getElementById('checkoutForm');
+  var verify = document.getElementById('checkoutVerify');
+  var verifyOptions = document.getElementById('verifyOptions');
+  var verifyStatus = document.getElementById('verifyStatus');
+  var verifyStatusText = document.getElementById('verifyStatusText');
   var done = document.getElementById('checkoutDone');
   var form = document.getElementById('signup');
   var lastTrigger = null;
@@ -101,7 +105,8 @@
     document.getElementById('mPlan').textContent = plan;
     document.getElementById('mSummary').textContent = plan + ' tier';
     document.getElementById('mPrice').textContent = fee;
-    formWrap.hidden = false; done.hidden = true;
+    formWrap.hidden = false; verify.hidden = true; done.hidden = true;
+    verifyOptions.hidden = false; verifyStatus.hidden = true;
     form.reset();
     form.querySelectorAll('.field').forEach(function (f) { f.classList.remove('invalid'); });
     if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
@@ -118,6 +123,7 @@
     });
   });
   document.getElementById('closeModal').addEventListener('click', closeCheckout);
+  document.getElementById('closeVerify').addEventListener('click', closeCheckout);
   document.getElementById('closeDone').addEventListener('click', closeCheckout);
   dlg.addEventListener('click', function (e) { if (e.target === dlg) closeCheckout(); });
 
@@ -132,8 +138,30 @@
     ok = company.value.trim() && emailOk;
     if (!ok) return;
     // TODO: POST form data to your signup/billing backend here.
-    formWrap.hidden = true; done.hidden = false;
-    document.getElementById('closeDone').focus();
+    formWrap.hidden = true; verify.hidden = false;
+    document.getElementById('closeVerify').focus();
+  });
+
+  // Simulated hand-off to a Signicat verification flow (demo only; no live API call).
+  verifyOptions.querySelectorAll('.verify-option').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var method = btn.getAttribute('data-method');
+      verifyOptions.hidden = true;
+      verifyStatus.hidden = false;
+      verifyStatus.classList.remove('is-done');
+      verifyStatusText.textContent = 'Connecting to Signicat — ' + method + '…';
+      setTimeout(function () {
+        verifyStatusText.textContent = 'Verifying with Signicat…';
+      }, 900);
+      setTimeout(function () {
+        verifyStatus.classList.add('is-done');
+        verifyStatusText.textContent = 'Verified';
+      }, 1900);
+      setTimeout(function () {
+        verify.hidden = true; done.hidden = false;
+        document.getElementById('closeDone').focus();
+      }, 2700);
+    });
   });
   }
 
