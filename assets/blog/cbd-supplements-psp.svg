@@ -2,21 +2,21 @@
   <rect width="1200" height="675" fill="#f7f7f8"/>
   <g font-family="Archivo, sans-serif">
     <rect x="180" y="237" width="260" height="200" rx="16" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
-    <text x="310" y="300" text-anchor="middle" font-size="22" font-weight="700" fill="#121316">Mollie</text>
-    <circle cx="310" cy="360" r="20" fill="#e4f4ec"/>
-    <path d="M300 360l7 7 14-14" stroke="#1f8c66" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="310" y="405" text-anchor="middle" font-size="13" fill="#676c75">Reviewed case by case</text>
+    <text x="310" y="300" text-anchor="middle" font-size="22" font-weight="700" fill="#121316">Stripe</text>
+    <circle cx="310" cy="360" r="20" fill="#f6e5e3"/>
+    <path d="M301 351l18 18M319 351l-18 18" stroke="#b4463f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="310" y="405" text-anchor="middle" font-size="13" fill="#676c75">CBD &amp; THC restricted</text>
 
     <rect x="470" y="237" width="260" height="200" rx="16" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
-    <text x="600" y="300" text-anchor="middle" font-size="22" font-weight="700" fill="#121316">Adyen</text>
+    <text x="600" y="300" text-anchor="middle" font-size="22" font-weight="700" fill="#121316">Mollie</text>
     <circle cx="600" cy="360" r="20" fill="#f4ecdd"/>
     <path d="M591 360h18" stroke="#b48a3f" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <text x="600" y="405" text-anchor="middle" font-size="13" fill="#676c75">Restricted, extra docs</text>
+    <text x="600" y="405" text-anchor="middle" font-size="13" fill="#676c75">Reviewed case by case</text>
 
     <rect x="760" y="237" width="260" height="200" rx="16" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
     <text x="890" y="300" text-anchor="middle" font-size="20" font-weight="700" fill="#121316">Shopify</text>
-    <circle cx="890" cy="360" r="20" fill="#f6e5e3"/>
-    <path d="M881 351l18 18M899 351l-18 18" stroke="#b4463f" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <text x="890" y="405" text-anchor="middle" font-size="13" fill="#676c75">CBD not supported</text>
+    <circle cx="890" cy="360" r="20" fill="#f4ecdd"/>
+    <path d="M891 349v12M891 373v2" stroke="#b48a3f" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="890" y="405" text-anchor="middle" font-size="13" fill="#676c75">Depends on infrastructure</text>
   </g>
 </svg>
