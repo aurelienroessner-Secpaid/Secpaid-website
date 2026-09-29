@@ -133,6 +133,32 @@
     });
   });
 
+  // Partner inquiry form (partners page only): validates, then opens a
+  // pre-filled email to the partnerships team. No backend on this site.
+  var partnerForm = document.getElementById('partnerForm');
+  if (partnerForm) {
+    partnerForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var company = document.getElementById('pCompany');
+      var name = document.getElementById('pName');
+      var phone = document.getElementById('pPhone');
+      company.closest('.field').classList.toggle('invalid', !company.value.trim());
+      name.closest('.field').classList.toggle('invalid', !name.value.trim());
+      phone.closest('.field').classList.toggle('invalid', !phone.value.trim());
+      if (!company.value.trim() || !name.value.trim() || !phone.value.trim()) return;
+
+      var subject = 'Partner inquiry: ' + company.value.trim();
+      var body = 'Company: ' + company.value.trim() +
+        '\nContact name: ' + name.value.trim() +
+        '\nPhone number: ' + phone.value.trim();
+      window.location.href = 'mailto:partners@secpaid.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      partnerForm.hidden = true;
+      document.getElementById('partnerDone').hidden = false;
+    });
+  }
+
   // Live routing panel (hero visual — illustrative data, not a real feed)
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var rows = document.getElementById('routeRows');

@@ -1,0 +1,22 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif" stroke-linecap="round">
+    <path d="M240 337 H430" stroke="#cfd2d8" stroke-width="2" fill="none"/>
+    <path d="M240 337 H430" stroke="#1f8c66" stroke-width="2" fill="none" stroke-dasharray="6 10"/>
+    <path d="M610 337 H800" stroke="#cfd2d8" stroke-width="2" fill="none"/>
+    <path d="M610 337 H800" stroke="#1f8c66" stroke-width="2" fill="none" stroke-dasharray="6 10"/>
+
+    <rect x="60" y="287" width="180" height="100" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+    <text x="150" y="343" text-anchor="middle" font-size="17" font-weight="600" fill="#121316">Doctor</text>
+
+    <rect x="430" y="257" width="180" height="160" rx="14" fill="#121316"/>
+    <text x="520" y="330" text-anchor="middle" font-size="17" font-weight="700" fill="#f7f7f8">Prescription</text>
+    <text x="520" y="356" text-anchor="middle" font-size="12" fill="#c8cbd1">e-Rezept</text>
+
+    <rect x="800" y="287" width="180" height="100" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+    <text x="890" y="343" text-anchor="middle" font-size="17" font-weight="600" fill="#121316">Pharmacy</text>
+
+    <rect x="1050" y="297" width="90" height="80" rx="12" fill="#e4f4ec"/>
+    <text x="1095" y="345" text-anchor="middle" font-size="15" font-weight="700" fill="#1f8c66">DE</text>
+  </g>
+</svg>

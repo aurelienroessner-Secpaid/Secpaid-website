@@ -1,0 +1,12 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <path d="M380 460 A220 220 0 0 1 820 460" fill="none" stroke="#e3e5e9" stroke-width="26" stroke-linecap="round"/>
+    <path d="M380 460 A220 220 0 0 1 640 242" fill="none" stroke="#1f8c66" stroke-width="26" stroke-linecap="round"/>
+    <path d="M640 242 A220 220 0 0 1 820 460" fill="none" stroke="#b4463f" stroke-width="26" stroke-linecap="round"/>
+    <line x1="600" y1="460" x2="700" y2="300" stroke="#121316" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="600" cy="460" r="16" fill="#121316"/>
+    <text x="600" y="560" text-anchor="middle" font-size="46" font-weight="800" fill="#121316">1.5%</text>
+    <text x="600" y="596" text-anchor="middle" font-size="15" fill="#676c75" font-family="IBM Plex Mono, monospace" letter-spacing="1">VAMP EXCESSIVE THRESHOLD</text>
+  </g>
+</svg>

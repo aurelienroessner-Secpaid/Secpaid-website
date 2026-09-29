@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visa VAMP 1.5% Threshold for EU Health Merchants | SecPaid Blog</title>
+  <meta name="description" content="Visa’s VAMP merchant threshold fell from 2.2% to 1.5% on 1 April 2026. See how the ratio works, why health merchants are exposed and how to lower it.">
+  <link rel="canonical" href="https://secpaid.com/blog/visa-vamp-1-5-percent-eu-health-merchants">
+  <link rel="icon" href="../../assets/favicon.png">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Visa VAMP 1.5% Threshold for EU Health Merchants | SecPaid Blog">
+  <meta property="og:description" content="Visa’s VAMP merchant threshold fell from 2.2% to 1.5% on 1 April 2026. See how the ratio works, why health merchants are exposed and how to lower it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="../../index.html" aria-label="SecPaid home"><img src="../../assets/logo-secpaid-black.svg" alt="SecPaid" width="120" height="39"></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <details>
+          <summary data-de="Branchen">Industries</summary>
+          <ul>
+            <li><a href="../../online-pharmacy-merchant-account/index.html" data-de="Apotheken">Pharmacies</a></li>
+            <li><a href="../../medical-cannabis-cbd-payment-processing/index.html" data-de="Medizinisches Cannabis">Medical Cannabis</a></li>
+            <li><a href="../../telehealth-payment-processing/index.html" data-de="Telemedizin">Telehealth</a></li>
+            <li><a href="../../supplements-nutraceuticals-merchant-account/index.html" data-de="Nahrungsergänzungsmittel">Nutraceuticals</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="nav-dropdown">
+        <details>
+          <summary data-de="Lösungen">Solutions</summary>
+          <ul>
+            <li><a href="../../index.html#orchestration" data-de="Orchestrierung">Orchestration</a></li>
+            <li><a href="../../index.html#product">Payment as a Service</a></li>
+            <li><a href="../../index.html#payment-links" data-de="Zahlungslinks">Payment links</a></li>
+            <li><a href="../../index.html#qr-codes" data-de="QR-Codes">QR codes</a></li>
+            <li><a href="../../index.html#split-payments" data-de="Split-Zahlungen">Split payments</a></li>
+            <li><a href="../../index.html#subscriptions" data-de="Abonnements">Subscriptions</a></li>
+            <li><a href="../../index.html#dashboard">Dashboard</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="../../index.html#developers" data-de="Entwickler">Developers</a></li>
+      <li><a href="../../index.html#pricing" data-de="Preise">Pricing</a></li>
+      <li><a href="../../partners/index.html" data-de="Partner">Partners</a></li>
+      <li><a href="../../blog/index.html" aria-current="page">Blog</a></li>
+      <li><a href="../../index.html#contact" data-de="Kontakt">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <div class="lang" role="group" aria-label="Language">
+        <button aria-pressed="true">EN</button>
+        <button aria-pressed="false">DE</button>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="https://app.secpaid.com" rel="noopener" data-de="Anmelden">Sign in</a>
+      <a class="btn btn-primary btn-sm" href="../../index.html#pricing" data-de="Jetzt loslegen">Let's get started</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="vhero post-hero">
+    <div class="wrap">
+      <div class="post-meta"><span class="tag">Risk</span><span>·</span><span>29 Sep 2026</span><span>·</span><span>Aurelien</span></div>
+      <h1>Visa VAMP at 1.5% for EU health merchants</h1>
+      
+    </div>
+  </section>
+
+  <div class="post-shot"><img src="../../assets/blog/visa-vamp-threshold.svg" alt="A gauge chart showing the 1.5% Visa VAMP excessive threshold" loading="lazy"></div>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="prose post-body reveal">
+        <p>On 1 April 2026, the Visa VAMP threshold for merchants in the EU fell from 2.2% to 1.5%. A merchant whose combined fraud and dispute ratio reaches 1.5% is now flagged as excessive, provided it also crosses a monthly volume floor. Many articles that rank today still quote the old 2.2% figure.</p>
+        <p>Health merchants that sell on subscription are exposed. Mollie says chargebacks are more prevalent in supplements, and a lower threshold leaves less room.</p>
+        <p>The figures below come from Justt and Visa’s own VAMP fact sheet. Germany sits in Visa’s EU region, so these EU figures apply to German merchants. Check your acquirer’s own rules too, because acquirers may apply stricter limits.</p>
+        <h2>How the VAMP ratio works</h2>
+        <p>The VAMP ratio adds fraud reports and disputes, then divides by settled card-not-present transactions.</p>
+        <p>In formula terms, it is the sum of TC40 fraud reports and TC15 disputes over the settled card-not-present transactions in the same period. Issuers file TC40 reports when a cardholder reports fraud, even if no dispute follows. Only card-not-present transactions count.</p>
+        <p>Here is an illustrative example with invented numbers. A merchant settles 100,000 card-not-present transactions in a month. Issuers file 600 fraud reports and cardholders open 1,000 disputes.</p>
+        <div class="post-callout">(600 + 1,000) / 100,000 = 1.6%</div>
+        <p>At 1.6% the ratio is above the 1.5% threshold, and the 1,600 combined events also clear the 1,500-event floor. This merchant would be flagged as excessive.</p>
+        <p>Now take a smaller merchant with 20,000 transactions and 400 combined events. Its ratio is 2.0%, higher than the first merchant’s, yet it sits under the 1,500-event floor. Visa’s program would not flag it, though its acquirer might.</p>
+        <h2>The current thresholds</h2>
+        <p>Merchants in the EU, including Germany, have been held to 1.5% since 1 April 2026, down from 2.2%.</p>
+        <div style="overflow-x:auto"><table><thead><tr><th>Who</th><th>Level</th><th>Threshold</th><th>Since</th></tr></thead><tbody><tr><td>Merchant in the EU, including Germany</td><td>Excessive</td><td>1.5%</td><td>1 April 2026</td></tr><tr><td>Merchant in the EU, including Germany</td><td>Excessive, previous</td><td>2.2%</td><td>Until 31 March 2026</td></tr><tr><td>Acquirer portfolio</td><td>Above standard</td><td>0.5%</td><td>Visa fact sheet, 2025</td></tr><tr><td>Acquirer portfolio</td><td>Excessive</td><td>0.7%</td><td>Visa fact sheet, 2025</td></tr></tbody></table></div>
+        <p>Merchants must also reach 1,500 combined fraud and dispute events in a month before Visa formally monitors them, according to Justt. That floor does not stop an acquirer from applying its own, stricter limit to your account.</p>
+        <p>The EU figure comes from Justt and Visa’s fact sheet, so confirm it with your acquirer.</p>
+        <p>Ask your acquirer what it charges for monitored transactions and which fees apply to you in the EU. Fee levels differ by acquirer and program.</p>
+        <h2>Why health merchants feel it first</h2>
+        <p>Health merchants sell products that customers often buy on subscription and later fail to recognise on a statement.</p>
+        <p>A recurring charge under a vague descriptor produces fraud reports and disputes even when the customer received the goods. A customer who cannot find the cancel button phones the bank instead. Under VAMP, that call can end up as a fraud report or as a dispute, and both count.</p>
+        <p>Mollie says chargebacks are more prevalent in supplements than in many other categories, without giving a figure. Stripe’s restricted businesses list prohibits “negative option marketing” and reduced-price trials with unclear or hidden pricing, which are practices that drive exactly these disputes.</p>
+        <p>A 1.5% ratio means fewer than 15 fraud reports and disputes for every 1,000 settled transactions. A merchant with a few unhappy subscription cohorts can pass that line in a single month.</p>
+        <h2>How to lower the ratio</h2>
+        <p>Most of the ratio is set before the customer ever contacts the bank. These steps are common practice among payment teams rather than Visa requirements, so test each against your own data:</p>
+        <ul><li>Put your trading name in the billing descriptor so customers recognise the charge.</li><li>Send an order confirmation and a reminder before each renewal.</li><li>Make cancellation as easy as sign-up, and refund quickly when a customer asks.</li><li>State trial length, renewal price and cancellation terms next to the pay button.</li><li>Use 3-D Secure where your provider supports it, and ask how it affects your fraud reports.</li><li>Track fraud reports and disputes weekly, not monthly, so you see a problem before the month closes.</li><li>Ask your acquirer which alerts and tools it supports, and how quickly it tells you when your ratio moves.</li></ul>
+        <h2>What acquirers do about it</h2>
+        <p>An acquirer has its own limits, and a merchant with a rising ratio is a risk to its portfolio.</p>
+        <p>Visa measures acquirers as well as merchants. A portfolio ratio of 0.5% counts as above standard and 0.7% as excessive, so an acquirer with several high-ratio merchants feels the pressure quickly. That gives acquirers a reason to act early against merchants who trend upward. This is our reading of how the incentives line up, not a statement from Visa.</p>
+        <p>The result for a merchant can be a warning, a reserve, a payout hold or a closure. Stripe’s Unacceptable Risk Policy says it will typically restrict or pause payouts for 120 days from the date of its initial email.</p>
+        <div class="post-callout">Our guide on <a class="link" href="../stripe-paypal-closed-my-account/index.html">what to do when a provider closes your account</a> covers that scenario in detail.</div>
+        <p>Talk to your acquirer when your ratio reaches about 1%, before a notice arrives.</p>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" style="padding-top:0">
+    <div class="wrap" style="max-width:760px">
+      <div class="section-head reveal" style="margin-inline:auto;text-align:center">
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>What is the VAMP merchant threshold in the EU? <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>It is 1.5% for the excessive level, in force since 1 April 2026. The previous level was 2.2%.</p>
+        </details>
+        <details>
+          <summary>Do small merchants have to worry about VAMP? <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Visa’s program applies a floor of 1,500 combined fraud and dispute events a month. A small merchant can sit under it and still face a limit set by its own acquirer.</p>
+        </details>
+        <details>
+          <summary>Does Mastercard have a similar program? <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Yes. According to Chargeflow, Mastercard’s Excessive Chargeback Merchant program starts at 100 to 299 chargebacks with a ratio of 1.5% to 2.99%. Chargeflow is a US vendor, so confirm the European figures with Mastercard before relying on them.</p>
+        </details>
+        <details>
+          <summary>Does VAMP count fraud even if the customer never disputes? <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Yes. The ratio includes TC40 fraud reports filed by issuers as well as TC15 disputes. If you sell supplements, telehealth or other health products and want to talk through your ratio and your acquiring options, <a class="link" href="../../index.html#contact">contact SecPaid</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="prose post-sources reveal">
+        <h2>Sources</h2>
+        <ol><li>Justt: Visa VAMP threshold changes, April 2026</li><li>Visa: Acquirer Monitoring Program fact sheet</li><li>Chargeflow: Mastercard monitoring programs</li><li>Mollie: payment gateways for supplement businesses</li><li>Stripe: restricted businesses</li><li>Stripe: unacceptable risk policy (Germany)</li></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <div class="box reveal">
+        <div>
+          <h2>Ready to get approved?</h2>
+          <p>Talk to SecPaid about a payment set-up built for your category. Most merchants are live within 24 hours.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-accent btn-lg" href="../../index.html#pricing">Let's get started</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:sales@secpaid.com">Talk to an account manager</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../../index.html" aria-label="SecPaid"><img src="../../assets/logo-secpaid-black.svg" alt="SecPaid" width="100" height="33"></a>
+        <p data-de="Payment as a Service aus Deutschland für regulierte Branchen.<br>Gehostet auf zertifizierter deutscher Cloud-Infrastruktur.">German-built payment as a service for regulated industries.<br>Hosted on certified German cloud infrastructure.</p>
+      </div>
+      <div>
+        <h4 data-de="Branchen">Industries</h4>
+        <ul>
+          <li><a href="../../online-pharmacy-merchant-account/index.html" data-de="Online-Apotheke">Online pharmacy</a></li>
+          <li><a href="../../supplements-nutraceuticals-merchant-account/index.html" data-de="Nahrungsergänzungsmittel">Supplements and nutraceuticals</a></li>
+          <li><a href="../../medical-cannabis-cbd-payment-processing/index.html" data-de="Medizinisches Cannabis und CBD">Medical cannabis and CBD</a></li>
+          <li><a href="../../telehealth-payment-processing/index.html" data-de="Telemedizin">Telehealth</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-de="Produkt">Product</h4>
+        <ul>
+          <li><a href="../../index.html#orchestration" data-de="Orchestrierung">Orchestration</a></li>
+          <li><a href="../../index.html#account-manager">Account Manager</a></li>
+          <li><a href="../../index.html#subscriptions" data-de="Abonnements">Subscriptions</a></li>
+          <li><a href="../../index.html#security" data-de="Deutschland und EU">Germany and EU</a></li>
+          <li><a href="../../index.html#pricing" data-de="Preise">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-de="Entwickler">Developers</h4>
+        <ul>
+          <li><a href="https://docs.secpaid.com/" rel="noopener" data-de="API-Referenz">API reference</a></li>
+          <li><a href="../../index.html#developers">Webhooks</a></li>
+          <li><a href="../../index.html#developers">Zapier</a></li>
+          <li><a href="../../index.html#developers">n8n</a></li>
+          <li><a href="https://app.secpaid.com" rel="noopener" data-de="Anmelden">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-de="Unternehmen">Company</h4>
+        <ul>
+          <li><a href="../../partners/index.html" data-de="Partner">Partners</a></li>
+          <li><a href="../../blog/index.html">Blog</a></li>
+          <li><a href="../../index.html#contact" data-de="Kontakt">Contact</a></li>
+          <li><a href="../../index.html#security" data-de="Sicherheit">Security</a></li>
+          <li><a href="../../privacy-policy/index.html" data-de="Datenschutzerklärung">Privacy policy</a></li>
+          <li><a href="../../terms-of-service/index.html" data-de="Nutzungsbedingungen">Terms of service</a></li>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="../../aml-policy/index.html" data-de="Geldwäsche-Richtlinie">AML policy</a></li>
+          <li><a href="#" data-de="Cookie-Richtlinie">Cookie policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-de="© 2026 SecPaid — gebaut in Frankfurt für Händler, die andere Anbieter ablehnen">© 2026 SecPaid — built in Frankfurt for merchants other processors turn away</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../main.js"></script>
+</body>
+</html>
