@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <rect x="500" y="110" width="200" height="80" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+    <text x="600" y="157" text-anchor="middle" font-size="17" font-weight="700" fill="#9a9ea5">Mainstream PSP</text>
+
+    <path d="M600 190 L600 240" stroke="#c7cad0" stroke-width="2" stroke-dasharray="5 6"/>
+    <circle cx="600" cy="255" r="17" fill="#f6e5e3"/>
+    <path d="M592 247l16 16M608 247l-16 16" stroke="#b4463f" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <path d="M600 272 L260 400 M600 272 L600 400 M600 272 L940 400" stroke="#1f8c66" stroke-width="2" fill="none"/>
+
+    <rect x="150" y="400" width="220" height="86" rx="14" fill="#121316"/>
+    <text x="260" y="437" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Specialist</text>
+    <text x="260" y="459" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">provider</text>
+
+    <rect x="490" y="400" width="220" height="86" rx="14" fill="#ffffff" stroke="#1f8c66" stroke-width="2"/>
+    <text x="600" y="437" text-anchor="middle" font-size="15" font-weight="700" fill="#121316">Acquiring</text>
+    <text x="600" y="459" text-anchor="middle" font-size="15" font-weight="700" fill="#121316">bank</text>
+
+    <rect x="830" y="400" width="220" height="86" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+    <text x="940" y="437" text-anchor="middle" font-size="15" font-weight="700" fill="#121316">Orchestration</text>
+    <text x="940" y="459" text-anchor="middle" font-size="13" fill="#676c75">multiple routes</text>
+  </g>
+</svg>

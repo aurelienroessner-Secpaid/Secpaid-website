@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <rect x="420" y="160" width="360" height="56" rx="8" fill="#e4f4ec"/>
+    <text x="600" y="194" text-anchor="middle" font-size="14" font-weight="700" fill="#1f8c66">Interchange (gedeckelt)</text>
+
+    <rect x="420" y="226" width="360" height="56" rx="8" fill="#f4ecdd"/>
+    <text x="600" y="260" text-anchor="middle" font-size="14" font-weight="700" fill="#b48a3f">Scheme Fees</text>
+
+    <rect x="420" y="292" width="360" height="72" rx="8" fill="#121316"/>
+    <text x="600" y="332" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Acquirer-Aufschlag</text>
+
+    <rect x="420" y="374" width="360" height="56" rx="8" fill="#ffffff" stroke="#c7cad0" stroke-width="2" stroke-dasharray="4 5"/>
+    <text x="600" y="408" text-anchor="middle" font-size="14" font-weight="700" fill="#676c75">Rolling Reserve</text>
+
+    <text x="600" y="140" text-anchor="middle" font-size="13" fill="#9a9ea5">Disagio / MDR</text>
+  </g>
+</svg>

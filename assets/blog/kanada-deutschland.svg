@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <rect x="160" y="260" width="240" height="155" rx="16" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+    <circle cx="280" cy="315" r="18" fill="#f6e5e3"/>
+    <path d="M280 305v10l8 5" stroke="#b4463f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="280" y="365" text-anchor="middle" font-size="18" font-weight="700" fill="#121316">Kanada</text>
+    <text x="280" y="390" text-anchor="middle" font-size="12" fill="#676c75">seit 2018 legal</text>
+
+    <rect x="800" y="260" width="240" height="155" rx="16" fill="#121316"/>
+    <circle cx="920" cy="315" r="18" fill="#1f8c66"/>
+    <path d="M912 315l6 6 10-10" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="920" y="365" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Deutschland</text>
+    <text x="920" y="390" text-anchor="middle" font-size="12" fill="#c7cad0">seit 2024 teillegal</text>
+
+    <path d="M400 337 L800 337" stroke="#1f8c66" stroke-width="2.5" stroke-dasharray="7 7" fill="none" marker-end="url(#arrow)"/>
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#1f8c66"/>
+      </marker>
+    </defs>
+    <text x="600" y="310" text-anchor="middle" font-size="13" fill="#676c75">46% der Importe · gelernte Lektionen</text>
+  </g>
+</svg>

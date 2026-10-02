@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <g fill="none" stroke="#c7cad0" stroke-width="2" stroke-dasharray="3 7">
+      <path d="M330 420 C 330 300 430 230 430 230 C 430 160 500 160 500 160 C 500 90 600 90 600 90"/>
+      <path d="M870 420 C 870 300 770 230 770 230 C 770 160 700 160 700 160 C 700 90 600 90 600 90"/>
+      <path d="M600 420 C 600 300 600 230 600 230 C 600 160 600 160 600 160 C 600 90 600 90 600 90"/>
+    </g>
+    <g font-size="14" font-weight="700" fill="#9a9ea5">
+      <circle cx="330" cy="440" r="34" fill="#ffffff" stroke="#c7cad0" stroke-width="2" stroke-dasharray="3 4"/>
+      <text x="330" y="446" text-anchor="middle">B</text>
+      <circle cx="600" cy="440" r="34" fill="#ffffff" stroke="#c7cad0" stroke-width="2" stroke-dasharray="3 4"/>
+      <text x="600" y="446" text-anchor="middle">HH</text>
+      <circle cx="870" cy="440" r="34" fill="#ffffff" stroke="#c7cad0" stroke-width="2" stroke-dasharray="3 4"/>
+      <text x="870" y="446" text-anchor="middle">M</text>
+    </g>
+    <circle cx="600" cy="80" r="26" fill="#f4ecdd"/>
+    <path d="M600 68v16M600 90v2" stroke="#b48a3f" stroke-width="3" stroke-linecap="round"/>
+    <text x="330" y="500" text-anchor="middle" font-size="12" fill="#9a9ea5">Berlin</text>
+    <text x="600" y="500" text-anchor="middle" font-size="12" fill="#9a9ea5">Hamburg</text>
+    <text x="870" y="500" text-anchor="middle" font-size="12" fill="#9a9ea5">München</text>
+    <text x="600" y="540" text-anchor="middle" font-size="13" fill="#676c75">Kein verbindlicher Zeitplan</text>
+  </g>
+</svg>

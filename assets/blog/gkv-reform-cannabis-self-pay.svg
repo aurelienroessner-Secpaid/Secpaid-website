@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <rect x="140" y="150" width="220" height="90" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+    <text x="250" y="202" text-anchor="middle" font-size="18" font-weight="700" fill="#9a9ea5">GKV</text>
+
+    <rect x="140" y="430" width="220" height="90" rx="14" fill="#ffffff" stroke="#1f8c66" stroke-width="2"/>
+    <text x="250" y="482" text-anchor="middle" font-size="18" font-weight="700" fill="#121316">Patient</text>
+
+    <rect x="840" y="290" width="220" height="90" rx="14" fill="#121316"/>
+    <text x="950" y="342" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Pharmacy</text>
+
+    <path d="M360 195 L840 320" stroke="#c7cad0" stroke-width="2" stroke-dasharray="6 6" fill="none"/>
+    <circle cx="600" cy="257" r="18" fill="#f6e5e3"/>
+    <path d="M591 248l18 18M609 248l-18 18" stroke="#b4463f" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <path d="M360 475 L840 350" stroke="#1f8c66" stroke-width="2.5" fill="none"/>
+    <rect x="580" y="395" width="44" height="30" rx="6" fill="#ffffff" stroke="#1f8c66" stroke-width="2"/>
+    <line x1="580" y1="405" x2="624" y2="405" stroke="#1f8c66" stroke-width="2"/>
+
+    <text x="250" y="270" text-anchor="middle" font-size="13" fill="#9a9ea5">No longer reimbursed</text>
+    <text x="250" y="550" text-anchor="middle" font-size="13" fill="#676c75">Pays by card</text>
+  </g>
+</svg>

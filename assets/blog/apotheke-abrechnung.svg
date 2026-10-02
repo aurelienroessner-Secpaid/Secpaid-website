@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <rect x="860" y="294" width="220" height="90" rx="14" fill="#121316"/>
+    <text x="970" y="346" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Apotheke</text>
+
+    <rect x="140" y="140" width="220" height="80" rx="14" fill="#ffffff" stroke="#1f8c66" stroke-width="2"/>
+    <text x="250" y="186" text-anchor="middle" font-size="16" font-weight="700" fill="#121316">Kassenrezept</text>
+
+    <rect x="140" y="300" width="220" height="80" rx="14" fill="#ffffff" stroke="#1f8c66" stroke-width="2"/>
+    <text x="250" y="346" text-anchor="middle" font-size="16" font-weight="700" fill="#121316">Privatrezept</text>
+
+    <rect x="140" y="460" width="220" height="80" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+    <text x="250" y="506" text-anchor="middle" font-size="16" font-weight="700" fill="#676c75">PKV</text>
+
+    <path d="M360 180 L860 320 M360 340 L860 340 M360 500 L860 360" stroke="#1f8c66" stroke-width="2" fill="none" opacity="0.8"/>
+
+    <circle cx="610" cy="248" r="16" fill="#e4f4ec"/>
+    <text x="610" y="253" text-anchor="middle" font-size="12" font-weight="700" fill="#1f8c66">GKV</text>
+  </g>
+</svg>

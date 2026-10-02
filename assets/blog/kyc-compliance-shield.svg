@@ -1,0 +1,23 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <path d="M600 110 L730 155 V330 C730 420 670 480 600 510 C530 480 470 420 470 330 V155 Z" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+
+    <g>
+      <rect x="520" y="205" width="22" height="22" rx="5" fill="#e4f4ec"/>
+      <path d="M526 216l4 4 8-9" stroke="#1f8c66" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="554" y="210" width="110" height="10" rx="3" fill="#3a3d43"/>
+    </g>
+    <g>
+      <rect x="520" y="250" width="22" height="22" rx="5" fill="#e4f4ec"/>
+      <path d="M526 261l4 4 8-9" stroke="#1f8c66" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="554" y="255" width="90" height="10" rx="3" fill="#3a3d43"/>
+    </g>
+    <g>
+      <rect x="520" y="295" width="22" height="22" rx="5" fill="#ffffff" stroke="#c7cad0" stroke-width="2"/>
+      <rect x="554" y="300" width="100" height="10" rx="3" fill="#c7cad0"/>
+    </g>
+
+    <text x="600" y="400" text-anchor="middle" font-size="13" fill="#676c75">KYC · GwG · Transparenzregister</text>
+  </g>
+</svg>

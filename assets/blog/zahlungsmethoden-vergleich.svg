@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <g>
+      <rect x="150" y="260" width="190" height="130" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+      <circle cx="245" cy="310" r="20" fill="#f7f7f8" stroke="#9a9ea5" stroke-width="2"/>
+      <text x="245" y="316" text-anchor="middle" font-size="14" font-weight="700" fill="#9a9ea5">€</text>
+      <text x="245" y="360" text-anchor="middle" font-size="13" font-weight="700" fill="#121316">Bargeld</text>
+    </g>
+    <g>
+      <rect x="390" y="260" width="190" height="130" rx="14" fill="#ffffff" stroke="#1f8c66" stroke-width="2"/>
+      <rect x="440" y="298" width="100" height="26" rx="5" fill="#1f8c66"/>
+      <line x1="440" y1="332" x2="520" y2="332" stroke="#c7cad0" stroke-width="3"/>
+      <text x="485" y="372" text-anchor="middle" font-size="13" font-weight="700" fill="#121316">girocard</text>
+    </g>
+    <g>
+      <rect x="630" y="260" width="190" height="130" rx="14" fill="#ffffff" stroke="#1f8c66" stroke-width="2"/>
+      <circle cx="700" cy="315" r="16" fill="#e4f4ec"/>
+      <path d="M692 315h16M700 307v16" stroke="#1f8c66" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="740" cy="315" r="16" fill="#e4f4ec"/>
+      <path d="M732 315h16M740 307v16" stroke="#1f8c66" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="725" y="362" text-anchor="middle" font-size="13" font-weight="700" fill="#121316">SEPA</text>
+    </g>
+    <g>
+      <rect x="870" y="260" width="190" height="130" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+      <rect x="915" y="298" width="100" height="64" rx="8" fill="none" stroke="#9a9ea5" stroke-width="2"/>
+      <line x1="915" y1="318" x2="1015" y2="318" stroke="#9a9ea5" stroke-width="2"/>
+      <text x="965" y="382" text-anchor="middle" font-size="13" font-weight="700" fill="#676c75">Kreditkarte</text>
+    </g>
+  </g>
+</svg>

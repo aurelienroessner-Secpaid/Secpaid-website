@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f7f7f8"/>
+  <g font-family="Archivo, sans-serif">
+    <circle cx="600" cy="337" r="150" fill="none" stroke="#e3e5e9" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>
+
+    <rect x="545" y="292" width="110" height="76" rx="10" fill="#ffffff" stroke="#1f8c66" stroke-width="2.5"/>
+    <rect x="545" y="292" width="110" height="20" rx="10" fill="#1f8c66"/>
+    <line x1="562" y1="335" x2="638" y2="335" stroke="#c7cad0" stroke-width="4"/>
+
+    <path d="M600 187 a150 150 0 0 1 106 44" stroke="#1f8c66" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M694 219 l14 8 -4 -16" stroke="#1f8c66" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="600" cy="187" r="26" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
+    <path d="M591 187h18M591 180h12M591 194h14" stroke="#676c75" stroke-width="2" stroke-linecap="round"/>
+    <text x="600" y="140" text-anchor="middle" font-size="13" fill="#676c75">Reminder before charge</text>
+
+    <circle cx="850" cy="450" r="26" fill="#f6e5e3"/>
+    <path d="M850 438v14M850 460v2" stroke="#b4463f" stroke-width="3" stroke-linecap="round"/>
+    <text x="850" y="502" text-anchor="middle" font-size="13" fill="#9a5a54">Dispute avoided</text>
+  </g>
+</svg>
