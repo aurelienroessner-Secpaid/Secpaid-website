@@ -45,6 +45,28 @@
   window.SECPAID_LANG = savedLang === 'de' ? 'de' : 'en';
   if (savedLang === 'de') applyLang('de');
 
+  // ---- Day/night toggle ----
+  // The saved choice is applied by a tiny inline script in <head> (before first
+  // paint). With no saved choice the page follows the system colour scheme.
+  var THEME_KEY = 'secpaid-theme';
+  var themeBtn = document.getElementById('themeToggle');
+  var darkQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function isDark() {
+    var t = document.documentElement.getAttribute('data-theme');
+    return t ? t === 'dark' : !!(darkQuery && darkQuery.matches);
+  }
+  function syncThemeBtn() { if (themeBtn) themeBtn.setAttribute('aria-pressed', String(isDark())); }
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = isDark() ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+      syncThemeBtn();
+    });
+    if (darkQuery && darkQuery.addEventListener) darkQuery.addEventListener('change', syncThemeBtn);
+    syncThemeBtn();
+  }
+
   // Mobile nav
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('navToggle');
@@ -163,7 +185,7 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var rows = document.getElementById('routeRows');
   if (rows) {
-    var METHODS = ['Visa', 'Mastercard', 'SEPA', 'iDEAL', 'PayPal', 'Apple Pay', 'Google Pay', 'EPS', 'Klarna'];
+    var METHODS = ['Visa', 'Mastercard', 'SEPA', 'iDEAL', 'Apple Pay', 'Google Pay', 'EPS', 'Klarna'];
     var ROUTES = ['route/de-1', 'route/de-berlin', 'route/eu-a', 'route/eu-b', 'route/at-1', 'route/nl-2', 'route/ch-1'];
     function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
     function euro() {

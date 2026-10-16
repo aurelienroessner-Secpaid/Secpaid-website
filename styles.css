@@ -447,6 +447,24 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 .lang button { border: 0; background: transparent; padding: .2rem .6rem; border-radius: 999px; cursor: pointer; font-size: .82rem; color: var(--muted); }
 .lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .nav-cta .lang { margin-right: .25rem; }
+.theme-toggle { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line-strong); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; transition: background-color .2s ease; }
+.theme-toggle:hover { background: var(--surface-2); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
+/* Tighten the header on narrow desktops so links never run under the toggles */
+@media (min-width: 961px) and (max-width: 1120px) {
+  .nav .wrap { gap: .75rem; }
+  .nav-links { margin-left: .25rem; }
+  .nav-links a, .nav-dropdown summary { padding-inline: .4rem; font-size: .9rem; }
+}
+@media (max-width: 960px) { .nav.open .nav-cta .theme-toggle { align-self: flex-start; margin: 0 0 .5rem; } }
 @media (max-width: 960px) { .nav.open .nav-cta .lang { align-self: flex-start; margin: 0 0 .5rem; } }
 @media (max-width: 960px) { .footer-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 
