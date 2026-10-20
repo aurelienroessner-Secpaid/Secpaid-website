@@ -548,7 +548,7 @@ a.industry:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px
 .vhero:not(.post-hero) { text-align: center; }
 .vhero:not(.post-hero) h1 { max-width: 26ch; }
 .vhero:not(.post-hero) .lede { max-width: 56ch; }
-.prose { max-width: 68ch; }
+.prose { max-width: 68ch; margin-inline: auto; }
 .prose h2 { margin-bottom: 1rem; }
 .prose h3 { margin: 2rem 0 .5rem; font-size: 1.15rem; }
 .prose p { margin-bottom: 1rem; color: var(--ink-2); }
