@@ -84,7 +84,7 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 .lede { color: var(--muted); font-size: 1.125rem; max-width: 60ch; }
 .mono { font-family: var(--mono); font-size: .85em; }
 .wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
-.section { padding-block: clamp(4.5rem, 9vw, 7.5rem); }
+.section { padding-block: clamp(3.5rem, 7vw, 6rem); }
 .section-head { max-width: 62ch; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .section-head h2 { margin-bottom: 1rem; }
 .eyebrow {
@@ -324,6 +324,13 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .split-viz i:nth-child(3) { height: 30%; opacity: .5; }
 .hook-log { font-family: var(--mono); font-size: .78rem; line-height: 1.7; margin-bottom: .5rem; color: var(--ink-2); }
 .hook-log span { color: var(--accent); }
+.sub-viz { margin-bottom: .5rem; }
+.sub-viz-track { display: flex; align-items: center; height: 28px; }
+.sub-viz-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex: none; }
+.sub-viz-dot + .sub-viz-dot { margin-left: 22px; position: relative; }
+.sub-viz-dot + .sub-viz-dot::before { content: ''; position: absolute; right: 100%; top: 50%; width: 22px; height: 1px; background: color-mix(in srgb, var(--bg) 30%, transparent); transform: translateY(-50%); }
+.sub-viz-dot.is-next { background: transparent; border: 1.5px dashed color-mix(in srgb, var(--bg) 55%, transparent); }
+.sub-viz-label { display: block; font-family: var(--mono); font-size: .78rem; color: color-mix(in srgb, var(--bg) 60%, transparent); }
 .cell-feats { list-style: none; display: grid; gap: .4rem; margin: 0; padding: 0; }
 .cell-feats li { display: flex; gap: .5rem; align-items: flex-start; font-size: .85rem; color: var(--ink-2); }
 .cell-feats svg { width: 15px; height: 15px; flex: none; margin-top: .15rem; color: var(--accent); }
