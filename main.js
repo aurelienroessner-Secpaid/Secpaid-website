@@ -131,21 +131,6 @@
     revealAll();
   }
 
-  // Subscription feature tabs swap the screenshot
-  var shot = document.getElementById('subsShot');
-  document.querySelectorAll('.feature-tab').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.feature-tab').forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
-      btn.setAttribute('aria-selected', 'true');
-      var src = btn.getAttribute('data-shot');
-      if (shot.getAttribute('src') === src) return;
-      shot.classList.add('fade');
-      var img = new Image();
-      img.onload = function () { shot.src = src; shot.alt = btn.querySelector('b').textContent + ' in the SecPaid dashboard'; shot.classList.remove('fade'); };
-      img.src = src;
-    });
-  });
-
   // Code tabs
   document.querySelectorAll('.code-tabs button').forEach(function (btn) {
     btn.addEventListener('click', function () {

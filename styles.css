@@ -84,7 +84,7 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 .lede { color: var(--muted); font-size: 1.125rem; max-width: 60ch; }
 .mono { font-family: var(--mono); font-size: .85em; }
 .wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
-.section { padding-block: clamp(3.5rem, 7vw, 6rem); }
+.section { padding-block: clamp(2.5rem, 5vw, 4.5rem); }
 .section-head { max-width: 62ch; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .section-head h2 { margin-bottom: 1rem; }
 .eyebrow {
@@ -348,15 +348,12 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .feature-tabs { display: grid; gap: .25rem; }
 .feature-tab {
   text-align: left; background: transparent; border: 0; border-left: 2px solid var(--line);
-  padding: .85rem 1rem; cursor: pointer; border-radius: 0 var(--radius-input) var(--radius-input) 0;
-  transition: background-color .2s, border-color .2s;
+  padding: .85rem 1rem; border-radius: 0 var(--radius-input) var(--radius-input) 0;
 }
-.feature-tab:hover { background: var(--surface-2); }
-.feature-tab[aria-selected="true"] { border-left-color: var(--accent); background: var(--surface-2); }
+.feature-tab.is-active { border-left-color: var(--accent); background: var(--surface-2); }
 .feature-tab b { display: block; font-weight: 600; margin-bottom: .15rem; }
 .feature-tab span { color: var(--muted); font-size: .92rem; display: block; }
-.subs .frame img { aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; transition: opacity .35s ease; }
-.subs .frame img.fade { opacity: 0; }
+.subs .frame img { aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; }
 @media (max-width: 960px) { .subs .wrap { grid-template-columns: minmax(0, 1fr); } }
 
 /* Developers */
