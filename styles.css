@@ -540,14 +540,6 @@ a.industry:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px
 .vhero h1 { font-size: clamp(2.15rem, 4.6vw, 3.5rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.038em; margin-bottom: 1.25rem; max-width: 18ch; }
 .vhero h1 em { font-style: normal; color: var(--accent); }
 .vhero .lede { font-size: 1.15rem; margin-bottom: 2rem; max-width: 62ch; }
-/* Pages with no side visual (industry, legal, partners, blog index): centre the
-   hero instead of leaving it narrow and left-anchored in the wide wrap. Blog
-   post heroes (.post-hero) keep their own left-aligned layout since a full-
-   width image sits directly below them. */
-.vhero:not(.post-hero) .wrap { display: flex; flex-direction: column; align-items: center; }
-.vhero:not(.post-hero) { text-align: center; }
-.vhero:not(.post-hero) h1 { max-width: 26ch; }
-.vhero:not(.post-hero) .lede { max-width: 56ch; }
 .prose { max-width: 68ch; margin-inline: auto; }
 .prose h2 { margin-bottom: 1rem; }
 .prose h3 { margin: 2rem 0 .5rem; font-size: 1.15rem; }
