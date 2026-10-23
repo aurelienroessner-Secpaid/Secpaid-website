@@ -19,7 +19,7 @@
     <text x="600" y="459" text-anchor="middle" font-size="15" font-weight="700" fill="#121316">bank</text>
 
     <rect x="830" y="400" width="220" height="86" rx="14" fill="#ffffff" stroke="#e3e5e9" stroke-width="2"/>
-    <text x="940" y="437" text-anchor="middle" font-size="15" font-weight="700" fill="#121316">Orchestration</text>
-    <text x="940" y="459" text-anchor="middle" font-size="13" fill="#676c75">multiple routes</text>
+    <text x="940" y="437" text-anchor="middle" font-size="15" font-weight="700" fill="#121316">Multiple</text>
+    <text x="940" y="459" text-anchor="middle" font-size="15" font-weight="700" fill="#121316">providers</text>
   </g>
 </svg>

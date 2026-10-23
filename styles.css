@@ -60,7 +60,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 body { overflow-x: hidden; }
-.wrap > *, .dev-grid > *, .orch-grid > *, .subs .wrap > *, .hero .wrap > * { min-width: 0; }
+.wrap > *, .dev-grid > *, .subs .wrap > *, .hero .wrap > * { min-width: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
@@ -221,32 +221,6 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .method img { height: 26px; width: auto; }
 @keyframes scroll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; } .marquee { mask-image: none; -webkit-mask-image: none; } }
-
-/* Orchestration (deliberate single dark block) */
-.orch {
-  --bg: #0f1012; --surface: #17181b; --surface-2: #1e2024; --ink: #f1f2f4; --ink-2: #c8cbd1;
-  --muted: #9ba0a9; --line: #272a30; --line-strong: #363a42; --accent: #3fcf97; --accent-ink: #0b1a13; --accent-soft: #123626;
-  background: var(--bg); color: var(--ink); color-scheme: dark;
-}
-.orch .section-head { max-width: 58ch; }
-.orch-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-.orch-diagram { border: 1px solid var(--line); border-radius: var(--radius-panel); background: var(--surface); padding: 1rem; }
-.orch-diagram svg { width: 100%; height: auto; }
-.orch-diagram text { font-family: var(--font); fill: var(--ink); font-size: 13px; }
-.orch-diagram .lbl { fill: var(--muted); font-size: 11px; font-family: var(--mono); }
-.orch-diagram .node { fill: var(--surface-2); stroke: var(--line-strong); }
-.orch-diagram .hub { fill: var(--accent-soft); stroke: var(--accent); }
-.orch-diagram .wire { fill: none; stroke: var(--line-strong); stroke-width: 1.5; }
-.orch-diagram .flow { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 10; stroke-linecap: round; animation: dash 1.6s linear infinite; }
-.orch-diagram .flow.retry { animation-duration: 2.4s; opacity: .55; }
-.orch-diagram .fail { stroke: var(--danger); stroke-dasharray: 2 6; opacity: .8; }
-@keyframes dash { to { stroke-dashoffset: -32; } }
-@media (prefers-reduced-motion: reduce) { .orch-diagram .flow { animation: none; } }
-.orch-list { display: grid; gap: 1.75rem; }
-.orch-list h3 { margin-bottom: .35rem; }
-.orch-list p { color: var(--muted); }
-.orch-list .num { font-family: var(--mono); color: var(--accent); font-size: .8rem; display: block; margin-bottom: .5rem; }
-@media (max-width: 960px) { .orch-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* Hard-ruled stat band (under the hero) */
 .statband { border-block: 2px solid var(--ink); background: var(--surface); }

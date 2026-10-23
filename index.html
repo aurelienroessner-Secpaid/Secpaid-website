@@ -33,7 +33,6 @@
         <details>
           <summary data-de="Lösungen">Solutions</summary>
           <ul>
-            <li><a href="#orchestration" data-de="Orchestrierung">Orchestration</a></li>
             <li><a href="#product">Payment as a Service</a></li>
             <li><a href="#payment-links" data-de="Zahlungslinks">Payment links</a></li>
             <li><a href="#qr-codes" data-de="QR-Codes">QR codes</a></li>
@@ -279,74 +278,6 @@
     </div>
   </section>
 
-  <!-- Orchestration -->
-  <section class="orch section" id="orchestration">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2 data-de="Eingebaute Redundanz für Geschäftskontinuität.">Built-in redundancy for business continuity.</h2>
-        <p class="lede" data-de="Konten können mit wenig Vorwarnung eingefroren oder gekündigt werden. Routen Sie über mehrere Anbieter, damit eine Kündigung nicht Ihren Umsatz mitreißt.">Accounts can get frozen or cut off with little warning. Route across multiple providers so one termination does not take your revenue with it.</p>
-      </div>
-      <div class="orch-grid">
-        <div class="orch-diagram reveal" aria-label="Diagram: a checkout sends a payment to SecPaid, which routes it to one of several payment providers and reroutes around a frozen provider">
-          <svg viewBox="0 0 760 400" role="img">
-            <!-- wires -->
-            <path class="wire" d="M150 200 H 290"/>
-            <path class="flow" d="M150 200 H 290"/>
-            <path class="wire" d="M470 200 C 530 200, 530 70, 590 70"/>
-            <path class="flow" d="M470 200 C 530 200, 530 70, 590 70"/>
-            <path class="wire" d="M470 200 C 530 200, 530 157, 590 157"/>
-            <path class="flow fail" d="M470 200 C 530 200, 530 157, 590 157"/>
-            <path class="wire" d="M470 200 C 530 200, 530 243, 590 243"/>
-            <path class="flow retry" d="M470 200 C 530 200, 530 243, 590 243"/>
-            <path class="wire" d="M470 200 C 530 200, 530 330, 590 330"/>
-            <path class="flow retry" d="M470 200 C 530 200, 530 330, 590 330"/>
-            <!-- checkout -->
-            <rect class="node" x="20" y="164" width="130" height="72" rx="12"/>
-            <text x="85" y="195" text-anchor="middle" data-de="Ihr Checkout">Your checkout</text>
-            <text class="lbl" x="85" y="216" text-anchor="middle" data-de="Web, App, Link">web, app, link</text>
-            <!-- hub -->
-            <rect class="hub" x="290" y="120" width="180" height="160" rx="16"/>
-            <text x="380" y="152" text-anchor="middle" font-weight="600">SecPaid</text>
-            <text class="lbl" x="380" y="180" text-anchor="middle" data-de="Routing nach Kosten + Autorisierungsrate">route by cost + auth rate</text>
-            <text class="lbl" x="380" y="202" text-anchor="middle" data-de="Umleitung bei eingefrorenem Anbieter">reroute if one is frozen</text>
-            <text class="lbl" x="380" y="224" text-anchor="middle" data-de="lokale Methode je Land">local method per country</text>
-            <text class="lbl" x="380" y="246" text-anchor="middle" data-de="ein Ledger, ein Webhook">one ledger, one webhook</text>
-            <!-- providers -->
-            <rect class="node" x="590" y="44" width="150" height="52" rx="12"/>
-            <text x="665" y="66" text-anchor="middle" data-de="Kartenacquirer A">Card acquirer A</text>
-            <text class="lbl" x="665" y="84" text-anchor="middle" data-de="niedrigste Gebühr, EU">lowest fee, EU</text>
-            <rect class="node" x="590" y="131" width="150" height="52" rx="12"/>
-            <text x="665" y="153" text-anchor="middle" data-de="Kartenacquirer B">Card acquirer B</text>
-            <text class="lbl" x="665" y="171" text-anchor="middle" data-de="Konto eingefroren">account frozen</text>
-            <rect class="node" x="590" y="217" width="150" height="52" rx="12"/>
-            <text x="665" y="239" text-anchor="middle" data-de="Wallet-Anbieter">Wallet provider</text>
-            <text class="lbl" x="665" y="257" text-anchor="middle">Apple Pay, Google Pay</text>
-            <rect class="node" x="590" y="304" width="150" height="52" rx="12"/>
-            <text x="665" y="326" text-anchor="middle" data-de="Bank-Rails">Bank rails</text>
-            <text class="lbl" x="665" y="344" text-anchor="middle">SEPA, iDEAL, EPS</text>
-          </svg>
-        </div>
-        <div class="orch-list">
-          <div class="reveal">
-            <span class="num" data-de="Immer erreichbar">Stay live</span>
-            <h3 data-de="Multi-Provider-Setup für Redundanz und Geschäftskontinuität">Multi-provider setup built for redundancy and business continuity</h3>
-            <p data-de="Erhöht ein Acquirer Ihre Rücklage oder sperrt Sie, wird der Traffic automatisch zu einem anderen Anbieter umgeleitet. Keine Codeänderungen, keine Ausfallzeit.">If an acquirer raises your reserve or shuts you down, traffic reroutes to another provider automatically. No code changes, no downtime.</p>
-          </div>
-          <div class="reveal">
-            <span class="num" data-de="Höhere Freigaberate">Higher approval</span>
-            <h3 data-de="Jede Zahlung dorthin routen, wo sie am ehesten durchgeht">Route each payment where it is most likely to clear</h3>
-            <p data-de="Regeln basierend auf Kartentyp, Land und Risikobereitschaft des Anbieters leiten jede Transaktion an den Acquirer mit der höchsten Freigabewahrscheinlichkeit.">Rules based on card type, country, and provider risk appetite send every transaction to the acquirer most likely to approve it.</p>
-          </div>
-          <div class="reveal">
-            <span class="num" data-de="Kein Kaltstart">No cold start</span>
-            <h3 data-de="Anbieter hinzufügen, ohne das Underwriting neu zu starten">Add providers without starting underwriting from zero</h3>
-            <p data-de="Anbieter sind Konfiguration, keine Integration. Ihr Account Manager kümmert sich um die Beziehung und den Papierkram.">Providers are configuration, not integrations. Your account manager handles the relationship and the paperwork.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Product bento -->
   <section class="section" id="product">
     <div class="wrap">
@@ -519,7 +450,7 @@ console.log(data.pay_link);</pre>
     <div class="wrap">
       <div class="section-head reveal">
         <h2 data-de="Sicherheit und Compliance sind der Ausgangspunkt, kein Nachgedanke.">Security and compliance are the starting point, not an afterthought.</h2>
-        <p class="lede" data-de="SecPaid ist eine neutrale Orchestrierungsschicht für regulierten Handel, entwickelt und gehostet in Deutschland nach EU-Datenschutz- und Zahlungsrecht, sodass Compliance nie nachträglich angeflickt wird.">SecPaid is a neutral orchestration layer engineered for regulated commerce, designed and hosted in Germany under EU data protection and payments law, so compliance is never bolted on later.</p>
+        <p class="lede" data-de="SecPaid ist eine neutrale Zahlungsinfrastruktur für regulierten Handel, entwickelt und gehostet in Deutschland nach EU-Datenschutz- und Zahlungsrecht, sodass Compliance nie nachträglich angeflickt wird.">SecPaid is neutral payment infrastructure engineered for regulated commerce, designed and hosted in Germany under EU data protection and payments law, so compliance is never bolted on later.</p>
       </div>
       <div class="sec-grid reveal">
         <div><b data-de="DSGVO und deutsches Hosting">GDPR and German hosting</b><p data-de="Alle Daten werden auf zertifizierter deutscher Cloud-Infrastruktur gehostet und nach EU-Datenschutzrecht verarbeitet.">All data is hosted on certified German cloud infrastructure and processed under EU data protection law.</p></div>
@@ -672,7 +603,6 @@ console.log(data.pay_link);</pre>
       <div>
         <h4 data-de="Produkt">Product</h4>
         <ul>
-          <li><a href="#orchestration" data-de="Orchestrierung">Orchestration</a></li>
           <li><a href="#account-manager">Account Manager</a></li>
           <li><a href="#subscriptions" data-de="Abonnements">Subscriptions</a></li>
           <li><a href="#security" data-de="Deutschland und EU">Germany and EU</a></li>
