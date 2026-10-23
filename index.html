@@ -539,7 +539,7 @@ console.log(data.pay_link);</pre>
   </section>
 
   <!-- Final CTA -->
-  <section class="cta" id="contact">
+  <section class="cta">
     <div class="wrap">
       <div class="box reveal">
         <div>
@@ -550,6 +550,55 @@ console.log(data.pay_link);</pre>
           <a class="btn btn-accent btn-lg" href="#pricing" data-de="Jetzt loslegen">Let's get started</a>
           <a class="btn btn-ghost btn-lg" href="mailto:contact@secpaid.com" data-de="Mit einem Account Manager sprechen">Talk to an account manager</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact form -->
+  <section class="section" id="contact">
+    <div class="wrap" style="max-width:560px">
+      <div class="section-head reveal" style="margin-inline:auto;text-align:center">
+        <h2 data-de="Schreiben Sie uns">Get in touch</h2>
+        <p class="lede" data-de="Erzählen Sie uns kurz von Ihrem Geschäft. Wir melden uns in der Regel innerhalb eines Werktags.">Tell us a little about your business. We usually respond within one business day.</p>
+      </div>
+      <form id="contactForm" class="contact-form reveal" novalidate>
+        <div class="field-hp" aria-hidden="true">
+          <label for="cWebsite">Website</label>
+          <input id="cWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="cName" data-de="Name">Name</label>
+          <input id="cName" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
+          <span class="error" data-de="Bitte geben Sie Ihren Namen ein.">Enter your name.</span>
+        </div>
+        <div class="field">
+          <label for="cEmail" data-de="E-Mail">Email</label>
+          <input id="cEmail" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required>
+          <span class="error" data-de="Bitte geben Sie eine gültige E-Mail-Adresse ein.">Enter a valid email address.</span>
+        </div>
+        <div class="field">
+          <label for="cPhone" data-de="Telefonnummer">Phone number</label>
+          <input id="cPhone" name="phone" type="tel" autocomplete="tel" placeholder="+49 30 1234567">
+        </div>
+        <div class="field">
+          <label for="cCompany" data-de="Unternehmen">Company</label>
+          <input id="cCompany" name="company" type="text" autocomplete="organization" placeholder="Your company GmbH">
+        </div>
+        <div class="field">
+          <label for="cUrl" data-de="URL">URL</label>
+          <input id="cUrl" name="url" type="text" autocomplete="url" placeholder="yourcompany.com">
+        </div>
+        <div class="field">
+          <label for="cNote" data-de="Nachricht">Note</label>
+          <textarea id="cNote" name="note" data-de="Wie können wir helfen?" placeholder="How can we help?"></textarea>
+        </div>
+        <button class="btn btn-primary btn-lg" type="submit" data-de="Nachricht senden">Send message</button>
+        <p class="form-note" data-de="Das Absenden öffnet Ihr E-Mail-Programm mit einer vorausgefüllten Nachricht an unser Team.">Sending opens your email app with a pre-filled message to our team.</p>
+      </form>
+      <div class="done" id="contactDone" hidden>
+        <div class="mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <h3 data-de="Fast geschafft">Almost there</h3>
+        <p data-de="Wir haben Ihr E-Mail-Programm mit Ihrer Anfrage geöffnet. Senden Sie die E-Mail ab, und unser Team meldet sich bei Ihnen.">We've opened your email app with your inquiry ready to go. Send the email, and our team will get back to you.</p>
       </div>
     </div>
   </section>

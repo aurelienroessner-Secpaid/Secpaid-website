@@ -166,6 +166,45 @@
     });
   }
 
+  // Contact form (homepage): validates, then opens a pre-filled email to
+  // the team. No backend on this site — swap to a fetch() POST once a
+  // form endpoint (e.g. a Zapier catch hook) is wired up.
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Honeypot: real visitors never fill this hidden field.
+      var honeypot = document.getElementById('cWebsite');
+      if (honeypot && honeypot.value.trim()) return;
+
+      var name = document.getElementById('cName');
+      var email = document.getElementById('cEmail');
+      var phone = document.getElementById('cPhone');
+      var company = document.getElementById('cCompany');
+      var url = document.getElementById('cUrl');
+      var note = document.getElementById('cNote');
+
+      var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      name.closest('.field').classList.toggle('invalid', !name.value.trim());
+      email.closest('.field').classList.toggle('invalid', !emailValid);
+      if (!name.value.trim() || !emailValid) return;
+
+      var subject = 'Contact form: ' + name.value.trim();
+      var body = 'Name: ' + name.value.trim() +
+        '\nEmail: ' + email.value.trim() +
+        '\nPhone number: ' + (phone.value.trim() || '-') +
+        '\nCompany: ' + (company.value.trim() || '-') +
+        '\nURL: ' + (url.value.trim() || '-') +
+        '\nNote: ' + (note.value.trim() || '-');
+      window.location.href = 'mailto:contact@secpaid.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      contactForm.hidden = true;
+      document.getElementById('contactDone').hidden = false;
+    });
+  }
+
   // Live routing panel (hero visual — illustrative data, not a real feed)
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var rows = document.getElementById('routeRows');

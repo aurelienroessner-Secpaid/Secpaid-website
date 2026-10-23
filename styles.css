@@ -388,12 +388,17 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
   height: 44px; padding: 0 .85rem; border-radius: var(--radius-input); border: 1px solid var(--line-strong);
   background: var(--surface); color: var(--ink); font: inherit; width: 100%;
 }
-.field input::placeholder { color: var(--muted); }
-.field input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); }
+.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.field textarea {
+  min-height: 110px; padding: .65rem .85rem; border-radius: var(--radius-input); border: 1px solid var(--line-strong);
+  background: var(--surface); color: var(--ink); font: inherit; width: 100%; resize: vertical;
+}
 .field .error { font-size: .82rem; color: var(--danger); display: none; }
-.field.invalid input { border-color: var(--danger); }
+.field.invalid input, .field.invalid textarea { border-color: var(--danger); }
 .field.invalid .error { display: block; }
-.partner-form .btn { width: 100%; margin-top: .5rem; }
+.partner-form .btn, .contact-form .btn { width: 100%; margin-top: .5rem; }
+.field-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form-note { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 1rem; }
 .done { text-align: center; padding: 1rem 0; }
 .done .mark { width: 56px; height: 56px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin: 0 auto 1rem; }
