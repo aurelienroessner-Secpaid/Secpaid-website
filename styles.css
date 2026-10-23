@@ -305,6 +305,15 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .sub-viz-dot + .sub-viz-dot::before { content: ''; position: absolute; right: 100%; top: 50%; width: 22px; height: 1px; background: color-mix(in srgb, var(--bg) 30%, transparent); transform: translateY(-50%); }
 .sub-viz-dot.is-next { background: transparent; border: 1.5px dashed color-mix(in srgb, var(--bg) 55%, transparent); }
 .sub-viz-label { display: block; font-family: var(--mono); font-size: .78rem; color: color-mix(in srgb, var(--bg) 60%, transparent); }
+.sub-viz-card { margin-top: 1rem; padding: .9rem 1rem; border-radius: 12px; background: color-mix(in srgb, var(--bg) 8%, transparent); border: 1px solid color-mix(in srgb, var(--bg) 15%, transparent); }
+.sub-viz-card-row { display: flex; align-items: center; gap: .65rem; }
+.sub-viz-avatar { width: 32px; height: 32px; border-radius: 50%; background: color-mix(in srgb, var(--bg) 15%, transparent); display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; flex: none; }
+.sub-viz-who { flex: 1; display: flex; flex-direction: column; font-size: .85rem; min-width: 0; }
+.sub-viz-who b { font-weight: 600; }
+.sub-viz-who span { font-size: .72rem; color: color-mix(in srgb, var(--bg) 60%, transparent); }
+.sub-viz-amt { font-weight: 700; font-size: .92rem; font-family: var(--mono); flex: none; }
+.sub-viz-next { margin-top: .65rem; font-size: .75rem; font-family: var(--mono); color: color-mix(in srgb, var(--bg) 60%, transparent); }
+.sub-viz-next b { color: var(--bg); font-weight: 600; }
 .cell-feats { list-style: none; display: grid; gap: .4rem; margin: 0; padding: 0; }
 .cell-feats li { display: flex; gap: .5rem; align-items: flex-start; font-size: .85rem; color: var(--ink-2); }
 .cell-feats svg { width: 15px; height: 15px; flex: none; margin-top: .15rem; color: var(--accent); }
