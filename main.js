@@ -235,6 +235,18 @@
     });
   }
 
+  // Form fields: hide placeholder text as soon as a field is focused,
+  // not just once typing starts, and restore it on blur if left empty.
+  document.querySelectorAll('.field input[placeholder], .field textarea[placeholder]').forEach(function (el) {
+    el.addEventListener('focus', function () {
+      el.dataset.placeholder = el.getAttribute('placeholder');
+      el.setAttribute('placeholder', '');
+    });
+    el.addEventListener('blur', function () {
+      if (!el.value && el.dataset.placeholder) el.setAttribute('placeholder', el.dataset.placeholder);
+    });
+  });
+
   // Live routing panel (hero visual — illustrative data, not a real feed)
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var rows = document.getElementById('routeRows');
