@@ -166,9 +166,10 @@
     });
   }
 
-  // Contact form (homepage): validates, then opens a pre-filled email to
-  // the team. No backend on this site — swap to a fetch() POST once a
-  // form endpoint (e.g. a Zapier catch hook) is wired up.
+  // Contact form (homepage): validates, then POSTs to the Zapier catch
+  // hook, which fans the submission out to Slack. Falls back to a
+  // pre-filled mailto if the request fails (e.g. offline, hook removed).
+  var CONTACT_WEBHOOK = 'https://hooks.zapier.com/hooks/catch/19990653/41vyna2/';
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
@@ -190,18 +191,47 @@
       email.closest('.field').classList.toggle('invalid', !emailValid);
       if (!name.value.trim() || !emailValid) return;
 
-      var subject = 'Contact form: ' + name.value.trim();
-      var body = 'Name: ' + name.value.trim() +
-        '\nEmail: ' + email.value.trim() +
-        '\nPhone number: ' + (phone.value.trim() || '-') +
-        '\nCompany: ' + (company.value.trim() || '-') +
-        '\nURL: ' + (url.value.trim() || '-') +
-        '\nNote: ' + (note.value.trim() || '-');
-      window.location.href = 'mailto:contact@secpaid.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var payload = {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        phone: phone.value.trim(),
+        company: company.value.trim(),
+        url: url.value.trim(),
+        note: note.value.trim()
+      };
 
-      contactForm.hidden = true;
-      document.getElementById('contactDone').hidden = false;
+      function mailtoFallback() {
+        var subject = 'Contact form: ' + payload.name;
+        var body = 'Name: ' + payload.name +
+          '\nEmail: ' + payload.email +
+          '\nPhone number: ' + (payload.phone || '-') +
+          '\nCompany: ' + (payload.company || '-') +
+          '\nURL: ' + (payload.url || '-') +
+          '\nNote: ' + (payload.note || '-');
+        window.location.href = 'mailto:contact@secpaid.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      }
+
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      fetch(CONTACT_WEBHOOK, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function () {
+        contactForm.hidden = true;
+        document.getElementById('contactDone').hidden = false;
+      }).catch(function () {
+        mailtoFallback();
+        var msg = document.getElementById('contactDoneMsg');
+        if (msg) msg.textContent = "We couldn't reach our server, so we've opened your email app with your inquiry ready to go. Send the email, and our team will get back to you.";
+        contactForm.hidden = true;
+        document.getElementById('contactDone').hidden = false;
+      }).finally(function () {
+        if (submitBtn) submitBtn.disabled = false;
+      });
     });
   }
 
