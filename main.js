@@ -140,29 +140,72 @@
     });
   });
 
-  // Partner inquiry form (partners page only): validates, then opens a
-  // pre-filled email to the partnerships team. No backend on this site.
+  // Partner inquiry form (partners page): validates, then POSTs to the
+  // same Zapier catch hook as the contact form. Falls back to a
+  // pre-filled mailto to partners@secpaid.com if the request fails.
   var partnerForm = document.getElementById('partnerForm');
   if (partnerForm) {
     partnerForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      var company = document.getElementById('pCompany');
+
+      // Honeypot: real visitors never fill this hidden field.
+      var honeypot = document.getElementById('pWebsite');
+      if (honeypot && honeypot.value.trim()) return;
+
       var name = document.getElementById('pName');
+      var email = document.getElementById('pEmail');
       var phone = document.getElementById('pPhone');
-      company.closest('.field').classList.toggle('invalid', !company.value.trim());
+      var company = document.getElementById('pCompany');
+      var url = document.getElementById('pUrl');
+      var note = document.getElementById('pNote');
+
+      var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
       name.closest('.field').classList.toggle('invalid', !name.value.trim());
-      phone.closest('.field').classList.toggle('invalid', !phone.value.trim());
-      if (!company.value.trim() || !name.value.trim() || !phone.value.trim()) return;
+      email.closest('.field').classList.toggle('invalid', !emailValid);
+      if (!name.value.trim() || !emailValid) return;
 
-      var subject = 'Partner inquiry: ' + company.value.trim();
-      var body = 'Company: ' + company.value.trim() +
-        '\nContact name: ' + name.value.trim() +
-        '\nPhone number: ' + phone.value.trim();
-      window.location.href = 'mailto:partners@secpaid.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var payload = {
+        form: 'partner',
+        name: name.value.trim(),
+        email: email.value.trim(),
+        phone: phone.value.trim(),
+        company: company.value.trim(),
+        url: url.value.trim(),
+        note: note.value.trim()
+      };
 
-      partnerForm.hidden = true;
-      document.getElementById('partnerDone').hidden = false;
+      function mailtoFallback() {
+        var subject = 'Partner inquiry: ' + (payload.company || payload.name);
+        var body = 'Name: ' + payload.name +
+          '\nEmail: ' + payload.email +
+          '\nPhone number: ' + (payload.phone || '-') +
+          '\nCompany: ' + (payload.company || '-') +
+          '\nURL: ' + (payload.url || '-') +
+          '\nNote: ' + (payload.note || '-');
+        window.location.href = 'mailto:partners@secpaid.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      }
+
+      var submitBtn = partnerForm.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      fetch(CONTACT_WEBHOOK, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function () {
+        partnerForm.hidden = true;
+        document.getElementById('partnerDone').hidden = false;
+      }).catch(function () {
+        mailtoFallback();
+        var msg = document.getElementById('partnerDoneMsg');
+        if (msg) msg.textContent = "We couldn't reach our server, so we've opened your email app with your inquiry ready to go. Send the email, and our team will get back to you.";
+        partnerForm.hidden = true;
+        document.getElementById('partnerDone').hidden = false;
+      }).finally(function () {
+        if (submitBtn) submitBtn.disabled = false;
+      });
     });
   }
 

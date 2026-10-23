@@ -165,28 +165,43 @@
         <p class="lede" data-de="Erzählen Sie uns kurz von sich. Unser Partnerschaftsteam meldet sich in der Regel innerhalb von zwei Werktagen.">Tell us a little about yourselves. Our partnerships team usually responds within two business days.</p>
       </div>
       <form id="partnerForm" class="partner-form reveal" novalidate>
-        <div class="field">
-          <label for="pCompany" data-de="Unternehmen">Company</label>
-          <input id="pCompany" name="company" type="text" autocomplete="organization" placeholder="Your company GmbH" required>
-          <span class="error" data-de="Bitte geben Sie Ihren Firmennamen ein.">Enter your company name.</span>
+        <div class="field-hp" aria-hidden="true">
+          <label for="pWebsite">Website</label>
+          <input id="pWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
         <div class="field">
-          <label for="pName" data-de="Name">Contact name</label>
+          <label for="pName" data-de="Name">Name</label>
           <input id="pName" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
           <span class="error" data-de="Bitte geben Sie Ihren Namen ein.">Enter your name.</span>
         </div>
         <div class="field">
+          <label for="pEmail" data-de="E-Mail">Email</label>
+          <input id="pEmail" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required>
+          <span class="error" data-de="Bitte geben Sie eine gültige E-Mail-Adresse ein.">Enter a valid email address.</span>
+        </div>
+        <div class="field">
           <label for="pPhone" data-de="Telefonnummer">Phone number</label>
-          <input id="pPhone" name="phone" type="tel" autocomplete="tel" placeholder="+49 30 1234567" required>
-          <span class="error" data-de="Bitte geben Sie eine Telefonnummer ein.">Enter a phone number.</span>
+          <input id="pPhone" name="phone" type="tel" autocomplete="tel" placeholder="+49 30 1234567">
+        </div>
+        <div class="field">
+          <label for="pCompany" data-de="Unternehmen">Company</label>
+          <input id="pCompany" name="company" type="text" autocomplete="organization" placeholder="Your company GmbH">
+        </div>
+        <div class="field">
+          <label for="pUrl" data-de="URL">URL</label>
+          <input id="pUrl" name="url" type="text" autocomplete="url" placeholder="yourcompany.com">
+        </div>
+        <div class="field">
+          <label for="pNote" data-de="Nachricht">Note</label>
+          <textarea id="pNote" name="note" data-de="Wie möchten Sie zusammenarbeiten?" placeholder="How would you like to work together?"></textarea>
         </div>
         <button class="btn btn-primary btn-lg" type="submit" data-de="Anfrage senden">Send inquiry</button>
-        <p class="form-note" data-de="Das Absenden öffnet Ihr E-Mail-Programm mit einer vorausgefüllten Nachricht an unser Partnerschaftsteam.">Sending opens your email app with a pre-filled message to our partnerships team.</p>
+        <p class="form-note" data-de="Ihre Anfrage geht direkt an unser Partnerschaftsteam.">Your inquiry goes straight to our partnerships team.</p>
       </form>
       <div class="done" id="partnerDone" hidden>
         <div class="mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
-        <h3 data-de="Fast geschafft">Almost there</h3>
-        <p data-de="Wir haben Ihr E-Mail-Programm mit Ihrer Anfrage geöffnet. Senden Sie die E-Mail ab, und unser Team meldet sich bei Ihnen.">We've opened your email app with your inquiry ready to go. Send the email, and our team will get back to you.</p>
+        <h3 data-de="Nachricht gesendet">Message sent</h3>
+        <p data-de="Danke. Wir haben Ihre Anfrage erhalten und melden uns in der Regel innerhalb von zwei Werktagen." id="partnerDoneMsg">Thanks. We've received your inquiry and will get back to you, usually within two business days.</p>
       </div>
     </div>
   </section>
