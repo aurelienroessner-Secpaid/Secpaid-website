@@ -162,7 +162,12 @@
       var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
       name.closest('.field').classList.toggle('invalid', !name.value.trim());
       email.closest('.field').classList.toggle('invalid', !emailValid);
-      if (!name.value.trim() || !emailValid) return;
+
+      var recaptchaField = partnerForm.querySelector('.recaptcha-field');
+      var recaptchaValid = window.grecaptcha ? !!grecaptcha.getResponse().length : true;
+      if (recaptchaField) recaptchaField.classList.toggle('invalid', !recaptchaValid);
+
+      if (!name.value.trim() || !emailValid || !recaptchaValid) return;
 
       var payload = {
         form: 'partner',
@@ -195,9 +200,11 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       }).then(function () {
+        if (window.grecaptcha) grecaptcha.reset();
         partnerForm.hidden = true;
         document.getElementById('partnerDone').hidden = false;
       }).catch(function () {
+        if (window.grecaptcha) grecaptcha.reset();
         mailtoFallback();
         var msg = document.getElementById('partnerDoneMsg');
         if (msg) msg.textContent = "We couldn't reach our server, so we've opened your email app with your inquiry ready to go. Send the email, and our team will get back to you.";
@@ -232,7 +239,12 @@
       var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
       name.closest('.field').classList.toggle('invalid', !name.value.trim());
       email.closest('.field').classList.toggle('invalid', !emailValid);
-      if (!name.value.trim() || !emailValid) return;
+
+      var recaptchaField = contactForm.querySelector('.recaptcha-field');
+      var recaptchaValid = window.grecaptcha ? !!grecaptcha.getResponse().length : true;
+      if (recaptchaField) recaptchaField.classList.toggle('invalid', !recaptchaValid);
+
+      if (!name.value.trim() || !emailValid || !recaptchaValid) return;
 
       var payload = {
         name: name.value.trim(),
@@ -264,9 +276,11 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       }).then(function () {
+        if (window.grecaptcha) grecaptcha.reset();
         contactForm.hidden = true;
         document.getElementById('contactDone').hidden = false;
       }).catch(function () {
+        if (window.grecaptcha) grecaptcha.reset();
         mailtoFallback();
         var msg = document.getElementById('contactDoneMsg');
         if (msg) msg.textContent = "We couldn't reach our server, so we've opened your email app with your inquiry ready to go. Send the email, and our team will get back to you.";

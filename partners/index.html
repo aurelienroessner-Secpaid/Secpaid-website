@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="../styles.css?v=3">
+  <link rel="stylesheet" href="../styles.css?v=4">
 </head>
 <body>
 
@@ -194,6 +194,10 @@
           <label for="pNote" data-de="Nachricht">Note</label>
           <textarea id="pNote" name="note" data-de="Wie möchten Sie zusammenarbeiten?" placeholder="How would you like to work together?"></textarea>
         </div>
+        <div class="field recaptcha-field">
+          <div class="g-recaptcha" data-sitekey="6Lf_mwEuAAAAAL-t1u-oyIW7OIiKLV8VXmR6_QvY"></div>
+          <span class="error" data-de="Bitte bestätigen Sie, dass Sie kein Roboter sind.">Please confirm you're not a robot.</span>
+        </div>
         <button class="btn btn-primary btn-lg" type="submit" data-de="Anfrage senden">Send inquiry</button>
         <p class="form-note" data-de="Ihre Anfrage geht direkt an unser Partnerschaftsteam.">Your inquiry goes straight to our partnerships team.</p>
       </form>
@@ -258,6 +262,7 @@
   </div>
 </footer>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="../main.js"></script>
 </body>
 </html>
