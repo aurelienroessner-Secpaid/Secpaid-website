@@ -336,7 +336,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .field.invalid .error { display: block; }
 .partner-form .btn, .contact-form .btn { width: 100%; margin-top: .5rem; }
 .field-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.recaptcha-field { margin-bottom: 1.25rem; }
+.recaptcha-field { margin-bottom: 1.25rem; text-align: center; }
 .recaptcha-field .g-recaptcha > div { margin: 0 auto; }
 .form-note { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 1rem; }
 .done { text-align: center; padding: 1rem 0; }
