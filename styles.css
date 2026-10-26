@@ -185,14 +185,13 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 
 /* Hero */
 .hero { padding-top: clamp(2.5rem, 5vw, 4.5rem); padding-bottom: clamp(2.5rem, 5vw, 4rem); overflow: hidden; }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 5.5fr) minmax(0, 6.5fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr); }
 .hero h1 { margin-bottom: 1.25rem; max-width: 18ch; font-size: clamp(2.5rem, 4.8vw, 3.9rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.0; overflow-wrap: break-word; }
 html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem); }
 .hero .eyebrow { display: block; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero .lede { margin-bottom: 2rem; max-width: 46ch; }
 .hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
-.hero-visual { position: relative; perspective: 1600px; }
 .frame {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-panel);
   box-shadow: var(--shadow); overflow: hidden;
@@ -201,13 +200,6 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .frame-bar span { width: 10px; height: 10px; border-radius: 999px; background: var(--line-strong); }
 .frame-bar .url { margin-left: .5rem; font-family: var(--mono); font-size: .72rem; color: var(--muted); }
 .frame img { width: 100%; height: auto; }
-.hero .frame { transform: rotateY(-8deg) rotateX(3deg); transform-origin: left center; }
-.hero .frame img { aspect-ratio: 16 / 10; object-fit: cover; object-position: left top; }
-@media (max-width: 960px) {
-  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
-  .hero .frame { transform: none; }
-  .hero h1 { max-width: none; }
-}
 
 /* Payment methods strip (single marquee on page) */
 .methods { padding-block: 2.5rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
@@ -235,33 +227,6 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
   .statitem:nth-child(-n+2) { border-bottom: 1px solid var(--line-strong); }
 }
 
-/* Live routing panel (hero visual) */
-.route-panel {
-  --rp-bg: #131417; --rp-line: #2a2c31; --rp-text: #e9eaec; --rp-dim: #9a9ea6; --rp-ok: #4ade9b;
-  background: var(--rp-bg); color: var(--rp-text);
-  border: 1px solid var(--rp-line); border-radius: var(--radius-panel);
-  overflow: hidden; box-shadow: var(--shadow); font-family: var(--mono);
-}
-.route-panel__head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 1rem; border-bottom: 1px solid var(--rp-line); }
-.route-panel__live { display: inline-flex; align-items: center; gap: .5rem; font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; }
-.route-panel__live i { width: 7px; height: 7px; border-radius: 999px; background: var(--rp-ok); animation: rp-pulse 2.2s ease-out infinite; flex: none; }
-@keyframes rp-pulse { 0% { box-shadow: 0 0 0 0 rgba(74,222,155,.5); } 70% { box-shadow: 0 0 0 7px rgba(74,222,155,0); } 100% { box-shadow: 0 0 0 0 rgba(74,222,155,0); } }
-.route-panel__region { font-size: .66rem; color: var(--rp-dim); letter-spacing: .04em; white-space: nowrap; }
-.route-panel__stats { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--rp-line); }
-.route-panel__stats > div { padding: .9rem 1rem; border-right: 1px solid var(--rp-line); }
-.route-panel__stats > div:last-child { border-right: 0; }
-.route-panel__stats b { display: block; font-family: var(--font); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
-.route-panel__stats span { font-size: .58rem; text-transform: uppercase; letter-spacing: .1em; color: var(--rp-dim); }
-.route-table-wrap { overflow-x: auto; }
-.route-table { width: 100%; border-collapse: collapse; font-size: .74rem; }
-.route-table th { text-align: left; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; font-size: .56rem; color: var(--rp-dim); padding: .55rem 1rem; border-bottom: 1px solid var(--rp-line); }
-.route-table td { padding: .5rem 1rem; border-bottom: 1px solid color-mix(in srgb, var(--rp-line) 55%, transparent); color: var(--rp-text); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.route-table td:nth-child(3) { color: var(--rp-dim); }
-.route-table .ok { color: var(--rp-ok); }
-.route-table tr.rp-new td { animation: rp-fade .6s ease; }
-@keyframes rp-fade { from { background: rgba(74,222,155,.1); } to { background: transparent; } }
-.route-panel__trust { padding: .7rem 1rem; font-size: .56rem; text-transform: uppercase; letter-spacing: .08em; color: var(--rp-dim); border-top: 1px solid var(--rp-line); }
-@media (prefers-reduced-motion: reduce) { .route-panel__live i { animation: none; } .route-table tr.rp-new td { animation: none; } }
 
 /* Germany / EU sovereignty trust section */
 .sovereignty { background: var(--surface); border-block: 1px solid var(--line); }
