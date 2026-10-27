@@ -194,6 +194,8 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .hero .lede { margin-bottom: 2rem; max-width: 46ch; }
 .hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
 .hero-footnote { margin-top: 1rem; font-size: .8rem; color: var(--muted); }
+.section-footnote { margin-top: .75rem; font-size: .8rem; color: var(--muted); max-width: 60ch; }
+.faq .section-footnote { margin-top: .5rem; }
 .frame {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-panel);
   box-shadow: var(--shadow); overflow: hidden;
@@ -360,6 +362,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .cta .box { background: var(--ink); color: var(--bg); border-radius: 24px; padding: clamp(2.5rem, 6vw, 4.5rem); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 2rem; align-items: center; }
 .cta h2 { margin-bottom: .75rem; }
 .cta p { color: color-mix(in srgb, var(--bg) 70%, transparent); max-width: 50ch; }
+.cta-footnote { margin-top: .5rem; font-size: .78rem; color: color-mix(in srgb, var(--bg) 55%, transparent); max-width: 50ch; }
 .cta .actions { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: flex-end; }
 .cta .btn-ghost { border-color: color-mix(in srgb, var(--bg) 35%, transparent); color: var(--bg); }
 .cta .btn-ghost:hover { background: color-mix(in srgb, var(--bg) 10%, transparent); }
