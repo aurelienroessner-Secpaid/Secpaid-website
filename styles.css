@@ -193,6 +193,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero .lede { margin-bottom: 2rem; max-width: 46ch; }
 .hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+.hero-footnote { margin-top: 1rem; font-size: .8rem; color: var(--muted); }
 .frame {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-panel);
   box-shadow: var(--shadow); overflow: hidden;
