@@ -215,7 +215,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .method { flex: none; margin-right: 1rem; display: grid; place-items: center; height: 56px; width: 96px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
 .method img { height: 26px; width: auto; }
-.method img[alt="Apple Pay"], .method img[alt="Google Pay"] { height: 46px; }
+.method img[alt="Apple Pay"], .method img[alt="Google Pay"], .method img[alt="SEPA"] { height: 46px; }
 @keyframes scroll { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; } .marquee { mask-image: none; -webkit-mask-image: none; } }
 
