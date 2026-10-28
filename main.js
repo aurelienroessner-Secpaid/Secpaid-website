@@ -158,6 +158,7 @@
       var company = document.getElementById('pCompany');
       var url = document.getElementById('pUrl');
       var note = document.getElementById('pNote');
+      var partnerEnquiry = document.getElementById('pPartnerEnquiry');
 
       var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
       name.closest('.field').classList.toggle('invalid', !name.value.trim());
@@ -171,6 +172,7 @@
 
       var payload = {
         form: 'partner',
+        partnerEnquiry: partnerEnquiry && partnerEnquiry.checked ? 'Yes' : 'No',
         name: name.value.trim(),
         email: email.value.trim(),
         phone: phone.value.trim(),
@@ -181,7 +183,8 @@
 
       function mailtoFallback() {
         var subject = 'Partner inquiry: ' + (payload.company || payload.name);
-        var body = 'Name: ' + payload.name +
+        var body = 'Partner enquiry: ' + payload.partnerEnquiry +
+          '\nName: ' + payload.name +
           '\nEmail: ' + payload.email +
           '\nPhone number: ' + (payload.phone || '-') +
           '\nCompany: ' + (payload.company || '-') +
