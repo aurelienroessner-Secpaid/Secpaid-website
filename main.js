@@ -216,12 +216,34 @@
     });
   }
 
+  // Contact reason: links across the site can carry data-reason="merchant"
+  // etc. so the "What can we help with?" dropdown on the homepage contact
+  // form is preselected based on which CTA the visitor clicked, even across
+  // a page navigation. sessionStorage carries the value across that
+  // navigation; it's consumed (removed) as soon as the form picks it up.
+  var CONTACT_REASON_KEY = 'secpaid-contact-reason';
+  document.querySelectorAll('a[data-reason]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { sessionStorage.setItem(CONTACT_REASON_KEY, a.getAttribute('data-reason')); } catch (e) {}
+    });
+  });
+
   // Contact form (homepage): validates, then POSTs to the Zapier catch
   // hook, which fans the submission out to Slack. Falls back to a
   // pre-filled mailto if the request fails (e.g. offline, hook removed).
   var CONTACT_WEBHOOK = 'https://hooks.zapier.com/hooks/catch/19990653/41vyna2/';
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    var reasonSelect = document.getElementById('cReason');
+    if (reasonSelect) {
+      var savedReason = null;
+      try { savedReason = sessionStorage.getItem(CONTACT_REASON_KEY); } catch (e) {}
+      if (savedReason && reasonSelect.querySelector('option[value="' + savedReason + '"]')) {
+        reasonSelect.value = savedReason;
+      }
+      try { sessionStorage.removeItem(CONTACT_REASON_KEY); } catch (e) {}
+    }
+
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -252,12 +274,14 @@
         phone: phone.value.trim(),
         company: company.value.trim(),
         url: url.value.trim(),
-        note: note.value.trim()
+        note: note.value.trim(),
+        reason: reasonSelect ? reasonSelect.value : ''
       };
 
       function mailtoFallback() {
         var subject = 'Contact form: ' + payload.name;
-        var body = 'Name: ' + payload.name +
+        var body = 'Reason: ' + (payload.reason || '-') +
+          '\nName: ' + payload.name +
           '\nEmail: ' + payload.email +
           '\nPhone number: ' + (payload.phone || '-') +
           '\nCompany: ' + (payload.company || '-') +

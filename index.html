@@ -75,7 +75,7 @@
         <p class="lede" data-de="In 24 Stunden freigeschaltet*. Ihr Account Manager richtet die Zahlungsanbieter passend zu Ihren Anforderungen ein.">Approved in 24 hours*. Payment providers set up by your account manager, based on your needs.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-lg" rel="noopener" href="https://auth.secpaid.com/realms/secpaid-prod/protocol/openid-connect/registrations?client_id=secpaid-prod&amp;redirect_uri=https%3A%2F%2Fapp.secpaid.com%2Fauth%2Fcallback&amp;response_type=code&amp;scope=openid" data-de="Jetzt loslegen">Let's get started</a>
-          <a class="btn btn-ghost btn-lg" href="#contact" data-de="Mit einem Account Manager sprechen">Talk to an account manager</a>
+          <a data-reason="merchant" class="btn btn-ghost btn-lg" href="#contact" data-de="Mit einem Account Manager sprechen">Talk to an account manager</a>
         </div>
       </div>
     </div>
@@ -401,7 +401,7 @@ console.log(data.pay_link);</pre>
       </div>
       <div class="pricing-cta reveal">
         <a class="btn btn-primary btn-lg" href="https://auth.secpaid.com/realms/secpaid-prod/protocol/openid-connect/registrations?client_id=secpaid-prod&amp;redirect_uri=https%3A%2F%2Fapp.secpaid.com%2Fauth%2Fcallback&amp;response_type=code&amp;scope=openid" rel="noopener" data-de="Jetzt loslegen">Let's get started</a>
-        <a class="btn btn-ghost btn-lg" href="#contact" data-de="Angebot anfragen">Request a quote</a>
+        <a data-reason="merchant" class="btn btn-ghost btn-lg" href="#contact" data-de="Angebot anfragen">Request a quote</a>
       </div>
     </div>
   </section>
@@ -455,7 +455,7 @@ console.log(data.pay_link);</pre>
         </div>
         <div class="actions">
           <a class="btn btn-accent btn-lg" rel="noopener" href="https://auth.secpaid.com/realms/secpaid-prod/protocol/openid-connect/registrations?client_id=secpaid-prod&amp;redirect_uri=https%3A%2F%2Fapp.secpaid.com%2Fauth%2Fcallback&amp;response_type=code&amp;scope=openid" data-de="Jetzt loslegen">Let's get started</a>
-          <a class="btn btn-ghost btn-lg" href="index.html#contact" data-de="Mit einem Account Manager sprechen">Talk to an account manager</a>
+          <a data-reason="merchant" class="btn btn-ghost btn-lg" href="index.html#contact" data-de="Mit einem Account Manager sprechen">Talk to an account manager</a>
         </div>
       </div>
     </div>
@@ -472,6 +472,15 @@ console.log(data.pay_link);</pre>
         <div class="field-hp" aria-hidden="true">
           <label for="cWebsite">Website</label>
           <input id="cWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="cReason" data-de="Worum geht es?">What can we help with?</label>
+          <select id="cReason" name="reason">
+            <option value="general" data-de="Allgemeine Anfrage">General inquiry</option>
+            <option value="support" data-de="Technischer Support">Technical support</option>
+            <option value="partner" data-de="Partner werden">Become a partner</option>
+            <option value="merchant" data-de="Händler werden">Become a merchant</option>
+          </select>
         </div>
         <div class="field">
           <label for="cName" data-de="Name">Name</label>
@@ -569,6 +578,6 @@ console.log(data.pay_link);</pre>
 </footer>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="main.js?v=2"></script>
+<script src="main.js?v=3"></script>
 </body>
 </html>
