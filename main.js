@@ -152,6 +152,18 @@
     }, 2400);
   }
 
+  // Payment links tile: loops through chat -> checkout -> paid.
+  var plAnim = document.querySelector('.pl-anim');
+  if (plAnim) {
+    var plPhases = plAnim.querySelectorAll('.pl-phase');
+    var plIndex = 0;
+    setInterval(function () {
+      plPhases[plIndex].classList.remove('active');
+      plIndex = (plIndex + 1) % plPhases.length;
+      plPhases[plIndex].classList.add('active');
+    }, 2200);
+  }
+
   // Partner inquiry form (partners page): validates, then POSTs to the
   // same Zapier catch hook as the contact form. Falls back to a
   // pre-filled mailto to partners@secpaid.com if the request fails.

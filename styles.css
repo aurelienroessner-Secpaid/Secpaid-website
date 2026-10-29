@@ -327,6 +327,23 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .qr-dynamic-island { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 42px; height: 13px; background: #000; border-radius: 8px; z-index: 2; }
 .qr-provided { text-align: center; margin-top: 12px; font-size: 11px; color: var(--muted); }
 .qr-provided b { color: var(--ink); }
+
+/* Payment links tile: looping chat -> checkout -> paid animation */
+.pl-anim { position: relative; margin: -1.5rem -1.5rem 1rem; height: 320px; overflow: hidden; border-bottom: 1px solid var(--line); background: #121316; }
+.pl-phase { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; padding: 0 1.5rem; opacity: 0; transition: opacity .5s ease; }
+.pl-phase.active { opacity: 1; }
+.pl-phase-chat { align-items: stretch; gap: .6rem; }
+.pl-bubble { font-size: .82rem; line-height: 1.35; padding: .55rem .8rem; border-radius: 14px; max-width: 82%; }
+.pl-bubble-in { align-self: flex-start; background: rgba(255, 255, 255, .1); color: #fff; border-bottom-left-radius: 4px; }
+.pl-bubble-out { align-self: flex-end; background: var(--accent); color: #fff; font-weight: 600; border-bottom-right-radius: 4px; text-align: right; }
+.pl-bubble-link { align-self: flex-end; background: rgba(31, 140, 102, .2); border: 1px solid rgba(31, 140, 102, .5); color: #8fe9c4; font-family: var(--mono); font-size: .72rem; padding: .4rem .7rem; border-radius: 8px; }
+.pl-card { background: #fff; border-radius: var(--radius-input); padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: .4rem; min-width: 200px; box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .4); }
+.pl-card-merchant { font-size: .9rem; font-weight: 700; color: #121316; }
+.pl-card-price { font-size: 1.4rem; font-weight: 800; color: #121316; }
+.pl-card-btn { margin-top: .3rem; align-self: flex-start; background: #121316; color: #fff; font-size: .8rem; font-weight: 700; padding: .5rem 1rem; border-radius: 999px; }
+.pl-phase-paid { flex-direction: row; gap: .6rem; }
+.pl-check { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
+.pl-paid-text { font-size: 1rem; font-weight: 700; color: #fff; }
 @media (max-width: 700px) {
   .bento { grid-template-columns: minmax(0, 1fr); }
   .cell-dashboard { flex-direction: column; align-items: stretch; }
