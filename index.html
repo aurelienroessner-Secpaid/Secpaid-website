@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=28">
+  <link rel="stylesheet" href="styles.css?v=29">
 </head>
 <body>
 
@@ -296,90 +296,96 @@
             <li data-de="Erschließen Sie neue Umsatzmöglichkeiten, indem Sie einen Zahlungslink per E-Mail, Social Media, WhatsApp, SMS, Chat oder sogar im Laden versenden."><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Open up more revenue opportunities for your business by sending a payment link through email, social media, WhatsApp, and SMS, chat or even in store.</li>
           </ul>
         </article>
-        <article class="cell reveal" id="qr-codes">
-          <div class="qr-anim" aria-hidden="true">
-            <div class="qr-phase qr-phase-invoice active">
-              <div class="qr-invoice">
-                <div class="qr-invoice-head">
-                  <div class="qr-invoice-biz"><div class="qr-invoice-mark">A</div><div><b data-de="Apotheke">Apotheke</b><span data-de="Musterstraße 1, Musterstadt">Musterstraße 1, Musterstadt</span></div></div>
-                  <div class="qr-invoice-meta"><div class="tag">Invoice</div><div class="num">INV-2031</div></div>
-                </div>
-                <table>
-                  <thead><tr><th>Item</th><th>Qty</th><th>Price</th></tr></thead>
-                  <tbody>
-                    <tr><td class="item-name">Atorvastatin 20mg</td><td>1</td><td>€24.90</td></tr>
-                    <tr><td class="item-name">Omega-3 Complex</td><td>1</td><td>€18.50</td></tr>
-                  </tbody>
-                </table>
-                <div class="qr-invoice-totals"><span>Total due</span><b>€43.40</b></div>
-                <div class="qr-invoice-pay">
-                  <img src="assets/screens/qr-code-asset.png" alt="">
-                  <div><b data-de="Zum Bezahlen scannen">Scan to pay</b><span data-de="Öffnet einen sicheren SecPaid-Checkout">Opens a secure SecPaid checkout</span></div>
-                </div>
-              </div>
+        <article class="cell cell-wide reveal" id="qr-codes">
+          <div class="cell-wide-grid cell-wide-grid-qr">
+            <div class="cell-wide-text">
+              <h3 data-de="QR-Codes">QR codes</h3>
+              <p data-de="Jeder Zahlungslink dient zugleich als scanbarer QR-Code, automatisch generiert.">Every payment link doubles as a scannable QR code, generated automatically.</p>
+              <ul class="cell-feats">
+                <li data-de="Drucken Sie ihn auf Rechnungen, Verpackungen oder Ladenbeschilderung"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Print on invoices, packaging, or in-store signage</li>
+                <li data-de="Scans führen direkt zu einem sicheren, gehosteten Checkout"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Scans open straight to a secure, hosted checkout</li>
+                <li data-de="Keine App oder zusätzliche Hardware für Ihre Kunden nötig"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No app or extra hardware required for your customers</li>
+              </ul>
             </div>
-            <div class="qr-phase qr-phase-zoom">
-              <div class="qr-zoom-wrap">
-                <div class="qr-invoice">
-                  <div class="qr-invoice-head">
-                    <div class="qr-invoice-biz"><div class="qr-invoice-mark">A</div><div><b data-de="Apotheke">Apotheke</b><span data-de="Musterstraße 1, Musterstadt">Musterstraße 1, Musterstadt</span></div></div>
-                    <div class="qr-invoice-meta"><div class="tag">Invoice</div><div class="num">INV-2031</div></div>
-                  </div>
-                  <table>
-                    <thead><tr><th>Item</th><th>Qty</th><th>Price</th></tr></thead>
-                    <tbody>
-                      <tr><td class="item-name">Atorvastatin 20mg</td><td>1</td><td>€24.90</td></tr>
-                      <tr><td class="item-name">Omega-3 Complex</td><td>1</td><td>€18.50</td></tr>
-                    </tbody>
-                  </table>
-                  <div class="qr-invoice-totals"><span>Total due</span><b>€43.40</b></div>
-                  <div class="qr-invoice-pay">
-                    <img src="assets/screens/qr-code-asset.png" alt="">
-                    <div><b data-de="Zum Bezahlen scannen">Scan to pay</b><span data-de="Öffnet einen sicheren SecPaid-Checkout">Opens a secure SecPaid checkout</span></div>
+            <div class="cell-wide-shot">
+              <div class="qr-anim" aria-hidden="true">
+                <div class="qr-phase qr-phase-invoice active">
+                  <div class="qr-invoice">
+                    <div class="qr-invoice-head">
+                      <div class="qr-invoice-biz"><div class="qr-invoice-mark">A</div><div><b data-de="Apotheke">Apotheke</b><span data-de="Musterstraße 1, Musterstadt">Musterstraße 1, Musterstadt</span></div></div>
+                      <div class="qr-invoice-meta"><div class="tag">Invoice</div><div class="num">INV-2031</div></div>
+                    </div>
+                    <table>
+                      <thead><tr><th>Item</th><th>Qty</th><th>Price</th></tr></thead>
+                      <tbody>
+                        <tr><td class="item-name">Atorvastatin 20mg</td><td>1</td><td>€24.90</td></tr>
+                        <tr><td class="item-name">Omega-3 Complex</td><td>1</td><td>€18.50</td></tr>
+                      </tbody>
+                    </table>
+                    <div class="qr-invoice-totals"><span>Total due</span><b>€43.40</b></div>
+                    <div class="qr-invoice-pay">
+                      <img src="assets/screens/qr-code-asset.png" alt="">
+                      <div><b data-de="Zum Bezahlen scannen">Scan to pay</b><span data-de="Öffnet einen sicheren SecPaid-Checkout">Opens a secure SecPaid checkout</span></div>
+                    </div>
                   </div>
                 </div>
-                <div class="qr-lens-handle"></div>
-                <div class="qr-lens"><img src="assets/screens/qr-code-asset.png" alt=""></div>
-              </div>
-            </div>
-            <div class="qr-phase qr-phase-phone">
-              <div>
-                <div class="qr-phone">
-                  <div class="qr-phone-screen">
-                    <div class="qr-dynamic-island"></div>
-                    <div class="qr-pf">
-                      <img class="qr-pf-logo" src="assets/logo-secpaid-black.svg" alt="SecPaid">
-                      <div class="qr-pf-gpay" data-de="Mit G Pay bezahlen">Pay with G Pay</div>
-                      <div class="qr-pf-label" data-de="Zahlungsmethode wählen">Select payment method</div>
-                      <div class="qr-pf-method"><span class="qr-pf-radio"></span>Card</div>
-                      <div class="qr-pf-field" data-de="Karteninhaber">Cardholder name</div>
-                      <div class="qr-pf-input"><span class="qr-pf-type" data-field="name"></span><span class="qr-pf-caret"></span></div>
-                      <div class="qr-pf-field" data-de="Kartennummer">Card number</div>
-                      <div class="qr-pf-input"><span class="qr-pf-type" data-field="card"></span><span class="qr-pf-caret"></span></div>
-                      <div class="qr-pf-row">
-                        <div class="qr-pf-input qr-pf-input-sm"><span class="qr-pf-type" data-field="exp"></span></div>
-                        <div class="qr-pf-input qr-pf-input-sm"><span class="qr-pf-type" data-field="cvv"></span></div>
+                <div class="qr-phase qr-phase-zoom">
+                  <div class="qr-zoom-wrap">
+                    <div class="qr-invoice">
+                      <div class="qr-invoice-head">
+                        <div class="qr-invoice-biz"><div class="qr-invoice-mark">A</div><div><b data-de="Apotheke">Apotheke</b><span data-de="Musterstraße 1, Musterstadt">Musterstraße 1, Musterstadt</span></div></div>
+                        <div class="qr-invoice-meta"><div class="tag">Invoice</div><div class="num">INV-2031</div></div>
                       </div>
-                      <div class="qr-pf-pay" data-de="€43,40 bezahlen">Pay €43.40</div>
+                      <table>
+                        <thead><tr><th>Item</th><th>Qty</th><th>Price</th></tr></thead>
+                        <tbody>
+                          <tr><td class="item-name">Atorvastatin 20mg</td><td>1</td><td>€24.90</td></tr>
+                          <tr><td class="item-name">Omega-3 Complex</td><td>1</td><td>€18.50</td></tr>
+                        </tbody>
+                      </table>
+                      <div class="qr-invoice-totals"><span>Total due</span><b>€43.40</b></div>
+                      <div class="qr-invoice-pay">
+                        <img src="assets/screens/qr-code-asset.png" alt="">
+                        <div><b data-de="Zum Bezahlen scannen">Scan to pay</b><span data-de="Öffnet einen sicheren SecPaid-Checkout">Opens a secure SecPaid checkout</span></div>
+                      </div>
                     </div>
-                    <div class="qr-pf-success">
-                      <span class="qr-pf-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-                      <b data-de="Zahlung erfolgreich">Payment successful</b>
-                      <span data-de="€43,40 bezahlt">€43.40 paid</span>
-                    </div>
+                    <div class="qr-lens-handle"></div>
+                    <div class="qr-lens"><img src="assets/screens/qr-code-asset.png" alt=""></div>
                   </div>
                 </div>
-                <div class="qr-provided"><span data-de="Checkout bereitgestellt von">Checkout provided by</span> <b>SecPaid</b></div>
+                <div class="qr-phase qr-phase-phone">
+                  <div>
+                    <div class="qr-phone">
+                      <div class="qr-phone-screen">
+                        <div class="qr-dynamic-island"></div>
+                        <div class="qr-pf">
+                          <img class="qr-pf-logo" src="assets/logo-secpaid-black.svg" alt="SecPaid">
+                          <div class="qr-pf-gpay" data-de="Mit G Pay bezahlen">Pay with G Pay</div>
+                          <div class="qr-pf-label" data-de="Zahlungsmethode wählen">Select payment method</div>
+                          <div class="qr-pf-method"><span class="qr-pf-radio"></span>Card</div>
+                          <div class="qr-pf-field" data-de="Karteninhaber">Cardholder name</div>
+                          <div class="qr-pf-input"><span class="qr-pf-type" data-field="name"></span><span class="qr-pf-caret"></span></div>
+                          <div class="qr-pf-field" data-de="Kartennummer">Card number</div>
+                          <div class="qr-pf-input"><span class="qr-pf-type" data-field="card"></span><span class="qr-pf-caret"></span></div>
+                          <div class="qr-pf-row">
+                            <div class="qr-pf-input qr-pf-input-sm"><span class="qr-pf-type" data-field="exp"></span></div>
+                            <div class="qr-pf-input qr-pf-input-sm"><span class="qr-pf-type" data-field="cvv"></span></div>
+                          </div>
+                          <div class="qr-pf-pay" data-de="€43,40 bezahlen">Pay €43.40</div>
+                        </div>
+                        <div class="qr-pf-success">
+                          <span class="qr-pf-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+                          <b data-de="Zahlung erfolgreich">Payment successful</b>
+                          <span data-de="€43,40 bezahlt">€43.40 paid</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="qr-provided"><span data-de="Checkout bereitgestellt von">Checkout provided by</span> <b>SecPaid</b></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <h3 data-de="QR-Codes">QR codes</h3>
-          <p data-de="Jeder Zahlungslink dient zugleich als scanbarer QR-Code, automatisch generiert.">Every payment link doubles as a scannable QR code, generated automatically.</p>
-          <ul class="cell-feats">
-            <li data-de="Drucken Sie ihn auf Rechnungen, Verpackungen oder Ladenbeschilderung"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Print on invoices, packaging, or in-store signage</li>
-            <li data-de="Scans führen direkt zu einem sicheren, gehosteten Checkout"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Scans open straight to a secure, hosted checkout</li>
-            <li data-de="Keine App oder zusätzliche Hardware für Ihre Kunden nötig"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No app or extra hardware required for your customers</li>
-          </ul>
         </article>
         <article class="cell cell-dashboard reveal" id="dashboard">
           <div class="cell-shot"><img src="assets/screens/dashboard-crop.png" alt="SecPaid dashboard overview with revenue, transactions, and payouts" loading="lazy"></div>
