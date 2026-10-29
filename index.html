@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=26">
+  <link rel="stylesheet" href="styles.css?v=27">
 </head>
 <body>
 
@@ -266,6 +266,36 @@
             <li data-de="Jeder Partner sieht nur seinen eigenen Anteil und Auszahlungsverlauf"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Each partner sees only their own share and payout history</li>
           </ul>
         </article>
+        <article class="cell reveal" id="payment-links">
+          <div class="pl-anim" aria-hidden="true">
+            <div class="pl-phase pl-phase-chat active">
+              <span class="pl-bubble pl-bubble-in" data-de="Hallo, ich suche ein einfaches Vitamin C Präparat.">Hi, I'm looking for a simple vitamin C supplement.</span>
+              <span class="pl-typing" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="pl-bubble pl-bubble-out" data-de="Kein Problem, ich empfehle unseren Vitamin C Komplex!">Sure! I'd recommend our Vitamin C Complex.</span>
+              <span class="pl-bubble pl-bubble-in" data-de="Super, wie kann ich bezahlen?">Great, how do I pay?</span>
+              <span class="pl-typing" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="pl-bubble pl-bubble-out" data-de="Klar, folgen Sie einfach dem Link unten – dort finden Sie alle verfügbaren Zahlungsoptionen.">Sure, please follow the link below and you will find all the payment options available there.</span>
+              <span class="pl-bubble pl-bubble-link">https://pay.secpaid.com/vitc-complex</span>
+            </div>
+            <div class="pl-phase pl-phase-checkout">
+              <div class="pl-card">
+                <span class="pl-card-merchant" data-de="Vitamin C Komplex">Vitamin C Complex</span>
+                <span class="pl-card-price">€11.99</span>
+                <span class="pl-card-btn" data-de="Jetzt bezahlen">Pay now</span>
+              </div>
+            </div>
+            <div class="pl-phase pl-phase-paid">
+              <span class="pl-check"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <span class="pl-paid-text" data-de="Bezahlt €11.99">Paid €11.99</span>
+            </div>
+          </div>
+          <h3 data-de="Zahlungen über jeden Kanal akzeptieren – mit Zahlungslinks">Accept payments on any channel with payment links</h3>
+          <p data-de="Fordern Sie Zahlungen bei Bedarf auf sichere, konforme und benutzerfreundliche Weise an – mit einem Zahlungslink, der über jeden Kanal geteilt werden kann.">Request payments on-demand in a secure, compliant and user-friendly manner with a payment link that can be shared across any channel.</p>
+          <ul class="cell-feats">
+            <li data-de="Erstellen Sie Zahlungslinks direkt über das Dashboard oder per API."><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Create payment links directly from the Dashboard or through API.</li>
+            <li data-de="Erschließen Sie neue Umsatzmöglichkeiten, indem Sie einen Zahlungslink per E-Mail, Social Media, WhatsApp, SMS, Chat oder sogar im Laden versenden."><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Open up more revenue opportunities for your business by sending a payment link through email, social media, WhatsApp, and SMS, chat or even in store.</li>
+          </ul>
+        </article>
         <article class="cell reveal" id="qr-codes">
           <div class="qr-anim" aria-hidden="true">
             <div class="qr-phase qr-phase-invoice active">
@@ -318,6 +348,7 @@
                   <div class="qr-phone-screen">
                     <div class="qr-dynamic-island"></div>
                     <div class="qr-pf">
+                      <img class="qr-pf-logo" src="assets/logo-secpaid-black.svg" alt="SecPaid">
                       <div class="qr-pf-gpay" data-de="Mit G Pay bezahlen">Pay with G Pay</div>
                       <div class="qr-pf-label" data-de="Zahlungsmethode wählen">Select payment method</div>
                       <div class="qr-pf-method"><span class="qr-pf-radio"></span>Card</div>
@@ -348,36 +379,6 @@
             <li data-de="Drucken Sie ihn auf Rechnungen, Verpackungen oder Ladenbeschilderung"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Print on invoices, packaging, or in-store signage</li>
             <li data-de="Scans führen direkt zu einem sicheren, gehosteten Checkout"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Scans open straight to a secure, hosted checkout</li>
             <li data-de="Keine App oder zusätzliche Hardware für Ihre Kunden nötig"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No app or extra hardware required for your customers</li>
-          </ul>
-        </article>
-        <article class="cell reveal" id="payment-links">
-          <div class="pl-anim" aria-hidden="true">
-            <div class="pl-phase pl-phase-chat active">
-              <span class="pl-bubble pl-bubble-in" data-de="Hallo, ich suche ein einfaches Vitamin C Präparat.">Hi, I'm looking for a simple vitamin C supplement.</span>
-              <span class="pl-typing" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="pl-bubble pl-bubble-out" data-de="Kein Problem, ich empfehle unseren Vitamin C Komplex!">Sure! I'd recommend our Vitamin C Complex.</span>
-              <span class="pl-bubble pl-bubble-in" data-de="Super, wie kann ich bezahlen?">Great, how do I pay?</span>
-              <span class="pl-typing" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="pl-bubble pl-bubble-out" data-de="Klar, folgen Sie einfach dem Link unten – dort finden Sie alle verfügbaren Zahlungsoptionen.">Sure, please follow the link below and you will find all the payment options available there.</span>
-              <span class="pl-bubble pl-bubble-link">https://pay.secpaid.com/vitc-complex</span>
-            </div>
-            <div class="pl-phase pl-phase-checkout">
-              <div class="pl-card">
-                <span class="pl-card-merchant" data-de="Vitamin C Komplex">Vitamin C Complex</span>
-                <span class="pl-card-price">€11.99</span>
-                <span class="pl-card-btn" data-de="Jetzt bezahlen">Pay now</span>
-              </div>
-            </div>
-            <div class="pl-phase pl-phase-paid">
-              <span class="pl-check"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-              <span class="pl-paid-text" data-de="Bezahlt €11.99">Paid €11.99</span>
-            </div>
-          </div>
-          <h3 data-de="Zahlungen über jeden Kanal akzeptieren – mit Zahlungslinks">Accept payments on any channel with payment links</h3>
-          <p data-de="Fordern Sie Zahlungen bei Bedarf auf sichere, konforme und benutzerfreundliche Weise an – mit einem Zahlungslink, der über jeden Kanal geteilt werden kann.">Request payments on-demand in a secure, compliant and user-friendly manner with a payment link that can be shared across any channel.</p>
-          <ul class="cell-feats">
-            <li data-de="Erstellen Sie Zahlungslinks direkt über das Dashboard oder per API."><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Create payment links directly from the Dashboard or through API.</li>
-            <li data-de="Erschließen Sie neue Umsatzmöglichkeiten, indem Sie einen Zahlungslink per E-Mail, Social Media, WhatsApp, SMS, Chat oder sogar im Laden versenden."><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Open up more revenue opportunities for your business by sending a payment link through email, social media, WhatsApp, and SMS, chat or even in store.</li>
           </ul>
         </article>
         <article class="cell cell-dashboard reveal" id="dashboard">
