@@ -140,6 +140,18 @@
     });
   });
 
+  // QR codes tile: loops through invoice -> zoom -> phone checkout.
+  var qrAnim = document.querySelector('.qr-anim');
+  if (qrAnim) {
+    var qrPhases = qrAnim.querySelectorAll('.qr-phase');
+    var qrIndex = 0;
+    setInterval(function () {
+      qrPhases[qrIndex].classList.remove('active');
+      qrIndex = (qrIndex + 1) % qrPhases.length;
+      qrPhases[qrIndex].classList.add('active');
+    }, 2400);
+  }
+
   // Partner inquiry form (partners page): validates, then POSTs to the
   // same Zapier catch hook as the contact form. Falls back to a
   // pre-filled mailto to partners@secpaid.com if the request fails.
