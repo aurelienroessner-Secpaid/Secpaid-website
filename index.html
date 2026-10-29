@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=24">
+  <link rel="stylesheet" href="styles.css?v=25">
 </head>
 <body>
 
@@ -284,7 +284,25 @@
                 <div class="qr-phone">
                   <div class="qr-phone-screen">
                     <div class="qr-dynamic-island"></div>
-                    <img src="assets/screens/checkout-payment-methods.png" alt="SecPaid checkout screen with Google Pay, a card entry form, Wero, and Instant Bank Transfer options">
+                    <div class="qr-pf">
+                      <div class="qr-pf-gpay" data-de="Mit G Pay bezahlen">Pay with G Pay</div>
+                      <div class="qr-pf-label" data-de="Zahlungsmethode wählen">Select payment method</div>
+                      <div class="qr-pf-method"><span class="qr-pf-radio"></span>Card</div>
+                      <div class="qr-pf-field" data-de="Karteninhaber">Cardholder name</div>
+                      <div class="qr-pf-input"><span class="qr-pf-type" data-field="name"></span><span class="qr-pf-caret"></span></div>
+                      <div class="qr-pf-field" data-de="Kartennummer">Card number</div>
+                      <div class="qr-pf-input"><span class="qr-pf-type" data-field="card"></span><span class="qr-pf-caret"></span></div>
+                      <div class="qr-pf-row">
+                        <div class="qr-pf-input qr-pf-input-sm"><span class="qr-pf-type" data-field="exp"></span></div>
+                        <div class="qr-pf-input qr-pf-input-sm"><span class="qr-pf-type" data-field="cvv"></span></div>
+                      </div>
+                      <div class="qr-pf-pay" data-de="€43,40 bezahlen">Pay €43.40</div>
+                    </div>
+                    <div class="qr-pf-success">
+                      <span class="qr-pf-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+                      <b data-de="Zahlung erfolgreich">Payment successful</b>
+                      <span data-de="€43,40 bezahlt">€43.40 paid</span>
+                    </div>
                   </div>
                 </div>
                 <div class="qr-provided"><span data-de="Checkout bereitgestellt von">Checkout provided by</span> <b>SecPaid</b></div>
@@ -654,6 +672,6 @@ console.log(data.pay_link);</pre>
 </footer>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="main.js?v=9"></script>
+<script src="main.js?v=10"></script>
 </body>
 </html>

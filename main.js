@@ -140,16 +140,60 @@
     });
   });
 
-  // QR codes tile: loops through invoice -> zoom -> phone checkout.
+  // QR codes tile: invoice -> zoom -> phone checkout, where the phone
+  // types in fake card details, "pays", and shows a success screen.
   var qrAnim = document.querySelector('.qr-anim');
   if (qrAnim) {
     var qrPhases = qrAnim.querySelectorAll('.qr-phase');
-    var qrIndex = 0;
-    setInterval(function () {
-      qrPhases[qrIndex].classList.remove('active');
-      qrIndex = (qrIndex + 1) % qrPhases.length;
-      qrPhases[qrIndex].classList.add('active');
-    }, 2400);
+    var qrScreen = qrAnim.querySelector('.qr-phone-screen');
+    var qrPayBtn = qrAnim.querySelector('.qr-pf-pay');
+    var qrTypeFields = {
+      name: qrAnim.querySelector('.qr-pf-type[data-field="name"]'),
+      card: qrAnim.querySelector('.qr-pf-type[data-field="card"]'),
+      exp: qrAnim.querySelector('.qr-pf-type[data-field="exp"]'),
+      cvv: qrAnim.querySelector('.qr-pf-type[data-field="cvv"]')
+    };
+
+    function qrType(field, text, charDelay) {
+      var el = qrTypeFields[field];
+      var i = 0;
+      el.textContent = '';
+      var iv = setInterval(function () {
+        i++;
+        el.textContent = text.slice(0, i);
+        if (i >= text.length) clearInterval(iv);
+      }, charDelay);
+    }
+
+    (function runQrSequence() {
+      qrPhases.forEach(function (p) { p.classList.remove('active'); });
+      qrScreen.classList.remove('paid');
+      qrPayBtn.classList.remove('pressed');
+      Object.keys(qrTypeFields).forEach(function (k) { qrTypeFields[k].textContent = ''; });
+
+      var t = 300;
+      var at = function (delay, fn) { setTimeout(fn, t); t += delay; };
+
+      at(2200, function () { qrPhases[0].classList.add('active'); });                 // invoice
+      at(2200, function () {                                                          // zoom
+        qrPhases[0].classList.remove('active');
+        qrPhases[1].classList.add('active');
+      });
+      at(1600, function () {                                                          // phone, empty form
+        qrPhases[1].classList.remove('active');
+        qrPhases[2].classList.add('active');
+      });
+      at(560, function () { qrType('name', 'Jane Doe', 70); });                        // type cardholder name
+      at(900, function () { qrType('card', '4242 4242 4242 4242', 45); });             // type card number
+      at(950, function () { qrType('exp', '12/28', 50); });                            // type expiry
+      at(350, function () { qrType('cvv', '123', 60); });                              // type CVV
+      at(500, function () { qrPayBtn.classList.add('pressed'); });                     // press pay
+      at(400, function () {
+        qrPayBtn.classList.remove('pressed');
+        qrScreen.classList.add('paid');                                                // show success
+      });
+      at(2400, runQrSequence);
+    })();
   }
 
   // Payment links tile: chat messages appear one by one (with a typing
