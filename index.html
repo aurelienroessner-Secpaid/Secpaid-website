@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=25">
+  <link rel="stylesheet" href="styles.css?v=26">
 </head>
 <body>
 
@@ -224,7 +224,40 @@
           </div>
         </article>
         <article class="cell cell-tint reveal" id="split-payments">
-          <div class="split-shot" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="sp-anim" aria-hidden="true">
+            <div class="sp-phase sp-phase-config active">
+              <div class="sp-card">
+                <span class="sp-card-title" data-de="Split-Konfiguration">Split configuration</span>
+                <div class="sp-row"><span data-de="Telemedizin-Partner">Telemedicine Partner</span><b>70%</b></div>
+                <div class="sp-bar"><i style="width: 70%"></i></div>
+                <div class="sp-row"><span data-de="Apotheke">Pharmacy</span><b>30%</b></div>
+                <div class="sp-bar"><i style="width: 30%"></i></div>
+                <div class="sp-toggle"><span class="sp-toggle-pill"><span class="sp-toggle-dot"></span></span><span data-de="Automatisch nach Zahlungseingang abrechnen">Auto-settle after payment</span></div>
+              </div>
+            </div>
+            <div class="sp-phase sp-phase-pay">
+              <div class="sp-pay">
+                <span class="sp-pay-label" data-de="Zahlung eingegangen">Payment received</span>
+                <span class="sp-pay-amount">€120.00</span>
+                <span class="sp-pay-from" data-de="Von der Patienten-Zahlung">From the patient checkout</span>
+              </div>
+            </div>
+            <div class="sp-phase sp-phase-settled">
+              <div class="sp-settled">
+                <div class="sp-payout">
+                  <span data-de="Telemedizin-Partner">Telemedicine Partner</span>
+                  <b>€84.00</b>
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div class="sp-payout">
+                  <span data-de="Apotheke">Pharmacy</span>
+                  <b>€36.00</b>
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <span class="sp-settled-caption" data-de="Automatisch abgerechnet">Settled automatically</span>
+              </div>
+            </div>
+          </div>
           <h3 data-de="Split-Zahlungen">Split payments</h3>
           <p data-de="Teilen Sie Zahlungen automatisch zwischen mehreren Parteien auf. Entwickelt im Hinblick auf Telemedizin und Marktplätze.">Automatically split payments between multiple parties. Built with telemedicine and marketplaces in mind.</p>
           <ul class="cell-feats">
@@ -672,6 +705,6 @@ console.log(data.pay_link);</pre>
 </footer>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="main.js?v=10"></script>
+<script src="main.js?v=11"></script>
 </body>
 </html>

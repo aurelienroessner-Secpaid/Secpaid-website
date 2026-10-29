@@ -140,6 +140,18 @@
     });
   });
 
+  // Split payments tile: loops through configure -> payment received -> settled.
+  var spAnim = document.querySelector('.sp-anim');
+  if (spAnim) {
+    var spPhases = spAnim.querySelectorAll('.sp-phase');
+    var spIndex = 0;
+    setInterval(function () {
+      spPhases[spIndex].classList.remove('active');
+      spIndex = (spIndex + 1) % spPhases.length;
+      spPhases[spIndex].classList.add('active');
+    }, 2200);
+  }
+
   // QR codes tile: invoice -> zoom -> phone checkout, where the phone
   // types in fake card details, "pays", and shows a success screen.
   var qrAnim = document.querySelector('.qr-anim');
