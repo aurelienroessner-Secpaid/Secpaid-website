@@ -152,16 +152,46 @@
     }, 2400);
   }
 
-  // Payment links tile: loops through chat -> checkout -> paid.
+  // Payment links tile: chat messages appear one by one (with a typing
+  // indicator between turns), then crossfades through checkout -> paid.
   var plAnim = document.querySelector('.pl-anim');
   if (plAnim) {
-    var plPhases = plAnim.querySelectorAll('.pl-phase');
-    var plIndex = 0;
-    setInterval(function () {
-      plPhases[plIndex].classList.remove('active');
-      plIndex = (plIndex + 1) % plPhases.length;
-      plPhases[plIndex].classList.add('active');
-    }, 2200);
+    var plPhaseChat = plAnim.querySelector('.pl-phase-chat');
+    var plPhaseCheckout = plAnim.querySelector('.pl-phase-checkout');
+    var plPhasePaid = plAnim.querySelector('.pl-phase-paid');
+    var plSteps = Array.prototype.slice.call(plPhaseChat.children);
+
+    (function runPlSequence() {
+      plPhaseChat.classList.add('active');
+      plPhaseCheckout.classList.remove('active');
+      plPhasePaid.classList.remove('active');
+      plSteps.forEach(function (s) { s.classList.remove('show'); });
+
+      var t = 400;
+      var at = function (delay, fn) { setTimeout(fn, t); t += delay; };
+
+      at(900, function () { plSteps[0].classList.add('show'); });           // client: question
+      at(700, function () { plSteps[1].classList.add('show'); });           // typing...
+      at(1000, function () {                                                // agent reply
+        plSteps[1].classList.remove('show');
+        plSteps[2].classList.add('show');
+      });
+      at(900, function () { plSteps[3].classList.add('show'); });           // client: how do I pay?
+      at(700, function () { plSteps[4].classList.add('show'); });           // typing...
+      at(1200, function () {                                                // agent sends link
+        plSteps[4].classList.remove('show');
+        plSteps[5].classList.add('show');
+      });
+      at(1800, function () {
+        plPhaseChat.classList.remove('active');
+        plPhaseCheckout.classList.add('active');
+      });
+      at(1800, function () {
+        plPhaseCheckout.classList.remove('active');
+        plPhasePaid.classList.add('active');
+      });
+      at(1200, runPlSequence);
+    })();
   }
 
   // Partner inquiry form (partners page): validates, then POSTs to the
