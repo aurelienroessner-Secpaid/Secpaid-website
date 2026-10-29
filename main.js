@@ -178,10 +178,11 @@
       });
       at(900, function () { plSteps[3].classList.add('show'); });           // client: how do I pay?
       at(700, function () { plSteps[4].classList.add('show'); });           // typing...
-      at(1200, function () {                                                // agent sends link
+      at(1100, function () {                                                // agent: follow the link below
         plSteps[4].classList.remove('show');
         plSteps[5].classList.add('show');
       });
+      at(900, function () { plSteps[6].classList.add('show'); });           // agent sends link
       at(1800, function () {
         plPhaseChat.classList.remove('active');
         plPhaseCheckout.classList.add('active');
