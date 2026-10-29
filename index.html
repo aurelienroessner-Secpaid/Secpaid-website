@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=16">
 </head>
 <body>
 
@@ -197,15 +197,29 @@
         <p class="lede" data-de="Eine umfassende Toolsuite für Ihre gesamte Zahlungsabwicklung, vom Annehmen von Zahlungen bis zur Steuerung komplexer Finanzflüsse.">A comprehensive suite of tools designed to streamline your payment operations, from accepting payments to managing complex financial flows.</p>
       </div>
       <div class="bento">
-        <article class="cell reveal">
-          <div class="cell-shot"><img src="assets/screens/payment-methods-crop.png" alt="SecPaid payment methods screen with Visa, Mastercard, Apple Pay, Google Pay, SEPA, iDEAL, EPS, Amex, MobilePay, Twint, and Revolut Pay enabled" loading="lazy"></div>
-          <h3>Payment as a Service</h3>
-          <p data-de="Wählen Sie zwischen führenden Zahlungsmethoden, Wallets oder Banküberweisungen unserer angebundenen Partner, um Ihre Konversion zu maximieren.">Choose between leading payment methods, wallets, or bank transfers from our connected partners to maximise your conversion.</p>
-          <ul class="cell-feats">
-            <li data-de="Autorisierungen, Rückerstattungen und Streitfälle in Echtzeit in einem Feed"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Real-time authorisations, refunds, and disputes in a single feed</li>
-            <li data-de="Multi-Provider-Routing von Grund auf integriert"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Multi-provider routing built in, not bolted on</li>
-            <li data-de="Apple Pay, Google Pay, SEPA und mehr sind von Anfang an aktiviert"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Apple Pay, Google Pay, SEPA, and more enabled from day one</li>
-          </ul>
+        <article class="cell cell-wide reveal">
+          <div class="cell-wide-grid">
+            <div class="cell-wide-text">
+              <h3>Payment as a Service</h3>
+              <p data-de="Wählen Sie zwischen führenden Zahlungsmethoden, Wallets oder Banküberweisungen unserer angebundenen Partner, um Ihre Konversion zu maximieren.">Choose between leading payment methods, wallets, or bank transfers from our connected partners to maximise your conversion.</p>
+              <ul class="method-checklist">
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Visa</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Mastercard</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Apple Pay</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Google Pay</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>SEPA</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iDEAL</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>EPS</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-de="American Express">American Express</span></li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>MobilePay</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Twint</li>
+                <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-de="Revolut Pay">Revolut Pay</span></li>
+              </ul>
+            </div>
+            <div class="cell-wide-shot">
+              <img src="assets/screens/checkout-payment-methods.png" alt="SecPaid checkout screen with Google Pay, a card entry form, Wero, and Instant Bank Transfer as payment options" loading="lazy">
+            </div>
+          </div>
         </article>
         <article class="cell cell-tint reveal" id="split-payments">
           <div class="split-shot" aria-hidden="true"><i></i><i></i><i></i></div>
