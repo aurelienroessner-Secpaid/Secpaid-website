@@ -278,7 +278,7 @@
         company: company.value.trim(),
         url: url.value.trim(),
         note: note.value.trim(),
-        reason: reasonSelect ? reasonSelect.value : ''
+        reason: reasonSelect && reasonSelect.selectedIndex > -1 ? reasonSelect.options[reasonSelect.selectedIndex].text : ''
       };
 
       function mailtoFallback() {
