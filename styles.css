@@ -300,7 +300,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .qr-invoice-biz { display: flex; align-items: center; gap: 8px; }
 .qr-invoice-mark { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-weight: 800; font-size: 11px; flex: none; }
 .qr-invoice-biz b { font-size: 12.5px; font-weight: 800; display: block; }
-.qr-invoice-biz span { font-size: 9.5px; color: var(--muted); }
+.qr-invoice-biz span { font-size: 9.5px; color: var(--muted); filter: blur(3px); user-select: none; }
 .qr-invoice-meta { text-align: right; }
 .qr-invoice-meta .tag { font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--accent); }
 .qr-invoice-meta .num { font-size: 15px; font-weight: 800; }
