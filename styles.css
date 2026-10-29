@@ -249,41 +249,40 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .trust-grid p { color: var(--muted); font-size: .9rem; }
 @media (max-width: 700px) { .trust-grid { grid-template-columns: 1fr; } .trust-grid > div { border-left: 0; padding-top: 1.25rem; } }
 
-/* Product bento (6 cells) */
-.bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: minmax(220px, auto); gap: 1rem; }
+/* Product bento: four large feature tiles, plus a slim Dashboard bar at the bottom */
+.bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .cell {
   position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-panel);
   background: var(--surface); padding: 1.5rem; display: flex; flex-direction: column; gap: .5rem;
 }
-.cell h3 { margin-top: auto; }
-.cell p { color: var(--muted); font-size: .95rem; max-width: 40ch; }
-.cell-a { grid-column: span 4; grid-row: span 2; }
-.cell-b { grid-column: span 2; grid-row: span 2; }
-.cell-c, .cell-d { grid-column: span 3; }
-.cell-f { grid-column: span 6; }
-.cell-f .cell-shot { display: flex; justify-content: center; }
-.cell-shot { margin: -1.5rem -1.5rem 1rem; height: 260px; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+.cell h3 { margin-top: auto; font-size: 1.15rem; }
+.cell p { color: var(--muted); font-size: .95rem; max-width: 46ch; }
+.cell-shot { margin: -1.5rem -1.5rem 1rem; height: 320px; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--surface-2); }
 .cell-shot img { width: 100%; height: 100%; object-fit: cover; object-position: left top; }
-.cell-b .cell-shot { height: 240px; }
 .cell-shot-qr img { object-position: center top; }
 .cell-tint { background: linear-gradient(160deg, var(--accent-soft), var(--surface) 70%); }
 .cell-dark { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .cell-dark p { color: color-mix(in srgb, var(--bg) 70%, transparent); }
-.split-viz { display: flex; gap: .4rem; align-items: flex-end; height: 64px; margin-bottom: .5rem; }
-.split-viz i { flex: 1; border-radius: 6px 6px 2px 2px; background: var(--accent); display: block; }
-.split-viz i:nth-child(1) { height: 100%; }
-.split-viz i:nth-child(2) { height: 55%; opacity: .75; }
-.split-viz i:nth-child(3) { height: 30%; opacity: .5; }
+.split-shot { margin: -1.5rem -1.5rem 1rem; height: 320px; border-bottom: 1px solid var(--line); background: linear-gradient(160deg, var(--accent-soft), var(--surface) 75%); display: flex; align-items: flex-end; justify-content: center; gap: 1.1rem; padding: 2.5rem 2.5rem 3rem; }
+.split-shot i { width: 72px; border-radius: 12px 12px 4px 4px; background: var(--accent); display: block; }
+.split-shot i:nth-child(1) { height: 88%; }
+.split-shot i:nth-child(2) { height: 56%; opacity: .78; }
+.split-shot i:nth-child(3) { height: 32%; opacity: .55; }
 .hook-log { font-family: var(--mono); font-size: .78rem; line-height: 1.7; margin-bottom: .5rem; color: var(--ink-2); }
 .hook-log span { color: var(--accent); }
 .cell-feats { list-style: none; display: grid; gap: .4rem; margin: 0; padding: 0; }
 .cell-feats li { display: flex; gap: .5rem; align-items: flex-start; font-size: .85rem; color: var(--ink-2); }
 .cell-feats svg { width: 15px; height: 15px; flex: none; margin-top: .15rem; color: var(--accent); }
 .cell-dark .cell-feats li { color: color-mix(in srgb, var(--bg) 75%, transparent); }
-@media (max-width: 960px) {
-  .bento { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-auto-rows: auto; }
-  .cell-a, .cell-b { grid-column: span 2; grid-row: auto; }
-  .cell-c, .cell-d, .cell-f { grid-column: span 2; }
+.cell-dashboard { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 1.5rem; padding: 1.25rem 1.5rem; }
+.cell-dashboard .cell-shot { flex: 0 0 240px; height: 110px; margin: 0; border-radius: var(--radius-input); border: 1px solid var(--line); }
+.cell-dashboard .cell-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .2rem; }
+.cell-dashboard h3 { margin: 0; font-size: 1rem; }
+.cell-dashboard p { margin: 0; font-size: .85rem; max-width: 60ch; }
+@media (max-width: 700px) {
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .cell-dashboard { flex-direction: column; align-items: stretch; }
+  .cell-dashboard .cell-shot { flex: none; width: 100%; height: 160px; }
 }
 
 /* Developers */
