@@ -400,7 +400,11 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .pl-bubble.show { opacity: 1; transform: none; }
 .pl-bubble-in { align-self: flex-start; background: rgba(255, 255, 255, .1); color: #fff; border-bottom-left-radius: 4px; }
 .pl-bubble-out { align-self: flex-end; background: var(--accent); color: #fff; font-weight: 600; border-bottom-right-radius: 4px; text-align: right; }
-.pl-bubble-link { align-self: flex-end; background: rgba(31, 140, 102, .2); border: 1px solid rgba(31, 140, 102, .5); color: #8fe9c4; font-family: var(--mono); font-size: .72rem; padding: .4rem .7rem; border-radius: 8px; }
+.pl-bubble-link { position: relative; align-self: flex-end; background: rgba(31, 140, 102, .2); border: 1px solid rgba(31, 140, 102, .5); color: #8fe9c4; font-family: var(--mono); font-size: .72rem; padding: .4rem .7rem; border-radius: 8px; overflow: hidden; transition: opacity .3s ease, transform .15s ease; }
+.pl-bubble-link.pressed { transform: scale(.93); background: rgba(31, 140, 102, .35); }
+.pl-tap-ripple { position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: rgba(143, 233, 196, .7); opacity: 0; pointer-events: none; }
+.pl-tap-ripple.tap { animation: pl-tap-ripple .5s ease-out; }
+@keyframes pl-tap-ripple { 0% { opacity: .9; transform: scale(0); } 100% { opacity: 0; transform: scale(9); } }
 .pl-typing { align-self: flex-end; display: flex; gap: 4px; background: var(--accent); padding: .5rem .7rem; border-radius: 14px; border-bottom-right-radius: 4px; opacity: 0; transform: translateY(4px); transition: opacity .3s ease, transform .3s ease; }
 .pl-typing.show { opacity: 1; transform: none; }
 .pl-typing i { width: 6px; height: 6px; border-radius: 50%; background: #fff; display: block; animation: pl-bounce 1.1s infinite ease-in-out; }
@@ -456,9 +460,10 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 
 /* Kept code sample + endpoint reference, with the integration logos
    alongside it on the right */
-.dev-code-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: clamp(2rem, 5vw, 3rem); align-items: center; }
+.dev-code-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: clamp(2rem, 5vw, 3rem); align-items: start; }
 .dev-code-main { max-width: 720px; }
-.dev-integrations { display: flex; align-items: center; justify-content: center; }
+.dev-integrations { display: flex; flex-direction: column; align-items: center; }
+.dev-integrations .link { margin-top: 1.5rem; }
 .integrations-stack { flex-direction: column; align-items: center; margin-top: 0; gap: 1.1rem; }
 .integrations-stack .chip { justify-content: center; width: 100%; max-width: 210px; height: 60px; font-size: 1.05rem; gap: .75rem; }
 .integrations-stack .chip img { height: 28px; }
