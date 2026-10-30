@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="styles.css?v=37">
 </head>
 <body>
 
@@ -350,8 +350,17 @@
                         <div><b data-de="Zum Bezahlen scannen">Scan to pay</b><span data-de="Öffnet einen sicheren SecPaid-Checkout">Opens a secure SecPaid checkout</span></div>
                       </div>
                     </div>
-                    <div class="qr-lens-handle"></div>
-                    <div class="qr-lens"><img src="assets/screens/qr-code-asset.png" alt=""></div>
+                    <div class="qr-scanner">
+                      <div class="qr-scanner-frame">
+                        <img src="assets/screens/qr-code-asset.png" alt="">
+                        <span class="qr-scanner-corner qr-scanner-corner-tl"></span>
+                        <span class="qr-scanner-corner qr-scanner-corner-tr"></span>
+                        <span class="qr-scanner-corner qr-scanner-corner-bl"></span>
+                        <span class="qr-scanner-corner qr-scanner-corner-br"></span>
+                        <span class="qr-scanner-line"></span>
+                      </div>
+                      <span class="qr-scanner-caption" data-de="Scannen …">Scanning…</span>
+                    </div>
                   </div>
                 </div>
                 <div class="qr-phase qr-phase-phone">
@@ -361,7 +370,7 @@
                         <div class="qr-dynamic-island"></div>
                         <div class="qr-pf">
                           <img class="qr-pf-logo" src="assets/logo-secpaid-black.svg" alt="SecPaid">
-                          <div class="qr-pf-gpay" data-de="Mit G Pay bezahlen">Pay with G Pay</div>
+                          <div class="qr-pf-gpay" data-de="Mit Apple Pay bezahlen">Pay with Apple Pay</div>
                           <div class="qr-pf-label" data-de="Zahlungsmethode wählen">Select payment method</div>
                           <div class="qr-pf-method"><span class="qr-pf-radio"></span>Card</div>
                           <div class="qr-pf-field" data-de="Karteninhaber">Cardholder name</div>
@@ -372,6 +381,8 @@
                             <div class="qr-pf-input qr-pf-input-sm"><span class="qr-pf-type" data-field="exp"></span></div>
                             <div class="qr-pf-input qr-pf-input-sm"><span class="qr-pf-type" data-field="cvv"></span></div>
                           </div>
+                          <div class="qr-pf-method qr-pf-method-alt"><span class="qr-pf-radio qr-pf-radio-off"></span><span class="qr-pf-wero">Wero</span></div>
+                          <div class="qr-pf-method qr-pf-method-alt"><span class="qr-pf-radio qr-pf-radio-off"></span><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M5 10V7l7-3 7 3v3M5 10v9M19 10v9M9 13v4M15 13v4M3 21h18"/></svg><span data-de="Banküberweisung">Bank transfer</span></div>
                           <div class="qr-pf-pay" data-de="€43,40 bezahlen">Pay €43.40</div>
                         </div>
                         <div class="qr-pf-success">
@@ -752,6 +763,6 @@ console.log(data.pay_link);</pre>
 </footer>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="main.js?v=14"></script>
+<script src="main.js?v=15"></script>
 </body>
 </html>

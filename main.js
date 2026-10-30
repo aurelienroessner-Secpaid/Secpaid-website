@@ -174,10 +174,18 @@
 
     function runQrSequence() {
       qrRunning = true;
+
+      // Suspend the card-form/success transitions for a frame so the old
+      // cycle's typed text and "paid" state reset instantly instead of
+      // visibly popping back to the empty form while the phone phase is
+      // still fading out.
+      qrAnim.classList.add('qr-resetting');
       qrPhases.forEach(function (p) { p.classList.remove('active'); });
       qrScreen.classList.remove('paid');
       qrPayBtn.classList.remove('pressed');
       Object.keys(qrTypeFields).forEach(function (k) { qrTypeFields[k].textContent = ''; });
+      void qrAnim.offsetWidth;
+      requestAnimationFrame(function () { qrAnim.classList.remove('qr-resetting'); });
 
       var t = 300;
       var at = function (delay, fn) { setTimeout(fn, t); t += delay; };
