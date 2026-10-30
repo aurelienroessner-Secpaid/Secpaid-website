@@ -327,14 +327,16 @@
       var note = document.getElementById('pNote');
 
       var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      var phoneValid = !!phone.value.trim();
       name.closest('.field').classList.toggle('invalid', !name.value.trim());
       email.closest('.field').classList.toggle('invalid', !emailValid);
+      phone.closest('.field').classList.toggle('invalid', !phoneValid);
 
       var recaptchaField = partnerForm.querySelector('.recaptcha-field');
       var recaptchaValid = window.grecaptcha ? !!grecaptcha.getResponse().length : true;
       if (recaptchaField) recaptchaField.classList.toggle('invalid', !recaptchaValid);
 
-      if (!name.value.trim() || !emailValid || !recaptchaValid) return;
+      if (!name.value.trim() || !emailValid || !phoneValid || !recaptchaValid) return;
 
       var payload = {
         reason: 'Become a partner',
@@ -427,14 +429,16 @@
       var note = document.getElementById('cNote');
 
       var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      var phoneValid = !!phone.value.trim();
       name.closest('.field').classList.toggle('invalid', !name.value.trim());
       email.closest('.field').classList.toggle('invalid', !emailValid);
+      phone.closest('.field').classList.toggle('invalid', !phoneValid);
 
       var recaptchaField = contactForm.querySelector('.recaptcha-field');
       var recaptchaValid = window.grecaptcha ? !!grecaptcha.getResponse().length : true;
       if (recaptchaField) recaptchaField.classList.toggle('invalid', !recaptchaValid);
 
-      if (!name.value.trim() || !emailValid || !recaptchaValid) return;
+      if (!name.value.trim() || !emailValid || !phoneValid || !recaptchaValid) return;
 
       var payload = {
         name: name.value.trim(),

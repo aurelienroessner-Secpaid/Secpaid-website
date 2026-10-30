@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="../styles.css?v=50">
+  <link rel="stylesheet" href="../styles.css?v=51">
 </head>
 <body>
 
@@ -158,29 +158,30 @@
           <input id="pWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
         <div class="field">
-          <label for="pName" data-de="Name">Name</label>
+          <label for="pName"><span data-de="Name">Name</span> <span class="field-tag field-tag-required" data-de="(Pflichtfeld)">(required)</span></label>
           <input id="pName" name="name" type="text" autocomplete="name" placeholder="Jane Doe" data-de="Max Mustermann" required>
           <span class="error" data-de="Bitte geben Sie Ihren Namen ein.">Enter your name.</span>
         </div>
         <div class="field">
-          <label for="pEmail" data-de="E-Mail">Email</label>
+          <label for="pEmail"><span data-de="E-Mail">Email</span> <span class="field-tag field-tag-required" data-de="(Pflichtfeld)">(required)</span></label>
           <input id="pEmail" name="email" type="email" autocomplete="email" placeholder="jane@company.com" data-de="max@firma.de" required>
           <span class="error" data-de="Bitte geben Sie eine gültige E-Mail-Adresse ein.">Enter a valid email address.</span>
         </div>
         <div class="field">
-          <label for="pPhone" data-de="Telefonnummer">Phone number</label>
-          <input id="pPhone" name="phone" type="tel" autocomplete="tel" placeholder="+49 30 1234567">
+          <label for="pPhone"><span data-de="Telefonnummer">Phone number</span> <span class="field-tag field-tag-required" data-de="(Pflichtfeld)">(required)</span></label>
+          <input id="pPhone" name="phone" type="tel" autocomplete="tel" placeholder="+49 30 1234567" required>
+          <span class="error" data-de="Bitte geben Sie Ihre Telefonnummer ein.">Enter your phone number.</span>
         </div>
         <div class="field">
-          <label for="pCompany" data-de="Unternehmen">Company</label>
+          <label for="pCompany"><span data-de="Unternehmen">Company</span> <span class="field-tag field-tag-optional">(optional)</span></label>
           <input id="pCompany" name="company" type="text" autocomplete="organization" placeholder="Your company GmbH" data-de="Ihre Firma GmbH">
         </div>
         <div class="field">
-          <label for="pUrl" data-de="URL">URL</label>
+          <label for="pUrl"><span data-de="URL">URL</span> <span class="field-tag field-tag-optional">(optional)</span></label>
           <input id="pUrl" name="url" type="text" autocomplete="url" placeholder="yourcompany.com" data-de="ihrefirma.de">
         </div>
         <div class="field">
-          <label for="pNote" data-de="Nachricht">Note</label>
+          <label for="pNote"><span data-de="Nachricht">Note</span> <span class="field-tag field-tag-optional">(optional)</span></label>
           <textarea id="pNote" name="note" data-de="Wie möchten Sie zusammenarbeiten?" placeholder="How would you like to work together?"></textarea>
         </div>
         <div class="field recaptcha-field">
@@ -252,6 +253,6 @@
 </footer>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="../main.js?v=19"></script>
+<script src="../main.js?v=20"></script>
 </body>
 </html>
