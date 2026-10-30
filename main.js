@@ -231,7 +231,7 @@
     });
   }
 
-  // Payment links tile: chat messages type out one by one (with a typing
+  // Payment links tile: chat messages appear one by one (with a typing
   // indicator between turns), the link gets a tap animation, then the tile
   // crossfades through checkout -> paid.
   var plAnim = document.querySelector('.pl-anim');
@@ -242,35 +242,9 @@
     var plCheck = plAnim.querySelector('.pl-check');
     var plSteps = Array.prototype.slice.call(plPhaseChat.children);
     var plLink = plSteps[6];
-    var plLinkText = plLink.querySelector('.pl-bubble-text');
     var plRipple = plLink.querySelector('.pl-tap-ripple');
     var plRunning = false;
     var plAutoRuns = 0;
-
-    // Reveals a bubble's text one character at a time instead of popping in
-    // as a finished block. Speed scales with message length so short and
-    // long lines (and their EN/DE translations) all type in a similar time.
-    function plType(bubble, textEl, cb) {
-      var full = textEl.textContent;
-      var i = 0;
-      textEl.textContent = '';
-      bubble.classList.add('show');
-      var charDelay = Math.max(16, Math.min(32, 700 / full.length));
-      (function tick() {
-        i++;
-        textEl.textContent = full.slice(0, i);
-        if (i < full.length) setTimeout(tick, charDelay);
-        else setTimeout(cb, 450);
-      })();
-    }
-
-    function plShowTyping(el, duration, cb) {
-      el.classList.add('show');
-      setTimeout(function () {
-        el.classList.remove('show');
-        cb();
-      }, duration);
-    }
 
     function runPlSequence() {
       plRunning = true;
@@ -290,41 +264,41 @@
       void plAnim.offsetWidth; // force the no-transition state to apply before re-enabling it
       requestAnimationFrame(function () { plAnim.classList.remove('pl-resetting'); });
 
-      setTimeout(function () {
-        plType(plSteps[0], plSteps[0], function () {                        // client: question
-          plShowTyping(plSteps[1], 900, function () {                       // typing...
-            plType(plSteps[2], plSteps[2], function () {                    // agent reply
-              plType(plSteps[3], plSteps[3], function () {                  // client: how do I pay?
-                plShowTyping(plSteps[4], 900, function () {                 // typing...
-                  plType(plSteps[5], plSteps[5], function () {              // agent: follow the link below
-                    plType(plLink, plLinkText, function () {                // agent sends link
-                      setTimeout(function () {
-                        plLink.classList.add('pressed');                    // tap the link...
-                        plRipple.classList.add('tap');
-                        setTimeout(function () {
-                          plLink.classList.remove('pressed');
-                          plPhaseChat.classList.remove('active');
-                          plPhaseCheckout.classList.add('active');          // ...before moving to checkout
-                          setTimeout(function () {
-                            plPhaseCheckout.classList.remove('active');
-                            plPhasePaid.classList.add('active');
-                            plCheck.classList.add('animate');               // animate the checkmark in
-                            setTimeout(function () {                        // pause on "Paid" before looping
-                              plRunning = false;
-                              plAutoRuns++;
-                              if (plAutoRuns < DEMO_ANIM_MAX_AUTO_RUNS) runPlSequence();
-                            }, 3600);
-                          }, 1800);
-                        }, 450);
-                      }, 700);
-                    });
-                  });
-                });
-              });
-            });
-          });
-        });
-      }, 400);
+      var t = 400;
+      var at = function (delay, fn) { setTimeout(fn, t); t += delay; };
+
+      at(700, function () { plSteps[0].classList.add('show'); });              // client: question
+      at(900, function () { plSteps[1].classList.add('show'); });              // typing...
+      at(900, function () {                                                    // agent reply
+        plSteps[1].classList.remove('show');
+        plSteps[2].classList.add('show');
+      });
+      at(700, function () { plSteps[3].classList.add('show'); });              // client: how do I pay?
+      at(900, function () { plSteps[4].classList.add('show'); });              // typing...
+      at(900, function () {                                                    // agent: follow the link below
+        plSteps[4].classList.remove('show');
+        plSteps[5].classList.add('show');
+      });
+      at(700, function () { plLink.classList.add('show'); });                  // agent sends link
+      at(700, function () {
+        plLink.classList.add('pressed');                                      // tap the link...
+        plRipple.classList.add('tap');
+      });
+      at(450, function () {
+        plLink.classList.remove('pressed');
+        plPhaseChat.classList.remove('active');
+        plPhaseCheckout.classList.add('active');                              // ...before moving to checkout
+      });
+      at(1800, function () {
+        plPhaseCheckout.classList.remove('active');
+        plPhasePaid.classList.add('active');
+        plCheck.classList.add('animate');                                     // animate the checkmark in
+      });
+      at(3600, function () {                                                  // pause on "Paid" before looping
+        plRunning = false;
+        plAutoRuns++;
+        if (plAutoRuns < DEMO_ANIM_MAX_AUTO_RUNS) runPlSequence();
+      });
     }
     runPlSequence();
 
