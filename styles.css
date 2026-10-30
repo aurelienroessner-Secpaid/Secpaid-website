@@ -315,7 +315,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .method-checklist li { display: flex; align-items: center; gap: .55rem; font-size: .92rem; color: var(--ink-2); }
 .method-checklist svg { flex: none; color: var(--accent); }
 .cell-wide-shot img { display: block; width: 100%; border-radius: var(--radius-panel); border: 1px solid var(--line); box-shadow: 0 24px 48px -28px rgba(18, 19, 22, .3); }
-.cell-wide-shot-flat { height: 440px; overflow: hidden; border-radius: var(--radius-panel); }
+.cell-wide-shot-flat { height: 470px; overflow: hidden; border-radius: var(--radius-panel); }
 .cell-wide-shot-flat img { height: 100%; object-fit: cover; object-position: top; border: none; box-shadow: 0 24px 48px -28px rgba(18, 19, 22, .3); }
 .cell-wide-grid-qr { grid-template-columns: minmax(0, 1fr) minmax(0, 460px); }
 
