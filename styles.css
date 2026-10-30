@@ -493,6 +493,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .pricing { background: var(--surface); border-top: 1px solid var(--line); }
 .pricing .section-head { margin-inline: auto; text-align: center; }
 .pricing-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; margin-top: 2.5rem; }
+@media (max-width: 480px) { .pricing .section-head h2 { font-size: clamp(1.5rem, 6.5vw, 2rem); white-space: nowrap; } }
 
 /* Forms (partner inquiry) */
 .field { display: grid; gap: .4rem; margin-bottom: 1rem; text-align: left; }
