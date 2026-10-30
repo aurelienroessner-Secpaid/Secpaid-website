@@ -70,12 +70,38 @@
   // Mobile nav
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('navToggle');
-  toggle.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
+  var navScrollY = 0;
+
+  // Fully pin the page behind the full-screen mobile menu: overflow:hidden
+  // alone still lets iOS Safari rubber-band/scroll the page underneath, so
+  // the body is pinned in place with a negative top offset and restored
+  // (scroll position included) when the menu closes.
+  function lockBodyScroll() {
+    navScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = -navScrollY + 'px';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+  }
+  function unlockBodyScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    window.scrollTo(0, navScrollY);
+  }
+
+  function setNavOpen(open) {
+    nav.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
+    if (open) lockBodyScroll(); else unlockBodyScroll();
+  }
+
+  toggle.addEventListener('click', function () {
+    setNavOpen(!nav.classList.contains('open'));
   });
   nav.querySelectorAll('.nav-links a, .nav-cta a').forEach(function (a) {
-    a.addEventListener('click', function () { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
+    a.addEventListener('click', function () { setNavOpen(false); });
   });
 
   // Industries dropdown in the header: close others when one opens,

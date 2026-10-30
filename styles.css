@@ -182,7 +182,7 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
   .nav.open .nav-menu {
     display: flex; flex-direction: column;
     position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-    background: var(--surface); overflow-y: auto; z-index: 39;
+    background: var(--surface); overflow-y: auto; overscroll-behavior: contain; z-index: 39;
     padding: .75rem 1.25rem 1.5rem; margin: 0; gap: .25rem;
   }
   .nav.open .nav-links, .nav.open .nav-cta {
