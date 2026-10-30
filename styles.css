@@ -268,7 +268,9 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .sp-step-label { display: flex; align-items: center; gap: .35rem; font-size: .68rem; font-weight: 700; color: #676c75; text-align: center; }
 .sp-step-num { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); color: #fff; font-size: .62rem; font-weight: 800; flex: none; }
 .sp-step-arrow { flex: none; color: #b7bac0; margin-top: 1.6rem; }
-.sp-card { width: 100%; max-width: 190px; background: #fff; border-radius: var(--radius-panel); border: 1px solid var(--line); box-shadow: 0 18px 40px -22px rgba(18, 19, 22, .2); padding: .85rem .9rem; display: flex; flex-direction: column; gap: .35rem; }
+.sp-card { position: relative; width: 100%; max-width: 190px; background: #fff; border-radius: var(--radius-panel); border: 1px solid var(--line); box-shadow: 0 18px 40px -22px rgba(18, 19, 22, .2); padding: .85rem .9rem; display: flex; flex-direction: column; gap: .35rem; }
+.sp-flex-bubble { position: absolute; top: -12px; right: -10px; background: var(--accent); color: #fff; font-size: .62rem; font-weight: 700; line-height: 1.2; padding: .4rem .6rem; border-radius: 999px; box-shadow: 0 10px 18px -10px rgba(18, 19, 22, .4); white-space: nowrap; z-index: 2; }
+.sp-flex-bubble::after { content: ""; position: absolute; bottom: -4px; right: 16px; width: 9px; height: 9px; background: var(--accent); transform: rotate(45deg); border-radius: 1px; }
 .sp-card-title { font-size: .62rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #8a8d93; margin-bottom: .1rem; }
 .sp-row { display: flex; justify-content: space-between; align-items: baseline; font-size: .74rem; color: #121316; }
 .sp-row b { font-weight: 800; }
