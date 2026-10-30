@@ -140,6 +140,11 @@
     });
   });
 
+  // Demo tiles (QR codes, Payment links) autoplay a couple of times on load,
+  // then rest on their final frame and only replay when hovered, instead of
+  // looping forever in the background.
+  var DEMO_ANIM_MAX_AUTO_RUNS = 2;
+
   // QR codes tile: invoice -> zoom -> phone checkout, where the phone
   // types in fake card details, "pays", and shows a success screen.
   var qrAnim = document.querySelector('.qr-anim');
@@ -153,6 +158,8 @@
       exp: qrAnim.querySelector('.qr-pf-type[data-field="exp"]'),
       cvv: qrAnim.querySelector('.qr-pf-type[data-field="cvv"]')
     };
+    var qrRunning = false;
+    var qrAutoRuns = 0;
 
     function qrType(field, text, charDelay) {
       var el = qrTypeFields[field];
@@ -165,7 +172,8 @@
       }, charDelay);
     }
 
-    (function runQrSequence() {
+    function runQrSequence() {
+      qrRunning = true;
       qrPhases.forEach(function (p) { p.classList.remove('active'); });
       qrScreen.classList.remove('paid');
       qrPayBtn.classList.remove('pressed');
@@ -192,8 +200,17 @@
         qrPayBtn.classList.remove('pressed');
         qrScreen.classList.add('paid');                                                // show success
       });
-      at(2400, runQrSequence);
-    })();
+      at(3600, function () {                                                          // pause on the success screen
+        qrRunning = false;
+        qrAutoRuns++;
+        if (qrAutoRuns < DEMO_ANIM_MAX_AUTO_RUNS) runQrSequence();
+      });
+    }
+    runQrSequence();
+
+    qrAnim.closest('.cell').addEventListener('mouseenter', function () {
+      if (!qrRunning) runQrSequence();
+    });
   }
 
   // Payment links tile: chat messages appear one by one (with a typing
@@ -203,13 +220,26 @@
     var plPhaseChat = plAnim.querySelector('.pl-phase-chat');
     var plPhaseCheckout = plAnim.querySelector('.pl-phase-checkout');
     var plPhasePaid = plAnim.querySelector('.pl-phase-paid');
+    var plCheck = plAnim.querySelector('.pl-check');
     var plSteps = Array.prototype.slice.call(plPhaseChat.children);
+    var plRunning = false;
+    var plAutoRuns = 0;
 
-    (function runPlSequence() {
+    function runPlSequence() {
+      plRunning = true;
+
+      // Reset with transitions suspended for a frame, so bubbles from the
+      // previous cycle disappear instantly instead of fading out on top of
+      // the chat phase fading back in (which briefly showed the full,
+      // already-completed conversation before the reveal restarted).
+      plAnim.classList.add('pl-resetting');
       plPhaseChat.classList.add('active');
       plPhaseCheckout.classList.remove('active');
       plPhasePaid.classList.remove('active');
+      plCheck.classList.remove('animate');
       plSteps.forEach(function (s) { s.classList.remove('show'); });
+      void plAnim.offsetWidth; // force the no-transition state to apply before re-enabling it
+      requestAnimationFrame(function () { plAnim.classList.remove('pl-resetting'); });
 
       var t = 400;
       var at = function (delay, fn) { setTimeout(fn, t); t += delay; };
@@ -234,9 +264,19 @@
       at(1800, function () {
         plPhaseCheckout.classList.remove('active');
         plPhasePaid.classList.add('active');
+        plCheck.classList.add('animate');                                   // animate the checkmark in
       });
-      at(1200, runPlSequence);
-    })();
+      at(3600, function () {                                                // pause on "Paid" before looping
+        plRunning = false;
+        plAutoRuns++;
+        if (plAutoRuns < DEMO_ANIM_MAX_AUTO_RUNS) runPlSequence();
+      });
+    }
+    runPlSequence();
+
+    plAnim.closest('.cell').addEventListener('mouseenter', function () {
+      if (!plRunning) runPlSequence();
+    });
   }
 
   // Partner inquiry form (partners page): validates, then POSTs to the

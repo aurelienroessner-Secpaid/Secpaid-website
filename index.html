@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=34">
+  <link rel="stylesheet" href="styles.css?v=35">
 </head>
 <body>
 
@@ -452,20 +452,17 @@
             <span class="dw-chip" data-de="Aktion">Action</span>
           </div>
           <p data-de="Zahlungslinks lassen sich direkt in Ihre bestehenden Automatisierungen einbinden, ganz ohne Entwicklungsaufwand auf Ihrer Seite.">Payment links plug straight into your existing automations, with no development effort on your side.</p>
-          <div class="integrations">
-            <span class="chip"><img src="assets/partners/zapier.svg" alt="">Zapier</span>
-            <span class="chip"><img src="assets/partners/n8n.svg" alt="">n8n</span>
-            <span class="chip"><span class="api">REST</span>Custom API</span>
-          </div>
         </div>
       </div>
       <div class="dev-code reveal">
-        <div class="code">
-          <div class="code-tabs" role="tablist" aria-label="Code samples">
-            <button role="tab" aria-selected="true" data-lang="curl">cURL</button>
-            <button role="tab" aria-selected="false" data-lang="node">Node.js</button>
-            <button role="tab" aria-selected="false" data-lang="response" data-de="Antwort">Response</button>
-          </div>
+        <div class="dev-code-grid">
+          <div class="dev-code-main">
+            <div class="code">
+              <div class="code-tabs" role="tablist" aria-label="Code samples">
+                <button role="tab" aria-selected="true" data-lang="curl">cURL</button>
+                <button role="tab" aria-selected="false" data-lang="node">Node.js</button>
+                <button role="tab" aria-selected="false" data-lang="response" data-de="Antwort">Response</button>
+              </div>
 <pre data-lang="curl"><span class="c"># Create a payment link</span>
 curl -X POST "https://app.secpaid.com/api/v2/createLink" \
   -H "token: <span class="s">YOUR_API_TOKEN</span>" \
@@ -494,14 +491,24 @@ console.log(data.pay_link);</pre>
     <span class="s">"status"</span>: <span class="s">"Unused"</span>
   }
 }</pre>
+            </div>
+            <div class="endpoints">
+              <div><code>POST /v2/createLink</code><span data-de="Erstellt eine teilbare Zahlungs-URL und einen QR-Code.">Generate a shareable payment URL and QR code.</span></div>
+              <div><code>POST /v2/splitLink</code><span data-de="Verteilt eine Zahlung auf mehrere Empfänger.">Distribute one payment across multiple recipients.</span></div>
+              <div><code>POST /v2/getPayInTransactions</code><span data-de="Zahlungsverlauf für den Abgleich abfragen und exportieren.">Query and export payment history for reconciliation.</span></div>
+              <div><code>POST /v2/refundPayment</code><span data-de="Vollständig oder teilweise erstatten, ohne Ihr System zu verlassen.">Refund in full or in part without leaving your system.</span></div>
+            </div>
+            <a class="link" href="https://docs.secpaid.com/" rel="noopener"><span data-de="Vollständige API-Dokumentation">Full API docs</span> <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg></a>
+          </div>
+          <div class="dev-integrations">
+            <span class="dev-integrations-label" data-de="Integriert sich mit">Integrates with</span>
+            <div class="integrations integrations-stack">
+              <span class="chip"><img src="assets/partners/zapier.svg" alt="">Zapier</span>
+              <span class="chip"><img src="assets/partners/n8n.svg" alt="">n8n</span>
+              <span class="chip"><span class="api">REST</span>Custom API</span>
+            </div>
+          </div>
         </div>
-        <div class="endpoints">
-          <div><code>POST /v2/createLink</code><span data-de="Erstellt eine teilbare Zahlungs-URL und einen QR-Code.">Generate a shareable payment URL and QR code.</span></div>
-          <div><code>POST /v2/splitLink</code><span data-de="Verteilt eine Zahlung auf mehrere Empfänger.">Distribute one payment across multiple recipients.</span></div>
-          <div><code>POST /v2/getPayInTransactions</code><span data-de="Zahlungsverlauf für den Abgleich abfragen und exportieren.">Query and export payment history for reconciliation.</span></div>
-          <div><code>POST /v2/refundPayment</code><span data-de="Vollständig oder teilweise erstatten, ohne Ihr System zu verlassen.">Refund in full or in part without leaving your system.</span></div>
-        </div>
-        <a class="link" href="https://docs.secpaid.com/" rel="noopener"><span data-de="Vollständige API-Dokumentation">Full API docs</span> <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg></a>
       </div>
     </div>
   </section>
@@ -750,6 +757,6 @@ console.log(data.pay_link);</pre>
 </footer>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="main.js?v=13"></script>
+<script src="main.js?v=14"></script>
 </body>
 </html>

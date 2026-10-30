@@ -404,8 +404,14 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .pl-card-price { font-size: 1.4rem; font-weight: 800; color: #121316; }
 .pl-card-btn { margin-top: .3rem; align-self: flex-start; background: #121316; color: #fff; font-size: .8rem; font-weight: 700; padding: .5rem 1rem; border-radius: 999px; }
 .pl-phase-paid { flex-direction: row; gap: .6rem; }
-.pl-check { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; flex: none; }
+.pl-check { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; flex: none; transform: scale(0); }
+.pl-check.animate { animation: pl-check-pop .4s cubic-bezier(.34, 1.56, .64, 1) .1s forwards; }
+.pl-check svg { stroke-dasharray: 24; stroke-dashoffset: 24; }
+.pl-check.animate svg { animation: pl-check-draw .35s ease .35s forwards; }
+@keyframes pl-check-pop { to { transform: scale(1); } }
+@keyframes pl-check-draw { to { stroke-dashoffset: 0; } }
 .pl-paid-text { font-size: 1rem; font-weight: 700; color: #fff; }
+.pl-resetting .pl-bubble, .pl-resetting .pl-typing { transition: none; }
 @media (max-width: 700px) {
   .bento { grid-template-columns: minmax(0, 1fr); }
   .cell-dashboard { flex-direction: column; align-items: stretch; }
@@ -439,10 +445,15 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .dw-invoice-doc i:nth-child(4) { width: 55%; }
 .dw-invoice-btn { margin-top: .25rem; background: var(--accent); color: #fff; font-size: .68rem; font-weight: 700; padding: .32rem .65rem; border-radius: 7px; }
 .dw-qr { flex: none; width: 64px; height: 64px; border-radius: 8px; border: 1px solid var(--line); }
-.dev-way .integrations { margin-top: 0; }
 
-/* Kept code sample + endpoint reference */
-.dev-code { max-width: 720px; margin: 0 auto; }
+/* Kept code sample + endpoint reference, with the integration logos
+   alongside it on the right */
+.dev-code-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: clamp(2rem, 5vw, 3rem); align-items: start; }
+.dev-code-main { max-width: 720px; }
+.dev-integrations { display: flex; flex-direction: column; gap: .9rem; padding-top: .5rem; }
+.dev-integrations-label { font-size: .8rem; font-weight: 600; color: var(--muted); }
+.integrations-stack { flex-direction: column; align-items: stretch; margin-top: 0; }
+.integrations-stack .chip { justify-content: flex-start; }
 .code { min-width: 0; background: #0f1012; color: #e6e8ec; border-radius: var(--radius-panel); border: 1px solid #272a30; overflow: hidden; color-scheme: dark; }
 .code-tabs { display: flex; gap: .25rem; padding: .6rem .75rem; border-bottom: 1px solid #272a30; background: #141518; }
 .code-tabs button { background: transparent; border: 0; color: #9ba0a9; padding: .35rem .7rem; border-radius: 999px; font-size: .82rem; cursor: pointer; }
@@ -459,7 +470,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .integrations .chip { display: inline-flex; align-items: center; gap: .6rem; height: 44px; padding: 0 1rem 0 .75rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-weight: 500; font-size: .92rem; }
 .integrations .chip img { height: 22px; width: auto; }
 .integrations .chip .api { font-family: var(--mono); font-size: .8rem; color: var(--accent); }
-@media (max-width: 960px) { .dev-ways { grid-template-columns: minmax(0, 1fr); } .endpoints { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 960px) { .dev-ways { grid-template-columns: minmax(0, 1fr); } .endpoints { grid-template-columns: minmax(0, 1fr); } .dev-code-grid { grid-template-columns: minmax(0, 1fr); } .integrations-stack { flex-direction: row; flex-wrap: wrap; } }
 
 /* Security */
 .sec-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
