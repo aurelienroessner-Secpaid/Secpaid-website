@@ -456,12 +456,13 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 
 /* Kept code sample + endpoint reference, with the integration logos
    alongside it on the right */
-.dev-code-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: clamp(2rem, 5vw, 3rem); align-items: start; }
+.dev-code-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: clamp(2rem, 5vw, 3rem); align-items: center; }
 .dev-code-main { max-width: 720px; }
-.dev-integrations { display: flex; flex-direction: column; gap: .9rem; padding-top: .5rem; }
-.dev-integrations-label { font-size: .8rem; font-weight: 600; color: var(--muted); }
-.integrations-stack { flex-direction: column; align-items: stretch; margin-top: 0; }
-.integrations-stack .chip { justify-content: flex-start; }
+.dev-integrations { display: flex; align-items: center; justify-content: center; }
+.integrations-stack { flex-direction: column; align-items: center; margin-top: 0; gap: 1.1rem; }
+.integrations-stack .chip { justify-content: center; width: 100%; max-width: 210px; height: 60px; font-size: 1.05rem; gap: .75rem; }
+.integrations-stack .chip img { height: 28px; }
+.integrations-stack .chip .api { font-size: .88rem; }
 .code { min-width: 0; background: #0f1012; color: #e6e8ec; border-radius: var(--radius-panel); border: 1px solid #272a30; overflow: hidden; color-scheme: dark; }
 .code-tabs { display: flex; gap: .25rem; padding: .6rem .75rem; border-bottom: 1px solid #272a30; background: #141518; }
 .code-tabs button { background: transparent; border: 0; color: #9ba0a9; padding: .35rem .7rem; border-radius: 999px; font-size: .82rem; cursor: pointer; }
@@ -478,7 +479,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .integrations .chip { display: inline-flex; align-items: center; gap: .6rem; height: 44px; padding: 0 1rem 0 .75rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-weight: 500; font-size: .92rem; }
 .integrations .chip img { height: 22px; width: auto; }
 .integrations .chip .api { font-family: var(--mono); font-size: .8rem; color: var(--accent); }
-@media (max-width: 960px) { .dev-ways { grid-template-columns: minmax(0, 1fr); } .endpoints { grid-template-columns: minmax(0, 1fr); } .dev-code-grid { grid-template-columns: minmax(0, 1fr); } .integrations-stack { flex-direction: row; flex-wrap: wrap; } }
+@media (max-width: 960px) { .dev-ways { grid-template-columns: minmax(0, 1fr); } .endpoints { grid-template-columns: minmax(0, 1fr); } .dev-code-grid { grid-template-columns: minmax(0, 1fr); } .integrations-stack { flex-direction: row; flex-wrap: wrap; justify-content: center; } .integrations-stack .chip { width: auto; } }
 
 /* Security */
 .sec-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
