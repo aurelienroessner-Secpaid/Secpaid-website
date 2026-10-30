@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>try{var t=localStorage.getItem('secpaid-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=33">
+  <link rel="stylesheet" href="styles.css?v=34">
 </head>
 <body>
 
@@ -412,17 +412,60 @@
   <section class="dev section" id="developers">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2 data-de="Für Entwickler gebaut. Auch ohne nutzbar.">Built for developers. Usable without one.</h2>
-        <p class="lede" data-de="Eine REST-API mit vier Kernaufrufen, Echtzeit-Callbacks und No-Code-Connectoren für den Rest Ihres Stacks.">A REST API with four core calls, real-time callbacks, and no-code connectors for the rest of your stack.</p>
+        <h2 data-de="Drei Wege, SecPaid einzusetzen">Three ways to use SecPaid</h2>
+        <p class="lede" data-de="Jeder Weg fügt sich nahtlos in Ihre bestehenden Systeme ein, ohne sie zu verändern. Die Implementierung ist einfach, und unser Team begleitet Sie dabei.">Each one fits into your existing systems without changing them. Implementation is simple, and our team is with you every step of the way.</p>
       </div>
-      <div class="dev-grid">
-        <div class="reveal">
-          <div class="code">
-            <div class="code-tabs" role="tablist" aria-label="Code samples">
-              <button role="tab" aria-selected="true" data-lang="curl">cURL</button>
-              <button role="tab" aria-selected="false" data-lang="node">Node.js</button>
-              <button role="tab" aria-selected="false" data-lang="response" data-de="Antwort">Response</button>
+      <div class="dev-ways reveal">
+        <div class="dev-way">
+          <span class="dev-way-tag"><b>01</b><span data-de="API – Hosted Checkout">API – Hosted checkout</span></span>
+          <h3 data-de="SecPaid Checkout auf Ihrer Landingpage">SecPaid Checkout on your landing page</h3>
+          <div class="dw-visual dw-checkout" aria-hidden="true">
+            <span class="dw-chip" data-de="Checkout">Checkout</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="dw-chip dw-chip-accent">SecPaid</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="dw-chip" data-de="Erfolg">Success</span>
+          </div>
+          <p data-de="Von Ihrem Shop-Checkout zur SecPaid-Checkout-Seite, und nahtlos zurück zu Ihrem Shop nach erfolgreicher Zahlung.">From your shop checkout to the SecPaid checkout page, and seamlessly back to your shop after successful payment.</p>
+        </div>
+        <div class="dev-way">
+          <span class="dev-way-tag"><b>02</b><span data-de="Rechnung &amp; E-Mail">Invoice &amp; email</span></span>
+          <h3 data-de="Zahlungslink und QR-Code auf jedem Dokument">Payment link and QR code on every document</h3>
+          <div class="dw-visual dw-invoice" aria-hidden="true">
+            <div class="dw-invoice-doc">
+              <span class="dw-invoice-label" data-de="Rechnung">Invoice</span>
+              <i></i><i></i><i></i>
+              <span class="dw-invoice-btn" data-de="Jetzt bezahlen">Pay now</span>
             </div>
+            <img class="dw-qr" src="assets/screens/qr-code-asset.png" alt="">
+          </div>
+          <p data-de="Zahlungsoptionen werden automatisch per API zu Rechnungen und E-Mails hinzugefügt, und der Kunde bezahlt mit einem Klick oder durch Scannen des QR-Codes.">Payment options are automatically added to invoices and emails via API, and the customer pays with one click or a QR code scan.</p>
+        </div>
+        <div class="dev-way">
+          <span class="dev-way-tag"><b>03</b><span data-de="Automatisierung">Automation</span></span>
+          <h3 data-de="Individuelle Workflows mit der SecPaid-Zapier-App">Custom workflows with the SecPaid Zapier app</h3>
+          <div class="dw-visual dw-automation" aria-hidden="true">
+            <span class="dw-chip" data-de="Trigger">Trigger</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="dw-chip dw-chip-accent">SecPaid</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span class="dw-chip" data-de="Aktion">Action</span>
+          </div>
+          <p data-de="Zahlungslinks lassen sich direkt in Ihre bestehenden Automatisierungen einbinden, ganz ohne Entwicklungsaufwand auf Ihrer Seite.">Payment links plug straight into your existing automations, with no development effort on your side.</p>
+          <div class="integrations">
+            <span class="chip"><img src="assets/partners/zapier.svg" alt="">Zapier</span>
+            <span class="chip"><img src="assets/partners/n8n.svg" alt="">n8n</span>
+            <span class="chip"><span class="api">REST</span>Custom API</span>
+          </div>
+        </div>
+      </div>
+      <div class="dev-code reveal">
+        <div class="code">
+          <div class="code-tabs" role="tablist" aria-label="Code samples">
+            <button role="tab" aria-selected="true" data-lang="curl">cURL</button>
+            <button role="tab" aria-selected="false" data-lang="node">Node.js</button>
+            <button role="tab" aria-selected="false" data-lang="response" data-de="Antwort">Response</button>
+          </div>
 <pre data-lang="curl"><span class="c"># Create a payment link</span>
 curl -X POST "https://app.secpaid.com/api/v2/createLink" \
   -H "token: <span class="s">YOUR_API_TOKEN</span>" \
@@ -451,29 +494,14 @@ console.log(data.pay_link);</pre>
     <span class="s">"status"</span>: <span class="s">"Unused"</span>
   }
 }</pre>
-          </div>
-          <div class="endpoints">
-            <div><code>POST /v2/createLink</code><span data-de="Erstellt eine teilbare Zahlungs-URL und einen QR-Code.">Generate a shareable payment URL and QR code.</span></div>
-            <div><code>POST /v2/splitLink</code><span data-de="Verteilt eine Zahlung auf mehrere Empfänger.">Distribute one payment across multiple recipients.</span></div>
-            <div><code>POST /v2/getPayInTransactions</code><span data-de="Zahlungsverlauf für den Abgleich abfragen und exportieren.">Query and export payment history for reconciliation.</span></div>
-            <div><code>POST /v2/refundPayment</code><span data-de="Vollständig oder teilweise erstatten, ohne Ihr System zu verlassen.">Refund in full or in part without leaving your system.</span></div>
-          </div>
         </div>
-        <div class="reveal">
-          <h3 style="margin-bottom:1rem" data-de="Echtzeit-Callbacks">Real-time callbacks</h3>
-          <ol class="hooks">
-            <li><b data-de="Kunde bezahlt">Customer pays</b><span data-de="Sie öffnen den Link oder Checkout und schließen die Zahlung mit einer beliebigen Methode ab.">They open the link or checkout and complete payment with any method.</span></li>
-            <li><b data-de="SecPaid sendet das Ereignis">SecPaid posts the event</b><span data-de="Ihre Callback-URL erhält Zahlungs-ID, Nutzer-ID und Status innerhalb von Sekunden.">Your callback URL receives the payment id, user id, and status within seconds.</span></li>
-            <li><b data-de="Sie bestätigen">You acknowledge</b><span data-de="Antworten Sie mit 200 OK. Falls nicht, wiederholt SecPaid mit exponentiellem Backoff und benachrichtigt Sie nach dem letzten Versuch.">Return 200 OK. If not, SecPaid retries with exponential backoff and alerts you after the last attempt.</span></li>
-            <li><b data-de="Automatisch erfüllen">Fulfil automatically</b><span data-de="Versenden Sie die Bestellung, schalten Sie das Konto frei oder aktualisieren Sie Ihr Ledger, ganz ohne Polling.">Ship the order, unlock the account, or update your ledger with no polling.</span></li>
-          </ol>
-          <div class="integrations">
-            <span class="chip"><img src="assets/partners/zapier.svg" alt="">Zapier</span>
-            <span class="chip"><img src="assets/partners/n8n.svg" alt="">n8n</span>
-            <span class="chip"><span class="api">REST</span>Custom API</span>
-            <a class="link" href="https://docs.secpaid.com/" rel="noopener"><span data-de="Vollständige API-Dokumentation">Full API docs</span> <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg></a>
-          </div>
+        <div class="endpoints">
+          <div><code>POST /v2/createLink</code><span data-de="Erstellt eine teilbare Zahlungs-URL und einen QR-Code.">Generate a shareable payment URL and QR code.</span></div>
+          <div><code>POST /v2/splitLink</code><span data-de="Verteilt eine Zahlung auf mehrere Empfänger.">Distribute one payment across multiple recipients.</span></div>
+          <div><code>POST /v2/getPayInTransactions</code><span data-de="Zahlungsverlauf für den Abgleich abfragen und exportieren.">Query and export payment history for reconciliation.</span></div>
+          <div><code>POST /v2/refundPayment</code><span data-de="Vollständig oder teilweise erstatten, ohne Ihr System zu verlassen.">Refund in full or in part without leaving your system.</span></div>
         </div>
+        <a class="link" href="https://docs.secpaid.com/" rel="noopener"><span data-de="Vollständige API-Dokumentation">Full API docs</span> <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg></a>
       </div>
     </div>
   </section>
