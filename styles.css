@@ -400,7 +400,7 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .qr-pf-check { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; }
 .qr-pf-success b { font-size: 11px; color: #121316; }
 .qr-pf-success span { font-size: 9px; color: #676c75; }
-.qr-resetting .qr-pf, .qr-resetting .qr-pf-success, .qr-resetting .qr-pf-pay { transition: none; }
+.qr-resetting .qr-pf, .qr-resetting .qr-pf-success, .qr-resetting .qr-pf-pay, .qr-resetting .qr-phase { transition: none; }
 
 /* Payment links tile: looping chat -> checkout -> paid animation */
 .pl-anim { position: relative; margin: -1.5rem -1.5rem 1rem; height: 360px; overflow: hidden; border-bottom: 1px solid var(--line); background: #121316; }
