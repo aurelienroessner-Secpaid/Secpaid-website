@@ -174,13 +174,21 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 @media (max-width: 960px) {
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: grid; place-items: center; }
-  .nav.open .nav-links, .nav.open .nav-cta {
-    display: flex; flex-direction: column; align-items: stretch;
-    position: absolute; left: 0; right: 0; background: var(--surface);
-    border-bottom: 1px solid var(--line); padding: .75rem 1.25rem; margin: 0; gap: .25rem;
+  .nav-menu { display: contents; }
+  /* backdrop-filter establishes a containing block for fixed-position
+     descendants, which would clamp the full-screen menu below to the
+     header's own height instead of the viewport. Drop it while open. */
+  .nav.open { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav.open .nav-menu {
+    display: flex; flex-direction: column;
+    position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+    background: var(--surface); overflow-y: auto; z-index: 39;
+    padding: .75rem 1.25rem 1.5rem; margin: 0; gap: .25rem;
   }
-  .nav.open .nav-links { top: var(--nav-h); }
-  .nav.open .nav-cta { top: calc(var(--nav-h) + 232px); padding-top: 0; padding-bottom: 1.25rem; }
+  .nav.open .nav-links, .nav.open .nav-cta {
+    display: flex; flex-direction: column; align-items: stretch; margin: 0; padding: 0; gap: .25rem;
+  }
+  .nav.open .nav-links { border-bottom: 1px solid var(--line); padding-bottom: .75rem; margin-bottom: .25rem; }
   .nav.open .nav-links a { padding: .75rem .5rem; border-radius: var(--radius-input); }
 }
 
