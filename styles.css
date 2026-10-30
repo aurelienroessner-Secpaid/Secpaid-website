@@ -297,11 +297,12 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .cell-feats li { display: flex; gap: .5rem; align-items: flex-start; font-size: .85rem; color: var(--ink-2); }
 .cell-feats svg { width: 15px; height: 15px; flex: none; margin-top: .15rem; color: var(--accent); }
 .cell-dark .cell-feats li { color: color-mix(in srgb, var(--bg) 75%, transparent); }
-.cell-dashboard { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 1.5rem; padding: 1.25rem 1.5rem; }
+.cell-dashboard { grid-column: 1 / -1; flex-direction: row; align-items: flex-start; gap: 1.5rem; padding: 1.5rem; }
 .cell-dashboard .cell-shot { flex: 0 0 240px; height: 110px; margin: 0; border-radius: var(--radius-input); border: 1px solid var(--line); }
 .cell-dashboard .cell-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .2rem; }
 .cell-dashboard h3 { margin: 0; font-size: 1rem; }
 .cell-dashboard p { margin: 0; font-size: .85rem; max-width: 60ch; }
+.cell-dashboard .cell-feats { margin-top: .7rem; }
 .cell-wide { grid-column: 1 / -1; padding: 0; }
 .cell-wide-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 380px); gap: 2.5rem; align-items: center; padding: 2.5rem; }
 .cell-wide-text h3 { margin: 0 0 .5rem; font-size: 1.4rem; }
@@ -312,7 +313,14 @@ html[lang="de"] .hero h1 { max-width: 22ch; font-size: clamp(2rem, 4vw, 3.2rem);
 .method-checklist li { display: flex; align-items: center; gap: .55rem; font-size: .92rem; color: var(--ink-2); }
 .method-checklist svg { flex: none; color: var(--accent); }
 .cell-wide-shot img { display: block; width: 100%; border-radius: var(--radius-panel); border: 1px solid var(--line); box-shadow: 0 24px 48px -28px rgba(18, 19, 22, .3); }
+.cell-wide-shot-flat img { border: none; box-shadow: 0 24px 48px -28px rgba(18, 19, 22, .3); }
 .cell-wide-grid-qr { grid-template-columns: minmax(0, 1fr) minmax(0, 460px); }
+
+/* Payment as a Service tile: cannabis specialization note + fraud/risk callout */
+.pas-note { margin: -.4rem 0 1rem; font-size: .85rem; color: var(--muted); }
+.pas-highlight { padding-top: 1rem; border-top: 1px solid var(--line); }
+.pas-highlight b { display: block; font-size: .92rem; margin-bottom: .3rem; }
+.pas-highlight p { margin: 0; font-size: .85rem; color: var(--muted); }
 
 /* QR codes tile: looping invoice -> zoom -> phone-checkout animation */
 .cell-wide-shot .qr-anim { margin: 0; height: 580px; background: none; border: none; box-shadow: none; border-radius: 0; }
