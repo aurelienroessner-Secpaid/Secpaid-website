@@ -171,10 +171,14 @@ h3 { font-size: 1.3rem; letter-spacing: -0.018em; line-height: 1.2; font-weight:
 .nav-cta { margin-left: auto; display: flex; gap: .5rem; align-items: center; }
 .nav-toggle { display: none; margin-left: auto; width: 44px; height: 44px; border: 1px solid var(--line-strong); border-radius: 999px; background: transparent; }
 .nav-toggle svg { width: 20px; height: 20px; margin: auto; }
+/* Purely a grouping wrapper around nav-links + nav-cta so the mobile-open
+   overlay below has a single element to target; on desktop (and when the
+   mobile menu is closed) it must stay invisible to layout so .nav-links
+   and .nav-cta remain direct flex items of .wrap. */
+.nav-menu { display: contents; }
 @media (max-width: 960px) {
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: grid; place-items: center; }
-  .nav-menu { display: contents; }
   /* backdrop-filter establishes a containing block for fixed-position
      descendants, which would clamp the full-screen menu below to the
      header's own height instead of the viewport. Drop it while open. */
